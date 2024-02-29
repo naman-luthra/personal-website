@@ -1,0 +1,68 @@
+{
+    "SKILLS_USED": "Skills Used",
+    "WFX_INTERN" : {
+        "TITLE": "Software Engineer Intern",
+        "COMPANY": "WhatFix",
+        "LOGO": "/whatfix-logo.png",
+        "TECHSTACK": [
+            "java",
+            "typescript",
+            "elastic-search",
+            "cassandra",
+            "openai",
+            "hadoop"
+        ],
+        "START_DATE": "January 2024",
+        "END_DATE": "Present",
+        "DESCRIPTION": "As an engineer in the CD/HUB team, I drive innovation in three key areas:\n\u2022 Enhancing enterprise search functionality through cutting-edge technologies like Elastic Search, with AI-enabled QuickRead feature.\n\u2022 Advanced content aggregation via distributed web crawling, capable of handling authenticated pages.\n\u2022 Developing a cross-platform desktop application using Chromium and minimalist native interfaces for seamless user experience."
+    },
+    "CLRFD_INTERN" : {
+        "TITLE": "Software Engineer Intern",
+        "COMPANY": "ClearFeed",
+        "LOGO": "/clearfeed-logo.jpeg",
+        "TECHSTACK": [
+            "typescript",
+            "nextjs",
+            "nestjs",
+            "sequelize",
+            "postgresql"
+        ],
+        "START_DATE": "May 2023",
+        "END_DATE": "August 2023",
+        "DESCRIPTION": "\u2022 Developed and contributed to both backend and frontend components as a full stack developer, utilizing technologies such as Next.js, Nest.js, and Sequelize.js\n\u2022 Successfully merged over 50 pull requests, driving the implementation of new features and resolving critical bugs, showcasing strong collaboration and problem-solving skills\n\u2022 Thrived in a fast-paced internship environment, actively participating in weekly production releases, demonstrating adaptability and delivering high-quality code under tight deadlines."
+    },
+    "BYS_INTERN" : {
+        "TITLE": "Geek-in-Residence, Full Stack",
+        "COMPANY": "Basys.ai",
+        "LOGO": "/Basys-White.webp",
+        "TECHSTACK": [
+            "react",
+            "redux",
+            "javascript",
+            "tailwindcss",
+            "nodejs",
+            "expressjs",
+            "mongodb",
+            "git"
+        ],
+        "START_DATE": "August 2022",
+        "END_DATE": "March 2023",
+        "DESCRIPTION": "\u2022 Worked on developing basys.ai's flagship web app for healthcare providers and insurance companies\n\u2022 Handled full system and database schema design for the app with frontend and backend\n\u2022 Reported directly to the founders and gaining hands on experience in software design and development\n\u2022 Selected from 2860 candidates that applied for the role from top institutes in India"
+    },
+    "BYT_INTERN" :{
+        "TITLE": "Front-End Developer Intern",
+        "COMPANY": "Bytelearn",
+        "LOGO": "/bytelearn-LOGO.jpeg",
+        "TECHSTACK": [
+            "react",
+            "typescript",
+            "scss",
+            "bitbucket",
+            "jira",
+            "git"
+        ],
+        "START_DATE": "July 2022",
+        "END_DATE": "August 2022",
+        "DESCRIPTION": "\u2022 Developed modular and reusable react UI elements using React, TypeScript and SCSS\n\u2022 Gained hands on experience in collaborating with a team and using industry standard collaboration tools like jira, bitbucket, confluence and git"
+    }
+}

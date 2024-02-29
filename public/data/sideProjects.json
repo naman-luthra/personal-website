@@ -1,0 +1,75 @@
+[
+    {
+        "type":"project",
+        "name":"Doubt Redressal App",
+        "description":"Built a doubt redressal app using MERN stack. This app is a react app with redux used for its state-management. Nodejs is used for its backend with a mongodb database. Experienced building and hosting a full fledged application in MERN stack combining the concepts of Front-End Development using react and redux with developing a API using Nodejs and designing a schema for efficient retrival in MongoDB",
+        "credential":{
+            "username":"ta@gmail.com",
+            "password":"samplePassword"
+        },
+        "techstack":["React.js", "Redux.js", "TailwindCSS", "NodeJS", "MongoDB", "JSX", "JavaScript"],
+        "deployment":"https://doubt-redresser.netlify.app/",
+        "codebase":"https://github.com/naman-luthra/doubt-redresser",
+        "projectsnap":"1PYXayW8OEcBZe4YfOhwIgMCDESgX6dy2"
+    },
+    {
+        "type":"project",
+        "name":"Personal Website V2",
+        "description":"Rebuilt my personal website using my improved front end skills. Used React js's modular components to create the website. Used TailwindCSS to style and make the webpage responsive. Hosted the web page on netlify. Learnt a lot about react components and react hooks during development. Used a json database to store and retrive project information.",
+        "techstack":["React", "React Hooks", "JSX", "TailwindCSS", "Javascript", "JSON"],
+        "deployment":"https://namanluthra.netlify.app/",
+        "codebase":"https://github.com/naman-luthra/Personal-Website-V2",
+        "projectsnap":"1TY7OUHgfr5TaWsCtPSHT_bxFNg-UozmW"
+    },
+    {
+        "type":"project",
+        "name":"Track My Health",
+        "description":"Worked as a full stack developer on building a health monitoring web application. Used Nodejs and Expressjs to build a authentication and login-session creation server. Used Tailwind CSS and some js frameworks like chartjs and cryptojs to build the front end data visualing part of the website. Used electron js to make a cross desktop application for the web-app.",
+        "techstack":["HTML", "TailwindCSS", "Javascript", "EJS", "NodeJS", "ExpressJS", "ChartJS", "CryptoJS"],
+        "deployment":"https://trackmyhealth.ananya2k20b808.repl.co/signin.html",
+        "credential":{
+            "username":"exampleuser@gmail.com",
+            "password":"Fedcba@0C"
+        }
+    },
+    {
+        "type":"project",
+        "name":"DNS Server Web Application",
+        "description":"Developed a DNS Server Web Application that interacts with an mysql database for querying and maintaining DNS records. Used HTML, TailwindCSS, EJS and JavaScript to build the front-end. Made an ExpressJs server using NodeJs to interact between the front-end and the MySQL database. Used my-sql-2 npm package to connect to the database. Used aws to create an mySQL database and used heroku to host the application.",
+        "techstack":["HTML", "TailwindCSS", "Javascript", "EJS", "NodeJS", "ExpressJS", "MySQL","AWS"],
+        "deployment":"https://dns-server.herokuapp.com/",
+        "codebase":"https://github.com/naman-luthra/DNS-Server",
+        "projectsnap":"1cnF7kcIjYxT-s8Zm8ciVROO-HmcsVo9c"
+    },
+    {
+        "type":"project",
+        "name":"Personal Website V1",
+        "description":"Built a personal website using knowledge of front-end web development which included HTML, CSS, Bootstrap, and JavaScript. I hosted this website on Github pages. During this project's development process, I learnt about maintaning and updating a project's codebase on Git/GitHub and the system of commits and pull-requests on Github.",
+        "techstack":["HTML","CSS","BootStrap","Javascript"],
+        "deployment":"https://www.namanluthra.repl.co/",
+        "codebase":"https://github.com/naman-luthra/home",
+        "projectsnap":"1IzdFd0NO7uJeqe6psH5Sy87QAVsObkSg"
+    },
+    {
+        "type":"project",
+        "name":"Retro Game Websites",
+        "description":"Built more javascript focused small websites for playing retro games like the simon game and the very popular snake game. During development of these websites, I gained more practical experince in javascript.",
+        "techstack":["HTML", "Javascript"],
+        "codebase":"https://github.com/naman-luthra/DNS-Server",
+        "deployment":"https://snake-game.namanluthra1.repl.co/"
+    },
+    {
+        "type":"project",
+        "name":"Commercial Website Project",
+        "description":"Collaborated with a peer to build and deploy a commercial website for an agro based company using Google cloud's knowledge for hosting and HTML, CSS and Bootstrap for Website design and Development. Meanwhile also learning best software development practices to follow in order to efficiently work in a collaborative enviornment.",
+        "techstack":["HTML","CSS","BootStrap","Javascript"],
+        "deployment":"https://www.khuranaagro.com/"
+    },
+    {
+        "type":"achievement",
+        "name":"30 Days of Google Cloud",
+        "description":"Completed Cloud Engineering Track and Data Science & Machine Learning Track in 30 Days of Google Cloud Program 2021. Google's 30 Days of Cloud was a great learning experience. It was exciting to learn about how millions of web applications that we use daily are deployed in the cloud. This knowledge allowed me to host a website using apache2 on GCP. I also used GCP's Cloud DNS API and Maps API in this project. I look forward to learn more about Cloud Computing, Machine Learning and Data Science.",
+        "techstack":["Google Clound Platform","Cloud"],
+        "deployment":"https://www.qwiklabs.com/public_profiles/c28c41da-e589-4c80-aca0-018c99e27977"
+    }
+]

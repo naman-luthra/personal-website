@@ -1,0 +1,12 @@
+id,name,icon,proficiency,domain
+react,React,./react-icon.png,10,frontend
+javascript,JavaScript,https://cdn-icons-png.flaticon.com/512/5968/5968292.png,10,frontend/backend
+typescript,TypeScript,https://www.svgrepo.com/show/303600/typescript-logo.svg,10,frontend/backend
+redux,Redux,./redux-icon.png,8,frontend
+tailwindcss,TailwindCSS,https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png,8,frontend
+nodejs,Nodejs,https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png,7,backend
+expressjs,Expressjs,./express-icon.png,7,backend
+mongodb,MongoDB,mongodb-icon.png,6,backend
+mysql,MySQL,./mysql-icon.webp,6,backend
+git,Git,./git-icon.png,9,frontend/backend
+cpp,C++,https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png,4,frontend/backend

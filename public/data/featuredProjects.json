@@ -1,0 +1,53 @@
+[
+    {
+        "name": "P2P Group Video Call",
+        "description": "Developed a WebRTC-based P2P Video Call application using Next.js and TypeScript, incorporating advanced features like presentation sharing, chat functionality, and authorized call access. Custom layout algorithm enabling Automatic Grid Sizing, Optimal Video Tile Placement & Responsive Design",
+        "techstack": ["Next.js", "TypeScript", "WebRTC", "Node.js", "WebSocket"],
+        "repositories": [
+            {
+                "name": "Application",
+                "link": "https://github.com/naman-luthra/p2p-webrtc-call"
+            },
+            {
+                "name": "Signaling Server",
+                "link": "https://github.com/naman-luthra/signaling-server"
+            }
+        ],
+        "projectsnap": "19vlAO2C0mhwjg9DZ5_04p8iW_m7nE3i8",
+        "justify":"start",
+        "specialimageclasses":"w-1/2"
+    },
+    {
+        "name": "Automated Timetable Generation",
+        "description": "Developed an automated system to streamline timetable generation for educational institutions, reducing manual effort and optimizing resource allocation.",
+        "techstack": ["Next.js", "TypeScript", "Node.js", "Express.js"],
+        "repositories": [
+            {
+                "name": "App",
+                "link": "https://github.com/naman-luthra/dtc"
+            }
+        ],
+        "projectsnap": "1B-fN6Ar3jyFuGUI-7Hc_o3QBpGEtZGY2",
+        "justify": "end",
+        "specialimageclasses": "w-1/2"
+    },    
+    {
+        "name": "MakeMeFit",
+        "description": "Leveraged OpenAI’s API to develop a health application to manage health metrics, recommend meal plans, and workout routines.",
+        "techstack": ["OpenAI", "React", "Redux", "TailwindCSS", "Node.js", "JWT", "Bcrypt", "MySQL"],
+        "deployment": "https://makemefit.netlify.app/",
+        "repositories": [
+            {
+                "name": "Frontend",
+                "link": "https://github.com/naman-luthra/make-me-fit-ui"
+            },
+            {
+                "name": "Backend",
+                "link": "https://github.com/naman-luthra/make-me-fit-backend"
+            }
+        ],
+        "projectsnap": "1yYC6FhDvWaKnDIZL9jFGP7rK651rpVEJ",
+        "justify":"start",
+        "specialimageclasses":"w-1/2"
+    }    
+]
