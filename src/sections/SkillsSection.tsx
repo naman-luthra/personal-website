@@ -37,7 +37,8 @@ const MySkills = () => {
       "JAVA",
       "CASSANDRA",
       "ELASTICSEARCH",
-      "CHROMIUM"
+      "CHROMIUM",
+      "NEXT"
     ];
 
     const skillData = skillKeys.map((key)=>({
@@ -62,7 +63,7 @@ const MySkills = () => {
         const radiusScale = d3.scaleSqrt().domain([1,10]).range([width<900 ? 10 : 12, width<900 ? 60 : 80]);
         const simulation = d3.forceSimulation()
             .force("x",d3.forceX(width/2).strength(0.05))
-            .force("y",d3.forceY(height/2).strength(0.1))
+            .force("y",d3.forceY(height/2).strength(width<900 ? 0.05 : 0.15))
             .force("collide",d3.forceCollide((d:any)=>(radiusScale(d.proficiency)+12)));
         const dragstarted = (event: any, d:any) => {
             console.log("drag started", d)

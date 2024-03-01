@@ -105,6 +105,13 @@
           "ICON": "https://www.kali.org/tools/chromium/images/chromium-logo.svg",
           "PROFICIENCY": 9,
           "DOMAIN": "web browser"
-        }
+        },
+        "NEXT": {
+            "ID": "next",
+            "NAME": "Next.js",
+            "ICON": "/next.svg",
+            "PROFICIENCY": 8,
+            "DOMAIN": "frontend/backend"
+          }
     }    
 }
