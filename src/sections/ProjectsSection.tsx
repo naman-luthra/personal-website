@@ -27,7 +27,7 @@ const ProjectsSection = () =>{
     }));
     return(
         <div className="text-white">
-            <div className="font-sans font-extrabold text-4xl">Some Things I have Built!</div>
+            <div className="font-sans font-extrabold text-4xl">{getTranslatedContent("HEADER","PROJECTS",languageCode)}</div>
             <div className="flex flex-col gap-6 mt-8">
                 {
                     featuredProjects.map((project,index)=>{

@@ -13,7 +13,7 @@ function SideProject({name,description,techstack,codebase,deployment}: SideProje
     return(
         <div className="p-2 px-4 bg-neutral-900 rounded-md text-white">
             <div className={`flex justify-end my-5 font-sans text-3xl font-bold`}>
-                <div className="grow"><AiOutlineFileDone className="text-react-blue w-12 h-12 inline mx-2"/></div>
+                <div className="grow"><AiOutlineFileDone className="text-white w-12 h-12 inline mx-2"/></div>
                 {codebase && <a target="_blank" rel="noreferrer" href={codebase}><FiGithub className="hover:text-react-blue inline mx-2"/></a>}
                 {deployment && <a target="_blank" rel="noreferrer" href={deployment}><MdOpenInNew className="hover:text-mint-green inline mx-2"/></a>}
             </div>

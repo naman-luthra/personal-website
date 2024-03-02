@@ -8,7 +8,7 @@ const AboutSection = () => {
     return (
         <div className="flex">
             <div className="md:basis-2/3">
-                <div className="my-2 text-xl text-react-blue-light font-mono font-semibold">
+                <div className="my-2 text-xl text-white opacity-80 font-mono font-semibold">
                     {getTranslatedContent("HEADER", "ABOUT", languageCode)}
                 </div>
                 <div className="my-2 text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-sans font-bold">
@@ -31,11 +31,13 @@ const AboutSection = () => {
                 </p>
                 <ProfileLinks />
                 <a target="_blank" rel="noreferrer" href={resumeLink}>
-                    <div className="inline-block mt-8 p-3 rounded-md font-semibold text-react-blue-light border-react-blue-light border-2 hover:bg-react-blue-light hover:text-matte-black">{getTranslatedContent("RESUME_BUTTON", "ABOUT", languageCode)}</div>
+                    <div className="inline-block mt-8 p-3 rounded-md font-semibold text-white border-white border-2 hover:bg-white hover:text-matte-black">{getTranslatedContent("RESUME_BUTTON", "ABOUT", languageCode)}</div>
                 </a>
             </div>
-            <div className="md:basis-1/3 lg:basis-1/2 hidden md:flex justify-end">
-                <img src={profilePicPath} className="w-36 h-36 sm:w-56 sm:h-56" alt="" />
+            <div className="basis-1/4 md:basis-1/3 lg:basis-1/2 relative">
+                <div className="hidden md:inline-block w-56 h-56 rounded-full bg-white opacity-70 absolute left-4 top-16"></div>
+                <img src="./icons/profilePic2023.png" className="w-36 sm:w-56 absolute top-12 right-4 md:left-0" alt="" />
+                <div className="w-screen h-[200vh] absolute bg-white opacity-80 rounded-lg -z-40 origin-top-left top-40 left-28 -rotate-45"/>
             </div>
         </div>
     );

@@ -2,6 +2,7 @@ import Image from "next/image";
 import {FiGithub, FiCopy, FiCheck} from "react-icons/fi";
 import {MdOpenInNew} from "react-icons/md";
 import FormattedText from "./FormattedText";
+import { getTranslatedContent } from "@/util/getTranslate";
 
 export type ProjectProps = {
     name: string;
@@ -15,6 +16,7 @@ export type ProjectProps = {
     specialimageclasses: string;
 }
 function Project({name,description,techstack,repositories,deployment,credential,projectsnap,justify,specialimageclasses}: ProjectProps){
+    const languageCode = "en";
     return (
         <div className="relative">
             <a target="_blank" rel="noreferrer" className="hidden md:inline-block" href={deployment || repositories[0].LINK}>
@@ -23,7 +25,7 @@ function Project({name,description,techstack,repositories,deployment,credential,
                     <MdOpenInNew className="mx-2 absolute w-6 h-6 top-2 right-2 hidden group-hover:block"/>
                 </div>
             </a>
-            <div className={`flex ${justify==="start" ? "justify-start" : "justify-start md:justify-end"} my-1 font-mono text-lg font-thin text-react-blue-light`}>Featured Project</div>
+            <div className={`flex ${justify==="start" ? "justify-start" : "justify-start md:justify-end"} my-1 font-mono text-lg font-thin text-white opacity-80`}>{getTranslatedContent("FEATURED_HEADER","PROJECTS",languageCode)}</div>
             <div className={`flex ${justify==="start" ? "justify-start" : "justify-start md:justify-end"} my-1 font-sans text-3xl font-bold`}>{name}</div>
             <div className={`flex ${justify==="start" ? "justify-start" : "justify-start md:justify-end"} my-4 font-sans text-base`}>
                 <div className={`md:w-2/3 lg:1/2 p-6 bg-matte-black-light rounded-md ${justify==="end" ? "md:text-right" : "text-left"} z-10`}>

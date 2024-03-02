@@ -1,4 +1,6 @@
 {
+    "HEADER": "Some Things I have Built!",
+    "FEATURED_HEADER": "Featured Projects",
     "FEATURED": {
         "P2P": {
             "NAME": "P2P Group Video Call",

@@ -59,7 +59,7 @@ const ExperienceSection = () => {
 
     return (
         <div className="w-full">
-            <div className="font-bold text-4xl">Work Experience</div>
+            <div className="font-bold text-4xl">{getTranslatedContent("HEADER","EXP", languageCode)}</div>
             <div className="grid md:grid-cols-4 gap-8 w-full h-[48rem] md:h-[28rem] mt-8">
                 <div className="">
                     <div className="hidden md:block">{experienceData[0].endDate}</div>
