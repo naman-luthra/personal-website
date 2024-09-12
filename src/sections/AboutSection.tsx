@@ -3,10 +3,9 @@ import { getTranslatedContent, getUntranslatedContent } from "@/util/getTranslat
 
 const AboutSection = () => {
     const languageCode = "en";
-    const resumeLink = "https://drive.google.com/file/d/1mHrJTGdXRmvTNDGLak9CWZnVycNn1Y11/view?usp=sharing";
-    const profilePicPath = "./icons/profilePic2023.png";
+    const resumeLink = "https://drive.google.com/file/d/1BSAkkz1K4lNtWCcd4pvoI_s1372rBs8D/view?usp=sharing";
     return (
-        <div className="flex">
+        <div className="flex lg:gap-20" id="about-section">
             <div className="md:basis-2/3">
                 <div className="my-2 text-xl text-white opacity-80 font-mono font-semibold">
                     {getTranslatedContent("HEADER", "ABOUT", languageCode)}
@@ -24,7 +23,7 @@ const AboutSection = () => {
                     {getUntranslatedContent("UNIVERSITY", "ABOUT")}
                 </div>
                 <div className="my-2 text-base md:text-lg lg:text-xl text-white font-sans font-semibold">
-                    {getTranslatedContent("EXPECTED_GRADUATION", "ABOUT", languageCode)}
+                    {getTranslatedContent("GRADUATION", "ABOUT", languageCode)}
                 </div>
                 <p className="my-6 text-base md:text-lg lg:text-xl text-white font-sans font-normal">
                     {getTranslatedContent("BIO", "ABOUT", languageCode)}
@@ -36,7 +35,7 @@ const AboutSection = () => {
             </div>
             <div className="basis-1/4 md:basis-1/3 lg:basis-1/2 relative hidden md:block">
                 <div className="hidden md:inline-block w-56 h-56 rounded-full bg-white opacity-70 absolute left-4 top-16"></div>
-                <img src="./icons/profilePic2023.png" className="w-36 sm:w-56 absolute top-12 right-4 md:left-0" alt="" />
+                <img src="./profilePicFull.jpg" className="w-36 h-36 grayscale-[60%] hover:grayscale-0 object-cover sm:w-56 sm:h-56 absolute top-12 right-4 md:left-0 rounded-full" alt="" />
                 <div className="w-screen h-[200vh] absolute bg-white opacity-80 rounded-lg -z-40 origin-top-left top-40 left-28 -rotate-45"/>
             </div>
         </div>

@@ -26,7 +26,7 @@ const ProjectsSection = () =>{
         deployment: getUntranslatedContent(`OTHER.${key}.DEPLOYMENT`,"PROJECTS")
     }));
     return(
-        <div className="text-white">
+        <div className="text-white" id="projects-section">
             <div className="font-sans font-extrabold text-4xl">{getTranslatedContent("HEADER","PROJECTS",languageCode)}</div>
             <div className="flex flex-col gap-6 mt-8">
                 {

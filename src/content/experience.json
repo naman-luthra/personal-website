@@ -1,9 +1,9 @@
 {
     "HEADER": "Work Experience",
     "SKILLS_USED": "Skills Used",
-    "WFX_INTERN" : {
+    "WFX_INTERN": {
         "TITLE": "Software Engineer Intern",
-        "COMPANY": "WhatFix",
+        "COMPANY": "Whatfix Intern",
         "LOGO": "/whatfix-logo.png",
         "TECHSTACK": [
             "java",
@@ -14,8 +14,22 @@
             "hadoop"
         ],
         "START_DATE": "January 2024",
+        "END_DATE": "June 2024",
+        "DESCRIPTION": "\u2022 Designed and developed a robust UI testing framework from scratch for a hybrid desktop application. This node-based framework is capable of testing web, hybrid, and native desktop applications on both Mac and Windows platforms. I implemented thin interfaces to facilitate the reuse of test cases written in our TestNG-based Java program, ensuring seamless integration and efficient testing processes through solid IPC using REST and STDIN/OUT pipes.\n\u2022 Actively participated in software design discussions, contributing to the architectural planning for both my projects and those of other team members. This involvement enhanced my understanding of software design and team collaboration.\n\u2022 Worked as a Success Engineer for one month, where I debugged and addressed critical customer-facing issues. This role significantly improved my problem-solving skills and my ability to debug effectively under pressure."
+    },
+    "WFX_FTE": {
+        "TITLE": "Software Engineer",
+        "COMPANY": "Whatfix FTE",
+        "LOGO": "/whatfix-logo.png",
+        "TECHSTACK": [
+            "java",
+            "typescript",
+            "node.js",
+            "openai"
+        ],
+        "START_DATE": "July 2024",
         "END_DATE": "Present",
-        "DESCRIPTION": "As an engineer in the CD/HUB team, I drive innovation in three key areas:\n\u2022 Enhancing enterprise search functionality through cutting-edge technologies like Elastic Search, with AI-enabled QuickRead feature.\n\u2022 Advanced content aggregation via distributed web crawling, capable of handling authenticated pages.\n\u2022 Developing a cross-platform desktop application using Chromium and minimalist native interfaces for seamless user experience."
+        "DESCRIPTION": "\u2022 Driving development of Communications and Change Management capabilities in whatfix end user experience. Involved in the development process from scratch.\n\u2022 Architected and developed a client-side scheduler process that acts like an advanced client-side CRON with extensive configurations.\n\u2022 Actively involved in Whatfix’s exploratory AI research projects, particularly working on retrieval augmented generation and enterprise search."
     },
     "CLRFD_INTERN" : {
         "TITLE": "Software Engineer Intern",

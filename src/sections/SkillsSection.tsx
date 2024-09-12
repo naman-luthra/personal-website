@@ -108,7 +108,7 @@ const MySkills = () => {
     },[]);
     const languageCode = "en";
     return(
-        <div className="text-white w-full relative">
+        <div id="skills-section" className="text-white w-full relative">
             <div className="font-bold text-3xl bg-black absolute z-10 pb-4 pr-4">{getTranslatedContent("HEADER", "SKILLS", languageCode)}</div>
             <div id="bubbleSkills" className="w-full h-[600px] md:h-[600px] relative mt-2 overflow-hidden  text-center">
                 {
