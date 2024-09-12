@@ -6,7 +6,7 @@ import MySkills from "@/sections/SkillsSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full overflow-hidden p-5 pt-2 md:p-10 lg:p-32 lg:pt-16 bg-black">
+    <main className="min-h-screen w-full overflow-hidden p-5 pt-2 md:p-10 lg:p-32 lg:pt-16 bg-black text-white">
       <Header />
       <div className="flex flex-col items-center justify-between mt-20 gap-20 md:gap-40">
         <AboutSection />
