@@ -57,8 +57,8 @@ const ExperienceSection = () => {
     return (
         <div className="md:w-5/6 lg:w-4/5 xl:w-2/3 mx-auto" id="experience-section">
             <div className="font-bold text-2xl">{getTranslatedContent("HEADER","EXP", languageCode)}</div>
-            <div className="md:grid md:grid-cols-4 gap-8 w-full h-[36rem] md:h-[28rem] mt-8">
-                <div className="flex md:flex-col md:text-lg w-full h-fit">
+            <div className="md:grid md:grid-cols-4 gap-8 w-full min-h-[36rem] md:min-h-[28rem] mt-8">
+                <div className="flex md:flex-col md:text-lg w-full h-fit overflow-x-auto max-w-[90vw]">
                     {
                         experienceData.map((exp,index)=>{
                             return(
