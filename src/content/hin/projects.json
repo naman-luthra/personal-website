@@ -1,0 +1,142 @@
+{
+    "HEADER": "मैंने जो चीजें बनाई हैं!",
+    "FEATURED_HEADER": "विशेष परियोजनाएं",
+    "FEATURED": {
+        "P2P": {
+            "NAME": "P2P समूह वीडियो कॉल",
+            "DESCRIPTION": "• Next.js और TypeScript का उपयोग करके WebRTC-आधारित P2P वीडियो कॉल एप्लिकेशन विकसित किया, जिसमें प्रस्तुति साझा करने, चैट कार्यक्षमता, और प्राधिकृत कॉल पहुँच जैसी उन्नत सुविधाएँ शामिल हैं।\n• कुशल कॉल प्रबंधन और सिग्नलिंग के लिए वेबसॉकेट्स के साथ नोड सर्वर लागू किया।\n• स्वचालित ग्रिड आकार, इष्टतम वीडियो टाइल प्लेसमेंट और प्रतिक्रियाशील डिजाइन सक्षम करने वाला एक कस्टम लेआउट एल्गोरिथ्म विकसित किया।\n• परियोजना के सभी पहलुओं का प्रबंधन किया, जिसमें वास्तुकला डिजाइन और उपयोगकर्ता इंटरफेस कार्यान्वयन शामिल है।",
+            "TECHSTACK": ["Next.js", "TypeScript", "WebRTC", "Node.js", "WebSocket"],
+            "REPOSITORIES": [
+                {
+                    "NAME": "एप्लिकेशन",
+                    "LINK": "https://github.com/naman-luthra/p2p-webrtc-call"
+                },
+                {
+                    "NAME": "सिग्नलिंग सर्वर",
+                    "LINK": "https://github.com/naman-luthra/signaling-server"
+                }
+            ],
+            "PROJECTSNAP": "19vlAO2C0mhwjg9DZ5_04p8iW_m7nE3i8",
+            "JUSTIFY": "start",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        },
+        "HilbertRtree": {
+            "NAME": "हिल्बर्ट आर-ट्री कार्यान्वयन",
+            "DESCRIPTION": "इब्राहिम कामेल और क्रिस्टोस फलौत्सोस द्वारा 'हिल्बर्ट आर-ट्री: फ्रैक्टल्स का उपयोग करते हुए एक उन्नत आर-ट्री' शोध पत्र के आधार पर हिल्बर्ट आर-ट्री अंतरिक्ष डेटा संरचना को लागू किया। मल्टी-डायमेंशनल डेटासेट्स के लिए क्वेरी दक्षता और स्टोरेज ओवरहेड में सुधार किया हिल्बर्ट कर्व्स का लाभ उठाकर।",
+            "TECHSTACK": ["C++", "एल्गोरिथ्म", "अंतरिक्ष डेटा संरचनाएं"],
+            "DEPLOYMENT": "",
+            "REPOSITORIES": [
+                {
+                    "NAME": "हिल्बर्ट-आर-ट्री",
+                    "LINK": "https://github.com/naman-luthra/Hilbert-R-Tree"
+                }
+            ],
+            "PROJECTSNAP": "wa85gISlshaiRxgfQ47Lw",
+            "JUSTIFY": "end",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        },
+        "MMF": {
+            "NAME": "मेकमीफिट",
+            "DESCRIPTION": "• OpenAI की API का उपयोग करके स्वास्थ्य एप्लिकेशन विकसित किया जो स्वास्थ्य मेट्रिक्स का प्रबंधन करता है, भोजन योजनाओं और व्यायाम दिनचर्याओं की सिफारिश करता है।\n• एक सहज उपयोगकर्ता अनुभव सुनिश्चित करने के लिए React, Redux, और TailwindCSS का उपयोग करके उपयोगकर्ता-अनुकूल फ्रंटेंड बनाया।\n• JWTs, Bcrypt और एक नोड सर्वर का उपयोग करके मजबूत प्रमाणीकरण और MySQL डेटाबेस में सुरक्षित रूप से उपयोगकर्ता डेटा संग्रहीत किया।",
+            "TECHSTACK": ["OpenAI", "React", "Redux", "TailwindCSS", "Node.js", "JWT", "Bcrypt", "MySQL"],
+            "DEPLOYMENT": "https://makemefit.netlify.app/",
+            "REPOSITORIES": [
+                {
+                    "NAME": "फ्रंटेंड",
+                    "LINK": "https://github.com/naman-luthra/make-me-fit-ui"
+                },
+                {
+                    "NAME": "बैकेंड",
+                    "LINK": "https://github.com/naman-luthra/make-me-fit-backend"
+                }
+            ],
+            "PROJECTSNAP": "1yYC6FhDvWaKnDIZL9jFGP7rK651rpVEJ",
+            "JUSTIFY": "start",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        }
+    },
+    "OTHER": {
+        "DNS": {
+            "TYPE": "परियोजना",
+            "NAME": "DNS सर्वर वेब एप्लिकेशन",
+            "DESCRIPTION": "DNS रिकॉर्ड क्वेरी करने और बनाए रखने के लिए mysql डेटाबेस के साथ इंटरैक्ट करने वाला एक DNS सर्वर वेब एप्लिकेशन विकसित किया। HTML, TailwindCSS, EJS और JavaScript का उपयोग करके फ्रंट-एंड बनाया। MySQL डेटाबेस के बीच इंटरैक्ट करने के लिए NodeJs का उपयोग करके एक ExpressJs सर्वर बनाया। डेटाबेस से कनेक्ट करने के लिए my-sql-2 npm पैकेज का उपयोग किया। aws का उपयोग करके एक mySQL डेटाबेस बनाया और हेरोकू पर एप्लिकेशन होस्ट किया।",
+            "TECHSTACK": ["HTML", "TailwindCSS", "Javascript", "EJS", "NodeJS", "ExpressJS", "MySQL", "AWS"],
+            "DEPLOYMENT": "https://dns-server.herokuapp.com/",
+            "CODEBASE": "https://github.com/naman-luthra/DNS-Server",
+            "PROJECTSNAP": "1cnF7kcIjYxT-s8Zm8ciVROO-HmcsVo9c"
+        },
+        "DTC": {
+            "NAME": "स्वचालित समय सारणी निर्माण",
+            "DESCRIPTION": "शैक्षणिक संस्थानों के लिए समय सारणी निर्माण की प्रक्रिया को सरलीकृत करने के लिए एक स्वचालित प्रणाली विकसित की, जिससे मैन्युअल प्रयास कम हो गया और संसाधन आवंटन का अनुकूलन हुआ।",
+            "TECHSTACK": ["Next.js", "TypeScript", "Node.js", "Express.js"],
+            "CODEBASE": "https://github.com/naman-luthra/dtc",
+            "PROJECTSNAP": "1B-fN6Ar3jyFuGUI-7Hc_o3QBpGEtZGY2",
+            "JUSTIFY": "end",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        },
+        "DOUBT": {
+            "TYPE": "परियोजना",
+            "NAME": "डाउट रेड्रेसल ऐप",
+            "DESCRIPTION": "MERN स्टैक का उपयोग करके एक डाउट रेड्रेसल ऐप बनाया। इस ऐप में रिएक्ट का उपयोग किया गया है जिसमें रिडक्स का उपयोग इसके स्टेट-मैनेजमेंट के लिए किया गया है। Nodejs का उपयोग इसके बैकएंड के लिए किया गया है जिसमें mongodb डेटाबेस है। MERN स्टैक की अवधारणाओं को मिलाकर एक पूर्ण विकसित एप्लिकेशन बनाने और होस्ट करने का अनुभव प्राप्त हुआ।",
+            "CREDENTIAL": {
+                "USERNAME": "ta@gmail.com",
+                "PASSWORD": "samplePassword"
+            },
+            "TECHSTACK": ["React.js", "Redux.js", "TailwindCSS", "NodeJS", "MongoDB", "JSX", "JavaScript"],
+            "DEPLOYMENT": "https://doubt-redresser.netlify.app/",
+            "CODEBASE": "https://github.com/naman-luthra/doubt-redresser",
+            "PROJECTSNAP": "1PYXayW8OEcBZe4YfOhwIgMCDESgX6dy2"
+        },
+        "PW2": {
+            "TYPE": "परियोजना",
+            "NAME": "व्यक्तिगत वेबसाइट V2",
+            "DESCRIPTION": "अपने परिष्कृत फ्रंट एंड कौशल का उपयोग करके मेरी व्यक्तिगत वेबसाइट को पुनर्निर्मित किया। रिएक्ट जेएस के मॉड्यूलर कौम्पोनॅन्टस् का उपयोग करके वेबसाइट बनाई। TailwindCSS का उपयोग करके वेबपेज को स्टाइल करने और प्रतिक्रियाशील बनाने के लिए किया गया। नेटलीफ पर वेब पेज को होस्ट किया गया। विकास के दौरान रिएक्ट कॉम्पोनेंट्स और रिएक्ट हुक्स के बारे में बहुत कुछ सीखा। परियोजना जानकारी को स्टोर करने और पुनः प्राप्त करने के लिए एक json डेटाबेस का उपयोग किया गया।",
+            "TECHSTACK": ["React", "React Hooks", "JSX", "TailwindCSS", "Javascript", "JSON"],
+            "DEPLOYMENT": "https://namanluthra.netlify.app/",
+            "CODEBASE": "https://github.com/naman-luthra/Personal-Website-V2",
+            "PROJECTSNAP": "1TY7OUHgfr5TaWsCtPSHT_bxFNg-UozmW"
+        },
+        "TMH": {
+            "TYPE": "परियोजना",
+            "NAME": "मेरा स्वास्थ्य ट्रैक करें",
+            "DESCRIPTION": "एक स्वास्थ्य निगरानी वेब एप्लिकेशन बनाने पर एक पूर्ण स्टैक डेवलपर के रूप में काम किया। Nodejs और Expressjs का उपयोग करके एक प्रमाणीकरण और लॉगिन-सत्र सृजन सर्वर बनाया। वेबसाइट के फ्रंट एंड डेटा विज़ुअलाइज़ेशन भाग को बनाने के लिए Tailwind CSS और कुछ जेएस फ्रेमवर्क जैसे कि chartjs और cryptojs का उपयोग किया। वेब-ऐप के लिए एक क्रॉस डेस्कटॉप एप्लिकेशन बनाने के लिए इलेक्ट्रॉन जेएस का उपयोग किया।",
+            "TECHSTACK": ["HTML", "TailwindCSS", "Javascript", "EJS", "NodeJS", "ExpressJS", "ChartJS", "CryptoJS"],
+            "DEPLOYMENT": "https://trackmyhealth.ananya2k20b808.repl.co/signin.html",
+            "CREDENTIAL": {
+                "USERNAME": "exampleuser@gmail.com",
+                "PASSWORD": "Fedcba@0C"
+            }
+        },
+        "PW1": {
+            "TYPE": "परियोजना",
+            "NAME": "व्यक्तिगत वेबसाइट V1",
+            "DESCRIPTION": "फ्रंट-एंड वेब विकास की जानकारी का उपयोग करके एक व्यक्तिगत वेबसाइट बनाई। इस परियोजना के विकास प्रक्रिया के दौरान, मैंने गिट/गिटहब पर एक परियोजना के कोडबेस के रख-रखाव और अपडेट के बारे में सीखा और गिटहब पर कमिट्स और पुल-रिक्वेस्ट्स की प्रणाली के बारे में जाना।",
+            "TECHSTACK": ["HTML", "CSS", "BootStrap", "Javascript"],
+            "DEPLOYMENT": "https://www.namanluthra.repl.co/",
+            "CODEBASE": "https://github.com/naman-luthra/home",
+            "PROJECTSNAP": "1IzdFd0NO7uJeqe6psH5Sy87QAVsObkSg"
+        },
+        "SNAKE_GAME": {
+            "TYPE": "परियोजना",
+            "NAME": "रेट्रो गेम वेबसाइट",
+            "DESCRIPTION": "जैसे साइमन गेम और बहुत लोकप्रिय स्नेक गेम के लिए अधिक जावास्क्रिप्ट केंद्रित छोटी वेबसाइटें बनाई। इन वेबसाइटों के विकास के दौरान, मैंने जावास्क्रिप्ट में अधिक व्यावहारिक अनुभव प्राप्त किया।",
+            "TECHSTACK": ["HTML", "Javascript"],
+            "CODEBASE": "https://github.com/naman-luthra/DNS-Server",
+            "DEPLOYMENT": "https://snake-game.namanluthra1.repl.co/"
+        },
+        "AGRO": {
+            "TYPE": "परियोजना",
+            "NAME": "कमर्शियल वेबसाइट प्रोजेक्ट",
+            "DESCRIPTION": "एक साथी के साथ मिलकर एक एग्रो आधारित कंपनी के लिए एक कमर्शियल वेबसाइट बनाई और डिप्लॉय की। Google क्लाउड की जानकारी का उपयोग करके होस्टिंग के लिए और HTML, CSS और Bootstrap का उपयोग करके वेबसाइट डिज़ाइन और डेवलपमेंट के लिए किया। इस बीच सहयोगी वातावरण में कुशलतापूर्वक काम करने के लिए सर्वोत्तम सॉफ्टवेयर विकास प्रथाओं को सीखा।",
+            "TECHSTACK": ["HTML", "CSS", "BootStrap", "Javascript"],
+            "DEPLOYMENT": "https://www.khuranaagro.com/"
+        },
+        "GCP": {
+            "TYPE": "उपलब्धि",
+            "NAME": "30 दिन Google क्लाउड के",
+            "DESCRIPTION": "2021 में Google क्लाउड के 30 दिनों के कार्यक्रम में क्लाउड इंजीनियरिंग ट्रैक और डेटा साइंस & मशीन लर्निंग ट्रैक पूरा किया। Google के 30 दिनों का क्लाउड एक शानदार सीखने का अनुभव था। यह रोमांचक था कि जानना कि हम रोजाना उपयोग करते हैं वेब एप्लिकेशन कैसे क्लाउड में डिप्लॉय होते हैं। इस ज्ञान ने मुझे GCP पर apache2 का उपयोग करके एक वेबसाइट होस्ट करने में मदद की। मैंने इस परियोजना में GCP के Cloud DNS API और Maps API का भी उपयोग किया। मैं क्लाउड कंप्यूटिंग, मशीन लर्निंग और डेटा साइंस के बारे में और अधिक सीखने के लिए उत्सुक हूं।",
+            "TECHSTACK": ["Google Clound Platform", "Cloud"],
+            "DEPLOYMENT": "https://www.qwiklabs.com/public_profiles/c28c41da-e589-4c80-aca0-018c99e27977"
+        }
+    }
+}

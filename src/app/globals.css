@@ -2,20 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/*Initialize vars*/
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+    --color-theme: #000000;
+    --color-theme-light: #ffffff;
+    --color-theme-lightest: #ffffff;
+    --color-theme-dark: #000000;
+    --color-theme-darkest: #000000;
+    --color-theme-light-text: #ffffff;
+    --color-theme-dark-text: #000000;
+    --color-theme-muted-light: #ffffff;
+    --color-theme-muted-dark: #000000;
+    --color-theme-muted-medium: #ffffff;
+    --color-theme-muted-light-medium: #ffffff;
+    --color-theme-muted-dark-medium: #000000;
 }
 
+
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--color-theme-light-text);
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+      var(--color-theme-darkest)
     )
-    rgb(var(--background-start-rgb));
+    var(--color-theme-darkest);
 }
 
 @layer utilities {

@@ -1,18 +1,16 @@
-import aboutJson from '../content/about.json';
-import experienceJson from '../content/experience.json';
-import skillsJson from '../content/skills.json';
-import projectsJson from '../content/projects.json';
 
-export default function getJson(sectionKey: string): { [key: string]: any } {
+export default function getJson(sectionKey: string, languageCode: string): { [key: string]: any } {
   switch (sectionKey) {
     case "ABOUT":
-        return aboutJson;
+        return require(`../content/${languageCode}/about.json`);
     case "EXP":
-        return experienceJson;
+        return require(`../content/${languageCode}/experience.json`);
     case "SKILLS":
-        return skillsJson;
+        return require(`../content/${languageCode}/skills.json`);
     case "PROJECTS":
-        return projectsJson;
+        return require(`../content/${languageCode}/projects.json`);
+    case "HEADER":
+        return require(`../content/${languageCode}/header.json`);
     default:
       return {};
   }

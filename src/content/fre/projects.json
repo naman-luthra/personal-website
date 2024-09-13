@@ -1,0 +1,142 @@
+{
+    "HEADER": "Quelques projets que j'ai réalisés !",
+    "FEATURED_HEADER": "Projets en vedette",
+    "FEATURED": {
+        "P2P": {
+            "NAME": "Appel vidéo en groupe P2P",
+            "DESCRIPTION": "• Développé une application d'appel vidéo P2P basée sur WebRTC en utilisant Next.js et TypeScript, intégrant des fonctionnalités avancées comme le partage de présentation, la fonctionnalité de chat et l'accès aux appels autorisés.\n• Implémenté un serveur node avec des websockets pour une gestion efficace des appels et la signalisation.\n• Conçu un algorithme de mise en page personnalisé permettant un dimensionnement automatique de la grille, un placement optimal des vignettes vidéo et un design réactif\n• Géré tous les aspects du projet, y compris la conception architecturale et la mise en œuvre de l'interface utilisateur.",
+            "TECHSTACK": ["Next.js", "TypeScript", "WebRTC", "Node.js", "WebSocket"],
+            "REPOSITORIES": [
+                {
+                    "NAME": "Application",
+                    "LINK": "https://github.com/naman-luthra/p2p-webrtc-call"
+                },
+                {
+                    "NAME": "Serveur de signalisation",
+                    "LINK": "https://github.com/naman-luthra/signaling-server"
+                }
+            ],
+            "PROJECTSNAP": "19vlAO2C0mhwjg9DZ5_04p8iW_m7nE3i8",
+            "JUSTIFY": "start",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        },
+        "HilbertRtree": {
+            "NAME": "Implémentation de l'arbre R de Hilbert",
+            "DESCRIPTION": "Implémenté une structure de données spatiales arbre R de Hilbert basée sur l'article de recherche 'Hilbert R-tree: An Improved R-tree Using Fractals' par Ibrahim Kamel et Christos Faloutsos. Amélioration de l'efficacité des requêtes et de la gestion de l'espace de stockage pour les ensembles de données multidimensionnelles en utilisant des courbes de Hilbert.",
+            "TECHSTACK": ["C++", "Algorithmes", "Structures de données spatiales"],
+            "DEPLOYMENT": "",
+            "REPOSITORIES": [
+                {
+                    "NAME": "Hilbert-R-Tree",
+                    "LINK": "https://github.com/naman-luthra/Hilbert-R-Tree"
+                }
+            ],
+            "PROJECTSNAP": "wa85gISlshaiRxgfQ47Lw",
+            "JUSTIFY": "end",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        },
+        "MMF": {
+            "NAME": "MakeMeFit",
+            "DESCRIPTION": "• Exploité l’API d’OpenAI pour développer une application de santé pour gérer les métriques de santé, recommander des plans de repas et des routines d’exercice\n• Créé une interface utilisateur conviviale en utilisant React, Redux et TailwindCSS pour garantir une expérience utilisateur intuitive\n• Utilisé des JWTs, Bcrypt et un serveur node pour une autorisation robuste et stocké de manière sécurisée les données des utilisateurs dans une base de données MySQL",
+            "TECHSTACK": ["OpenAI", "React", "Redux", "TailwindCSS", "Node.js", "JWT", "Bcrypt", "MySQL"],
+            "DEPLOYMENT": "https://makemefit.netlify.app/",
+            "REPOSITORIES": [
+                {
+                    "NAME": "Frontend",
+                    "LINK": "https://github.com/naman-luthra/make-me-fit-ui"
+                },
+                {
+                    "NAME": "Backend",
+                    "LINK": "https://github.com/naman-luthra/make-me-fit-backend"
+                }
+            ],
+            "PROJECTSNAP": "1yYC6FhDvWaKnDIZL9jFGP7rK651rpVEJ",
+            "JUSTIFY": "start",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        }
+    },
+    "OTHER": {
+        "DNS": {
+            "TYPE": "project",
+            "NAME": "Application serveur DNS",
+            "DESCRIPTION": "Développé une application serveur DNS qui interagit avec une base de données mysql pour interroger et maintenir les enregistrements DNS. Utilisé HTML, TailwindCSS, EJS et JavaScript pour construire le front-end. Fait un serveur ExpressJs utilisant NodeJs pour interagir entre le front-end et la base de données MySQL. Utilisé le package npm my-sql-2 pour se connecter à la base de données. Utilisé aws pour créer une base de données mySQL et utilisé heroku pour héberger l'application.",
+            "TECHSTACK": ["HTML", "TailwindCSS", "Javascript", "EJS", "NodeJS", "ExpressJS", "MySQL", "AWS"],
+            "DEPLOYMENT": "https://dns-server.herokuapp.com/",
+            "CODEBASE": "https://github.com/naman-luthra/DNS-Server",
+            "PROJECTSNAP": "1cnF7kcIjYxT-s8Zm8ciVROO-HmcsVo9c"
+        },
+        "DTC": {
+            "NAME": "Génération automatique d'emplois du temps",
+            "DESCRIPTION": "Développé un système automatisé pour rationaliser la génération d'emplois du temps pour les établissements d'enseignement, réduisant l'effort manuel et optimisant l'allocation des ressources.",
+            "TECHSTACK": ["Next.js", "TypeScript", "Node.js", "Express.js"],
+            "CODEBASE": "https://github.com/naman-luthra/dtc",
+            "PROJECTSNAP": "1B-fN6Ar3jyFuGUI-7Hc_o3QBpGEtZGY2",
+            "JUSTIFY": "end",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        },
+        "DOUBT": {
+            "TYPE": "project",
+            "NAME": "Application de résolution de doutes",
+            "DESCRIPTION": "Construit une application de résolution de doutes utilisant la pile MERN. Cette application est une application react avec redux utilisé pour sa gestion d'état. Nodejs est utilisé pour son backend avec une base de données mongodb. Expérience de construction et d'hébergement d'une application complète dans la pile MERN combinant les concepts de développement front-end utilisant react et redux avec le développement d'une API utilisant Nodejs et la conception d'un schéma pour une récupération efficace dans MongoDB",
+            "CREDENTIAL": {
+                "USERNAME": "ta@gmail.com",
+                "PASSWORD": "samplePassword"
+            },
+            "TECHSTACK": ["React.js", "Redux.js", "TailwindCSS", "NodeJS", "MongoDB", "JSX", "JavaScript"],
+            "DEPLOYMENT": "https://doubt-redresser.netlify.app/",
+            "CODEBASE": "https://github.com/naman-luthra/doubt-redresser",
+            "PROJECTSNAP": "1PYXayW8OEcBZe4YfOhwIgMCDESgX6dy2"
+        },
+        "PW2": {
+            "TYPE": "project",
+            "NAME": "Site Web Personnel V2",
+            "DESCRIPTION": "Reconstruit mon site web personnel en utilisant mes compétences améliorées en développement front-end. Utilisé les composants modulaires de React js pour créer le site web. Utilisé TailwindCSS pour styliser et rendre la page web réactive. Hébergé la page web sur netlify. Beaucoup appris sur les composants react et les hooks react pendant le développement. Utilisé une base de données json pour stocker et récupérer les informations du projet.",
+            "TECHSTACK": ["React", "React Hooks", "JSX", "TailwindCSS", "Javascript", "JSON"],
+            "DEPLOYMENT": "https://namanluthra.netlify.app/",
+            "CODEBASE": "https://github.com/naman-luthra/Personal-Website-V2",
+            "PROJECTSNAP": "1TY7OUHgfr5TaWsCtPSHT_bxFNg-UozmW"
+        },
+        "TMH": {
+            "TYPE": "project",
+            "NAME": "Suivi de ma santé",
+            "DESCRIPTION": "Travaillé comme développeur full stack sur la construction d'une application web de surveillance de la santé. Utilisé Nodejs et Expressjs pour construire un serveur de création d'authentification et de session de connexion. Utilisé Tailwind CSS et quelques frameworks js comme chartjs et cryptojs pour construire la partie visualisation des données front end du site web. Utilisé electron js pour faire une application de bureau croisée pour l'application web.",
+            "TECHSTACK": ["HTML", "TailwindCSS", "Javascript", "EJS", "NodeJS", "ExpressJS", "ChartJS", "CryptoJS"],
+            "DEPLOYMENT": "https://trackmyhealth.ananya2k20b808.repl.co/signin.html",
+            "CREDENTIAL": {
+                "USERNAME": "exampleuser@gmail.com",
+                "PASSWORD": "Fedcba@0C"
+            }
+        },
+        "PW1": {
+            "TYPE": "project",
+            "NAME": "Site Web Personnel V1",
+            "DESCRIPTION": "Construit un site web personnel en utilisant des connaissances en développement web front-end qui comprenait HTML, CSS, Bootstrap et JavaScript. J'ai hébergé ce site web sur les pages Github. Pendant le processus de développement de ce projet, j'ai appris à maintenir et à mettre à jour la base de code d'un projet sur Git/GitHub et le système de commits et de pull-requests sur Github.",
+            "TECHSTACK": ["HTML", "CSS", "BootStrap", "Javascript"],
+            "DEPLOYMENT": "https://www.namanluthra.repl.co/",
+            "CODEBASE": "https://github.com/naman-luthra/home",
+            "PROJECTSNAP": "1IzdFd0NO7uJeqe6psH5Sy87QAVsObkSg"
+        },
+        "SNAKE_GAME": {
+            "TYPE": "project",
+            "NAME": "Sites Web de jeux rétro",
+            "DESCRIPTION": "Construit des sites web petits et axés sur javascript pour jouer à des jeux rétro comme le jeu Simon et le très populaire jeu de serpent. Pendant le développement de ces sites web, j'ai acquis plus d'expérience pratique en javascript.",
+            "TECHSTACK": ["HTML", "Javascript"],
+            "CODEBASE": "https://github.com/naman-luthra/DNS-Server",
+            "DEPLOYMENT": "https://snake-game.namanluthra1.repl.co/"
+        },
+        "AGRO": {
+            "TYPE": "project",
+            "NAME": "Projet de site web commercial",
+            "DESCRIPTION": "Collaboré avec un pair pour construire et déployer un site web commercial pour une entreprise basée sur l'agro en utilisant les connaissances de Google cloud pour l'hébergement et HTML, CSS et Bootstrap pour la conception et le développement de sites web. En attendant, j'ai également appris les meilleures pratiques de développement logiciel à suivre afin de travailler efficacement dans un environnement collaboratif.",
+            "TECHSTACK": ["HTML", "CSS", "BootStrap", "Javascript"],
+            "DEPLOYMENT": "https://www.khuranaagro.com/"
+        },
+        "GCP": {
+            "TYPE": "achievement",
+            "NAME": "30 jours de Google Cloud",
+            "DESCRIPTION": "Complété la piste d'ingénierie des nuages et la piste de science des données et d'apprentissage automatique dans le programme 30 Days of Google Cloud 2021. Les 30 jours de Cloud de Google ont été une excellente expérience d'apprentissage. C'était excitant d'apprendre comment des millions d'applications web que nous utilisons quotidiennement sont déployées dans le nuage. Cette connaissance m'a permis d'héberger un site web utilisant apache2 sur GCP. J'ai également utilisé l'API Cloud DNS de GCP et l'API Maps dans ce projet. J'ai hâte d'en apprendre davantage sur l'informatique en nuage, l'apprentissage automatique et la science des données.",
+            "TECHSTACK": ["Google Clound Platform", "Cloud"],
+            "DEPLOYMENT": "https://www.qwiklabs.com/public_profiles/c28c41da-e589-4c80-aca0-018c99e27977"
+        }
+    }
+}

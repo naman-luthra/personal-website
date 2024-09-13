@@ -1,0 +1,83 @@
+{
+    "HEADER": "Experiencia Laboral",
+    "SKILLS_USED": "Habilidades Utilizadas",
+    "WFX_INTERN": {
+        "TITLE": "Pasante de Ingeniería de Software",
+        "COMPANY": "Whatfix Intern",
+        "LOGO": "/whatfix-logo.png",
+        "TECHSTACK": [
+            "java",
+            "typescript",
+            "elastic-search",
+            "cassandra",
+            "openai",
+            "hadoop"
+        ],
+        "START_DATE": "Enero 2024",
+        "END_DATE": "Junio 2024",
+        "DESCRIPTION": "\u2022 Diseñé y desarrollé un robusto marco de pruebas de interfaz de usuario desde cero para una aplicación de escritorio híbrida. Este marco basado en nodos es capaz de probar aplicaciones web, híbridas y nativas de escritorio en plataformas Mac y Windows. Implementé interfaces delgadas para facilitar la reutilización de casos de prueba escritos en nuestro programa Java basado en TestNG, asegurando una integración sin problemas y procesos de prueba eficientes a través de una sólida IPC usando tuberías REST y STDIN/OUT.\n\u2022 Participé activamente en discusiones de diseño de software, contribuyendo a la planificación arquitectónica tanto de mis proyectos como de los de otros miembros del equipo. Esta participación mejoró mi comprensión del diseño de software y la colaboración en equipo.\n\u2022 Trabajé como Ingeniero de Éxito durante un mes, donde depuré y abordé problemas críticos que enfrentaban los clientes. Este rol mejoró significativamente mis habilidades de resolución de problemas y mi capacidad para depurar efectivamente bajo presión."
+    },
+    "WFX_FTE": {
+        "TITLE": "Ingeniero de Software",
+        "COMPANY": "Whatfix FTE",
+        "LOGO": "/whatfix-logo.png",
+        "TECHSTACK": [
+            "java",
+            "typescript",
+            "node.js",
+            "openai"
+        ],
+        "START_DATE": "Julio 2024",
+        "END_DATE": "Presente",
+        "DESCRIPTION": "\u2022 Impulsando el desarrollo de capacidades de Comunicación y Gestión del Cambio en la experiencia del usuario final de whatfix. Involucrado en el proceso de desarrollo desde cero.\n\u2022 Arquitecté y desarrollé un proceso de programador del lado del cliente que actúa como un CRON del lado del cliente avanzado con configuraciones extensas.\n\u2022 Involucrado activamente en los proyectos de investigación de IA exploratoria de Whatfix, particularmente trabajando en la generación aumentada por recuperación y búsqueda empresarial."
+    },
+    "CLRFD_INTERN" : {
+        "TITLE": "Pasante de Ingeniería de Software",
+        "COMPANY": "ClearFeed",
+        "LOGO": "/clearfeed-logo.jpeg",
+        "TECHSTACK": [
+            "typescript",
+            "nextjs",
+            "nestjs",
+            "sequelize",
+            "postgresql"
+        ],
+        "START_DATE": "Mayo 2023",
+        "END_DATE": "Agosto 2023",
+        "DESCRIPTION": "\u2022 Desarrollé y contribuí tanto a los componentes de backend como de frontend como desarrollador de pila completa, utilizando tecnologías como Next.js, Nest.js y Sequelize.js\n\u2022 Fusioné exitosamente más de 50 pull requests, impulsando la implementación de nuevas funcionalidades y resolviendo bugs críticos, mostrando una fuerte colaboración y habilidades de resolución de problemas\n\u2022 Prosperé en un ambiente de pasantía de ritmo rápido, participando activamente en lanzamientos de producción semanales, demostrando adaptabilidad y entregando código de alta calidad bajo plazos ajustados."
+    },
+    "BYS_INTERN" : {
+        "TITLE": "Geek-in-Residence, Full Stack",
+        "COMPANY": "Basys.ai",
+        "LOGO": "/Basys-White.webp",
+        "TECHSTACK": [
+            "react",
+            "redux",
+            "javascript",
+            "tailwindcss",
+            "nodejs",
+            "expressjs",
+            "mongodb",
+            "git"
+        ],
+        "START_DATE": "Agosto 2022",
+        "END_DATE": "Marzo 2023",
+        "DESCRIPTION": "\u2022 Trabajé en el desarrollo de la aplicación web insignia de basys.ai para proveedores de servicios de salud y compañías de seguros\n\u2022 Manejé el diseño completo del sistema y el esquema de la base de datos para la aplicación con frontend y backend\n\u2022 Reporté directamente a los fundadores y gané experiencia práctica en diseño y desarrollo de software\n\u2022 Seleccionado de entre 2860 candidatos que aplicaron para el rol desde institutos de élite en India"
+    },
+    "BYT_INTERN" :{
+        "TITLE": "Pasante de Desarrollador Front-End",
+        "COMPANY": "Bytelearn",
+        "LOGO": "/bytelearn-LOGO.jpeg",
+        "TECHSTACK": [
+            "react",
+            "typescript",
+            "scss",
+            "bitbucket",
+            "jira",
+            "git"
+        ],
+        "START_DATE": "Julio 2022",
+        "END_DATE": "Agosto 2022",
+        "DESCRIPTION": "\u2022 Desarrollé elementos de UI de React modulares y reutilizables utilizando React, TypeScript y SCSS\n\u2022 Adquirí experiencia práctica colaborando con un equipo y utilizando herramientas de colaboración estándar de la industria como jira, bitbucket, confluence y git"
+    }
+}

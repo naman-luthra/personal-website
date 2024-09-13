@@ -1,0 +1,83 @@
+{
+    "HEADER": "工作经验",
+    "SKILLS_USED": "所用技能",
+    "WFX_INTERN": {
+        "TITLE": "软件工程师实习生",
+        "COMPANY": "Whatfix 实习",
+        "LOGO": "/whatfix-logo.png",
+        "TECHSTACK": [
+            "java",
+            "typescript",
+            "elastic-search",
+            "cassandra",
+            "openai",
+            "hadoop"
+        ],
+        "START_DATE": "2024年1月",
+        "END_DATE": "2024年6月",
+        "DESCRIPTION": "\u2022 从零开始设计并开发了一个用于混合桌面应用的稳健UI测试框架。这个基于node的框架能够测试Web、混合和原生桌面应用，支持Mac和Windows平台。我实现了薄接口，以便我们基于TestNG的Java程序中编写的测试用例能够重用，通过REST和STDIN/OUT管道实现了无缝集成和高效的测试过程。\n\u2022 积极参与软件设计讨论，为我的项目及其他团队成员的项目的架构规划做出贡献。这种参与增强了我对软件设计和团队协作的理解。\n\u2022 担任成功工程师一个月，期间调试并解决关键的面向客户的问题。这一角色显著提高了我的问题解决能力和在压力下有效调试的能力。"
+    },
+    "WFX_FTE": {
+        "TITLE": "软件工程师",
+        "COMPANY": "Whatfix 正式员工",
+        "LOGO": "/whatfix-logo.png",
+        "TECHSTACK": [
+            "java",
+            "typescript",
+            "node.js",
+            "openai"
+        ],
+        "START_DATE": "2024年7月",
+        "END_DATE": "目前",
+        "DESCRIPTION": "\u2022 推动whatfix用户体验中的通讯和变更管理能力的开发。从零开始参与开发过程。\n\u2022 架构并开发了一个类似于高级客户端CRON的客户端调度器进程，具有广泛的配置。\n\u2022 积极参与Whatfix的探索性AI研究项目，特别是在检索增强生成和企业搜索方面的工作。"
+    },
+    "CLRFD_INTERN" : {
+        "TITLE": "软件工程师实习生",
+        "COMPANY": "ClearFeed",
+        "LOGO": "/clearfeed-logo.jpeg",
+        "TECHSTACK": [
+            "typescript",
+            "nextjs",
+            "nestjs",
+            "sequelize",
+            "postgresql"
+        ],
+        "START_DATE": "2023年5月",
+        "END_DATE": "2023年8月",
+        "DESCRIPTION": "\u2022 作为全栈开发者，开发并贡献了前端和后端组件，使用技术包括Next.js、Nest.js和Sequelize.js\n\u2022 成功合并了50多个拉取请求，推动了新功能的实现和关键错误的解决，展示了出色的协作和问题解决能力\n\u2022 在快节奏的实习环境中茁壮成长，积极参与每周的生产发布，显示出适应性并在紧迫的最后期限下交付高质量代码。"
+    },
+    "BYS_INTERN" : {
+        "TITLE": "全栈极客驻场",
+        "COMPANY": "Basys.ai",
+        "LOGO": "/Basys-White.webp",
+        "TECHSTACK": [
+            "react",
+            "redux",
+            "javascript",
+            "tailwindcss",
+            "nodejs",
+            "expressjs",
+            "mongodb",
+            "git"
+        ],
+        "START_DATE": "2022年8月",
+        "END_DATE": "2023年3月",
+        "DESCRIPTION": "\u2022 参与开发basys.ai为医疗提供者和保险公司设计的旗舰Web应用\n\u2022 负责应用的完整系统和数据库架构设计，包括前端和后端\n\u2022 直接向创始人汇报，并在软件设计和开发中获得实践经验\n\u2022 从2860名申请者中被选中，这些申请者来自印度顶尖学院"
+    },
+    "BYT_INTERN" :{
+        "TITLE": "前端开发实习生",
+        "COMPANY": "Bytelearn",
+        "LOGO": "/bytelearn-LOGO.jpeg",
+        "TECHSTACK": [
+            "react",
+            "typescript",
+            "scss",
+            "bitbucket",
+            "jira",
+            "git"
+        ],
+        "START_DATE": "2022年7月",
+        "END_DATE": "2022年8月",
+        "DESCRIPTION": "\u2022 使用React、TypeScript和SCSS开发模块化和可重用的react UI元素\n\u2022 获得与团队合作和使用行业标准协作工具（如jira、bitbucket、confluence和git）的实践经验"
+    }
+}

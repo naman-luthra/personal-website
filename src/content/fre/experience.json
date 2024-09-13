@@ -1,0 +1,83 @@
+{
+    "HEADER": "Expérience professionnelle",
+    "SKILLS_USED": "Compétences utilisées",
+    "WFX_INTERN": {
+        "TITLE": "Stagiaire Ingénieur Logiciel",
+        "COMPANY": "Whatfix Intern",
+        "LOGO": "/whatfix-logo.png",
+        "TECHSTACK": [
+            "java",
+            "typescript",
+            "elastic-search",
+            "cassandra",
+            "openai",
+            "hadoop"
+        ],
+        "START_DATE": "Janvier 2024",
+        "END_DATE": "Juin 2024",
+        "DESCRIPTION": "\u2022 Conçu et développé un cadre de test d'interface utilisateur robuste à partir de zéro pour une application de bureau hybride. Ce cadre basé sur Node est capable de tester des applications web, hybrides et natives sur les plateformes Mac et Windows. J'ai mis en œuvre des interfaces minces pour faciliter la réutilisation des cas de test écrits dans notre programme Java basé sur TestNG, garantissant une intégration transparente et des processus de test efficaces grâce à une communication inter-processus solide utilisant REST et les tubes STDIN/OUT.\n\u2022 Participé activement aux discussions de conception logicielle, contribuant à la planification architecturale pour mes projets ainsi que ceux des autres membres de l'équipe. Cette implication a amélioré ma compréhension de la conception logicielle et de la collaboration en équipe.\n\u2022 Travaillé comme ingénieur de succès pendant un mois, où j'ai débogué et résolu des problèmes critiques face aux clients. Ce rôle a considérablement amélioré mes compétences en résolution de problèmes et ma capacité à déboguer efficacement sous pression."
+    },
+    "WFX_FTE": {
+        "TITLE": "Ingénieur Logiciel",
+        "COMPANY": "Whatfix FTE",
+        "LOGO": "/whatfix-logo.png",
+        "TECHSTACK": [
+            "java",
+            "typescript",
+            "node.js",
+            "openai"
+        ],
+        "START_DATE": "Juillet 2024",
+        "END_DATE": "Présent",
+        "DESCRIPTION": "\u2022 Dirige le développement des capacités de communication et de gestion du changement dans l'expérience utilisateur de whatfix. Impliqué dans le processus de développement depuis le début.\n\u2022 Architecturé et développé un processus planificateur côté client qui agit comme un CRON côté client avancé avec des configurations étendues.\n\u2022 Impliqué activement dans les projets de recherche en IA exploratoire de Whatfix, en particulier travaillant sur la génération augmentée par récupération et la recherche d'entreprise."
+    },
+    "CLRFD_INTERN" : {
+        "TITLE": "Stagiaire Ingénieur Logiciel",
+        "COMPANY": "ClearFeed",
+        "LOGO": "/clearfeed-logo.jpeg",
+        "TECHSTACK": [
+            "typescript",
+            "nextjs",
+            "nestjs",
+            "sequelize",
+            "postgresql"
+        ],
+        "START_DATE": "Mai 2023",
+        "END_DATE": "Août 2023",
+        "DESCRIPTION": "\u2022 Développé et contribué aux composants backend et frontend en tant que développeur full stack, utilisant des technologies telles que Next.js, Nest.js, et Sequelize.js\n\u2022 Fusionné avec succès plus de 50 demandes d'intégration, pilotant l'implémentation de nouvelles fonctionnalités et résolvant des bugs critiques, montrant une forte collaboration et des compétences en résolution de problèmes\n\u2022 Prospéré dans un environnement de stage rapide, participant activement aux sorties de production hebdomadaires, démontrant une adaptabilité et livrant un code de haute qualité sous des délais serrés."
+    },
+    "BYS_INTERN" : {
+        "TITLE": "Geek en Résidence, Full Stack",
+        "COMPANY": "Basys.ai",
+        "LOGO": "/Basys-White.webp",
+        "TECHSTACK": [
+            "react",
+            "redux",
+            "javascript",
+            "tailwindcss",
+            "nodejs",
+            "expressjs",
+            "mongodb",
+            "git"
+        ],
+        "START_DATE": "Août 2022",
+        "END_DATE": "Mars 2023",
+        "DESCRIPTION": "\u2022 Travaillé sur le développement de l'application web phare de basys.ai pour les fournisseurs de soins de santé et les compagnies d'assurance\n\u2022 Géré la conception complète du système et le schéma de la base de données pour l'application avec frontend et backend\n\u2022 Rapporté directement aux fondateurs et acquis une expérience pratique dans la conception et le développement logiciel\n\u2022 Sélectionné parmi 2860 candidats qui ont postulé pour le rôle provenant des meilleurs instituts en Inde"
+    },
+    "BYT_INTERN" :{
+        "TITLE": "Stagiaire Développeur Front-End",
+        "COMPANY": "Bytelearn",
+        "LOGO": "/bytelearn-LOGO.jpeg",
+        "TECHSTACK": [
+            "react",
+            "typescript",
+            "scss",
+            "bitbucket",
+            "jira",
+            "git"
+        ],
+        "START_DATE": "Juillet 2022",
+        "END_DATE": "Août 2022",
+        "DESCRIPTION": "\u2022 Développé des éléments d'interface utilisateur React modulaires et réutilisables en utilisant React, TypeScript et SCSS\n\u2022 Acquis une expérience pratique dans la collaboration avec une équipe et l'utilisation des outils de collaboration standard de l'industrie tels que jira, bitbucket, confluence et git"
+    }
+}

@@ -1,5 +1,11 @@
-import exp from "constants";
+import { IoMdArrowDroprightCircle } from "react-icons/io";
 
+/**
+ * FormattedText is a component that displays the user's formatted text.
+ * It includes the user's text and a className for styling.
+ * 
+ * @returns The FormattedText component.
+ */
 const FormattedText = ({text, className} : {
     text: string,
     className?: string
@@ -59,15 +65,20 @@ const FormattedText = ({text, className} : {
                                 }
                             </div>
                         ) : (
-                            <ul key={index} className="list-disc list-inside mt-1">
+                            <div key={index} className="">
                                 {
                                     group.items.map((item,index)=>{
                                         return(
-                                            <li key={index}>{item}</li>
+                                            <div key={index} className="flex gap-2">
+                                                <div className="text-theme-muted-light-medium text-xl mt-0.5">
+                                                    <IoMdArrowDroprightCircle/>
+                                                </div>
+                                                <div>{item}</div>
+                                            </div>
                                         );
                                     })
                                 }
-                            </ul>
+                            </div>
                         )
                     );
                 })

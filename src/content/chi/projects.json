@@ -1,0 +1,142 @@
+{
+    "HEADER": "我构建的一些项目！",
+    "FEATURED_HEADER": "特色项目",
+    "FEATURED": {
+        "P2P": {
+            "NAME": "P2P群组视频通话",
+            "DESCRIPTION": "• 使用Next.js和TypeScript开发了基于WebRTC的P2P视频通话应用，集成了演示共享、聊天功能和授权通话访问。\n• 实现了一个带有websockets的node服务器，用于有效的呼叫管理和信号传递。\n• 设计了自定义布局算法，实现自动网格大小调整，最优视频平铺放置和响应式设计\n• 管理项目的所有方面，包括架构设计和用户界面实现。",
+            "TECHSTACK": ["Next.js", "TypeScript", "WebRTC", "Node.js", "WebSocket"],
+            "REPOSITORIES": [
+                {
+                    "NAME": "应用程序",
+                    "LINK": "https://github.com/naman-luthra/p2p-webrtc-call"
+                },
+                {
+                    "NAME": "信号服务器",
+                    "LINK": "https://github.com/naman-luthra/signaling-server"
+                }
+            ],
+            "PROJECTSNAP": "19vlAO2C0mhwjg9DZ5_04p8iW_m7nE3i8",
+            "JUSTIFY": "start",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        },
+        "HilbertRtree": {
+            "NAME": "希尔伯特R树实现",
+            "DESCRIPTION": "根据Ibrahim Kamel和Christos Faloutsos的研究论文《希尔伯特R树：使用分形的改进R树》实现了希尔伯特R树空间数据结构。通过利用希尔伯特曲线提高了多维数据集的查询效率和存储开销。",
+            "TECHSTACK": ["C++", "算法", "空间数据结构"],
+            "DEPLOYMENT": "",
+            "REPOSITORIES": [
+                {
+                    "NAME": "希尔伯特-R-树",
+                    "LINK": "https://github.com/naman-luthra/Hilbert-R-Tree"
+                }
+            ],
+            "PROJECTSNAP": "wa85gISlshaiRxgfQ47Lw",
+            "JUSTIFY": "end",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        },
+        "MMF": {
+            "NAME": "MakeMeFit",
+            "DESCRIPTION": "• 利用OpenAI的API开发了一个健康应用程序，用于管理健康指标，推荐餐饮计划和锻炼程序\n• 使用React、Redux和TailwindCSS创建了一个用户友好的前端，以确保直观的用户体验\n• 使用JWTs、Bcrypt和node服务器进行强大的授权，并在MySQL数据库中安全地存储用户数据",
+            "TECHSTACK": ["OpenAI", "React", "Redux", "TailwindCSS", "Node.js", "JWT", "Bcrypt", "MySQL"],
+            "DEPLOYMENT": "https://makemefit.netlify.app/",
+            "REPOSITORIES": [
+                {
+                    "NAME": "前端",
+                    "LINK": "https://github.com/naman-luthra/make-me-fit-ui"
+                },
+                {
+                    "NAME": "后端",
+                    "LINK": "https://github.com/naman-luthra/make-me-fit-backend"
+                }
+            ],
+            "PROJECTSNAP": "1yYC6FhDvWaKnDIZL9jFGP7rK651rpVEJ",
+            "JUSTIFY": "start",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        }
+    },
+    "OTHER": {
+        "DNS": {
+            "TYPE": "project",
+            "NAME": "DNS服务器网络应用",
+            "DESCRIPTION": "开发了一个DNS服务器网络应用，与mysql数据库交互，用于查询和维护DNS记录。使用HTML、TailwindCSS、EJS和JavaScript构建前端。使用NodeJs的ExpressJs服务器在前端和MySQL数据库之间进行交互。使用my-sql-2 npm包连接到数据库。使用aws创建了一个mySQL数据库，并使用heroku托管应用程序。",
+            "TECHSTACK": ["HTML", "TailwindCSS", "Javascript", "EJS", "NodeJS", "ExpressJS", "MySQL", "AWS"],
+            "DEPLOYMENT": "https://dns-server.herokuapp.com/",
+            "CODEBASE": "https://github.com/naman-luthra/DNS-Server",
+            "PROJECTSNAP": "1cnF7kcIjYxT-s8Zm8ciVROO-HmcsVo9c"
+        },
+        "DTC": {
+            "NAME": "自动化时间表生成",
+            "DESCRIPTION": "为教育机构开发了一个自动化系统，以简化时间表生成，减少人工劳动并优化资源分配。",
+            "TECHSTACK": ["Next.js", "TypeScript", "Node.js", "Express.js"],
+            "CODEBASE": "https://github.com/naman-luthra/dtc",
+            "PROJECTSNAP": "1B-fN6Ar3jyFuGUI-7Hc_o3QBpGEtZGY2",
+            "JUSTIFY": "end",
+            "SPECIALIMAGECLASSES": "w-1/2"
+        },
+        "DOUBT": {
+            "TYPE": "project",
+            "NAME": "疑问解答应用",
+            "DESCRIPTION": "使用MERN堆栈构建了疑问解答应用。这个应用是一个react应用，使用redux进行状态管理。Nodejs用于其后端，mongodb用于数据库。在MERN堆栈中结合使用react和redux的前端开发概念与开发Nodejs API和设计MongoDB高效检索的模式，体验构建和托管一个完整的应用程序。",
+            "CREDENTIAL": {
+                "USERNAME": "ta@gmail.com",
+                "PASSWORD": "samplePassword"
+            },
+            "TECHSTACK": ["React.js", "Redux.js", "TailwindCSS", "NodeJS", "MongoDB", "JSX", "JavaScript"],
+            "DEPLOYMENT": "https://doubt-redresser.netlify.app/",
+            "CODEBASE": "https://github.com/naman-luthra/doubt-redresser",
+            "PROJECTSNAP": "1PYXayW8OEcBZe4YfOhwIgMCDESgX6dy2"
+        },
+        "PW2": {
+            "TYPE": "project",
+            "NAME": "个人网站V2",
+            "DESCRIPTION": "使用我改进的前端技能重建我的个人网站。使用React js的模块化组件创建网站。使用TailwindCSS进行样式设计并使网页响应。在netlify上托管网页。在开发过程中大量学习了关于react组件和react钩子的知识。使用json数据库存储和检索项目信息。",
+            "TECHSTACK": ["React", "React Hooks", "JSX", "TailwindCSS", "Javascript", "JSON"],
+            "DEPLOYMENT": "https://namanluthra.netlify.app/",
+            "CODEBASE": "https://github.com/naman-luthra/Personal-Website-V2",
+            "PROJECTSNAP": "1TY7OUHgfr5TaWsCtPSHT_bxFNg-UozmW"
+        },
+        "TMH": {
+            "TYPE": "project",
+            "NAME": "追踪我的健康",
+            "DESCRIPTION": "作为全栈开发人员参与构建健康监测网络应用。使用Nodejs和Expressjs构建身份验证和登录会话创建服务器。使用Tailwind CSS和一些js框架如chartjs和cryptojs构建前端数据可视化部分的网站。使用electron js制作网络应用的跨桌面应用。",
+            "TECHSTACK": ["HTML", "TailwindCSS", "Javascript", "EJS", "NodeJS", "ExpressJS", "ChartJS", "CryptoJS"],
+            "DEPLOYMENT": "https://trackmyhealth.ananya2k20b808.repl.co/signin.html",
+            "CREDENTIAL": {
+                "USERNAME": "exampleuser@gmail.com",
+                "PASSWORD": "Fedcba@0C"
+            }
+        },
+        "PW1": {
+            "TYPE": "project",
+            "NAME": "个人网站V1",
+            "DESCRIPTION": "使用前端网络开发的知识构建了一个个人网站，包括HTML, CSS, Bootstrap和JavaScript。我在Github页面上托管了这个网站。在这个项目的开发过程中，我学习了关于在Git/GitHub上维护和更新项目代码库的知识，以及Github上的提交和拉取请求系统。",
+            "TECHSTACK": ["HTML", "CSS", "BootStrap", "Javascript"],
+            "DEPLOYMENT": "https://www.namanluthra.repl.co/",
+            "CODEBASE": "https://github.com/naman-luthra/home",
+            "PROJECTSNAP": "1IzdFd0NO7uJeqe6psH5Sy87QAVsObkSg"
+        },
+        "SNAKE_GAME": {
+            "TYPE": "project",
+            "NAME": "复古游戏网站",
+            "DESCRIPTION": "为玩复古游戏如西蒙游戏和非常流行的贪吃蛇游戏构建了更多以javascript为中心的小型网站。在这些网站的开发过程中，我获得了更多实际的javascript经验。",
+            "TECHSTACK": ["HTML", "Javascript"],
+            "CODEBASE": "https://github.com/naman-luthra/DNS-Server",
+            "DEPLOYMENT": "https://snake-game.namanluthra1.repl.co/"
+        },
+        "AGRO": {
+            "TYPE": "project",
+            "NAME": "商业网站项目",
+            "DESCRIPTION": "与同伴合作为一家农业公司构建和部署商业网站，使用Google cloud的知识进行托管，并使用HTML, CSS和Bootstrap进行网站设计和开发。同时也学习了在协作环境中高效工作所需遵循的最佳软件开发实践。",
+            "TECHSTACK": ["HTML", "CSS", "BootStrap", "Javascript"],
+            "DEPLOYMENT": "https://www.khuranaagro.com/"
+        },
+        "GCP": {
+            "TYPE": "achievement",
+            "NAME": "Google Cloud 30天",
+            "DESCRIPTION": "在2021年Google Cloud 30天计划中完成了云工程轨道和数据科学与机器学习轨道。Google的30天云计划是一次很好的学习经历。了解我们每天使用的数百万网络应用程序是如何在云中部署的非常令人兴奋。这些知识使我能够使用apache2在GCP上托管网站。我还使用了GCP的Cloud DNS API和Maps API在这个项目中。我期待学习更多关于云计算、机器学习和数据科学的知识。",
+            "TECHSTACK": ["Google Clound Platform", "Cloud"],
+            "DEPLOYMENT": "https://www.qwiklabs.com/public_profiles/c28c41da-e589-4c80-aca0-018c99e27977"
+        }
+    }
+}

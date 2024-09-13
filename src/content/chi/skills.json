@@ -1,0 +1,117 @@
+{
+  "HEADER": "我使用过的技术",
+  "SKILLS": {
+      "REACT": {
+        "ID": "react",
+        "NAME": "React",
+        "ICON": "./react-icon.png",
+        "PROFICIENCY": 10,
+        "DOMAIN": "前端"
+      },
+      "JAVASCRIPT": {
+        "ID": "javascript",
+        "NAME": "JavaScript",
+        "ICON": "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
+        "PROFICIENCY": 10,
+        "DOMAIN": "前端/后端"
+      },
+      "TYPESCRIPT": {
+        "ID": "typescript",
+        "NAME": "TypeScript",
+        "ICON": "https://www.svgrepo.com/show/303600/typescript-logo.svg",
+        "PROFICIENCY": 10,
+        "DOMAIN": "前端/后端"
+      },
+      "REDUX": {
+        "ID": "redux",
+        "NAME": "Redux",
+        "ICON": "./redux-icon.png",
+        "PROFICIENCY": 8,
+        "DOMAIN": "前端"
+      },
+      "TAILWINDCSS": {
+        "ID": "tailwindcss",
+        "NAME": "TailwindCSS",
+        "ICON": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png",
+        "PROFICIENCY": 8,
+        "DOMAIN": "前端"
+      },
+      "NODEJS": {
+        "ID": "nodejs",
+        "NAME": "Nodejs",
+        "ICON": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png",
+        "PROFICIENCY": 7,
+        "DOMAIN": "后端"
+      },
+      "EXPRESSJS": {
+        "ID": "expressjs",
+        "NAME": "Expressjs",
+        "ICON": "./express-icon.png",
+        "PROFICIENCY": 7,
+        "DOMAIN": "后端"
+      },
+      "MONGODB": {
+        "ID": "mongodb",
+        "NAME": "MongoDB",
+        "ICON": "mongodb-icon.png",
+        "PROFICIENCY": 6,
+        "DOMAIN": "后端"
+      },
+      "MYSQL": {
+        "ID": "mysql",
+        "NAME": "MySQL",
+        "ICON": "./mysql-icon.webp",
+        "PROFICIENCY": 6,
+        "DOMAIN": "后端"
+      },
+      "GIT": {
+        "ID": "git",
+        "NAME": "Git",
+        "ICON": "./git-icon.png",
+        "PROFICIENCY": 9,
+        "DOMAIN": "前端/后端"
+      },
+      "CPP": {
+        "ID": "cpp",
+        "NAME": "C++",
+        "ICON": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png",
+        "PROFICIENCY": 4,
+        "DOMAIN": "编程语言"
+      },
+      "JAVA": {
+        "ID": "java",
+        "NAME": "Java",
+        "ICON": "https://static.javatpoint.com/core/images/java-logo1.png",
+        "PROFICIENCY": 8,
+        "DOMAIN": "编程语言"
+      },
+      "CASSANDRA": {
+        "ID": "cassandra",
+        "NAME": "Cassandra",
+        "ICON": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cassandra_logo.svg/1200px-Cassandra_logo.svg.png",
+        "PROFICIENCY": 6,
+        "DOMAIN": "数据库"
+      },
+      "ELASTICSEARCH": {
+        "ID": "elasticsearch",
+        "NAME": "Elasticsearch",
+        "ICON": "data:image/png;base64,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",
+        "PROFICIENCY": 6,
+        "DOMAIN": "搜索引擎"
+      },
+      "CHROMIUM": {
+        "ID": "chromium",
+        "NAME": "Chromium",
+        "ICON": "https://www.kali.org/tools/chromium/images/chromium-logo.svg",
+        "PROFICIENCY": 9,
+        "DOMAIN": "网络浏览器"
+      },
+      "NEXT": {
+        "ID": "next",
+        "NAME": "Next.js",
+        "ICON": "/next.svg",
+        "PROFICIENCY": 8,
+        "DOMAIN": "前端/后端"
+      }
+  }
+}

@@ -14,9 +14,16 @@ export type ProjectProps = {
     projectsnap: string;
     justify: string;
     specialimageclasses: string;
+    languageCode: string;
 }
-function Project({name,description,techstack,repositories,deployment,credential,projectsnap,justify,specialimageclasses}: ProjectProps){
-    const languageCode = "en";
+
+/**
+ * Project is a component that displays the user's project.
+ * It includes the project name, description, techstack, repositories, deployment, credential, projectsnap.
+ * 
+ * @returns The Project component.
+ */
+function Project({name,description,techstack,repositories,deployment,credential,projectsnap,justify,specialimageclasses,languageCode}: ProjectProps){
     return (
         <div className="relative">
             <a target="_blank" rel="noreferrer" className="hidden md:inline-block" href={deployment || repositories[0].LINK}>
@@ -25,14 +32,14 @@ function Project({name,description,techstack,repositories,deployment,credential,
                     <MdOpenInNew className="mx-2 absolute w-6 h-6 top-2 right-2 hidden group-hover:block"/>
                 </div>
             </a>
-            <div className={`flex ${justify==="start" ? "justify-start" : "justify-start md:justify-end"} my-1 font-mono text-lg font-thin text-white opacity-80`}>{getTranslatedContent("FEATURED_HEADER","PROJECTS",languageCode)}</div>
-            <div className={`flex ${justify==="start" ? "justify-start" : "justify-start md:justify-end"} my-1 font-sans text-3xl font-bold`}>{name}</div>
+            <div className={`flex ${justify==="start" ? "justify-start" : "justify-start md:justify-end"} my-1 font-mono text-lg font-thin text-theme-light`}>{getTranslatedContent("FEATURED_HEADER","PROJECTS",languageCode)}</div>
+            <div className={`flex ${justify==="start" ? "justify-start" : "justify-start md:justify-end"} my-1 font-sans text-2xl md:text-3xl font-bold`}>{name}</div>
             <div className={`flex ${justify==="start" ? "justify-start" : "justify-start md:justify-end"} my-4 font-sans text-base`}>
-                <div className={`md:w-2/3 lg:1/2 p-6 bg-matte-black-light rounded-md ${justify==="end" ? "md:text-right" : "text-left"} z-10`}>
+                <div className={`md:w-2/3 lg:1/2 p-6 bg-theme-muted-dark-medium rounded-md ${justify==="end" ? "md:text-right" : "text-left"} z-10`}>
                     <FormattedText text={description} className="font-normal"/>
                     {
                         credential &&
-                        <div className="mt-5 text-sm rounded-md bg-neutral-600 text-white p-2 inline-block">
+                        <div className="mt-5 text-sm rounded-md bg-neutral-600 p-2 inline-block">
                             <div className="my-2 lg:my-0 lg:inline-block mx-2 font-bold">Sample Credentials :</div>
                             <div onClick={()=>{
                                     navigator.clipboard.writeText(credential.username); 
@@ -90,7 +97,7 @@ function Project({name,description,techstack,repositories,deployment,credential,
                         {
                             repositories.map(({LINK,NAME},index)=>{
                                 return(
-                                    <a key={index} target="_blank" rel="noreferrer" href={LINK} className="flex gap-2 p-2 border rounded-lg items-center hover:text-react-blue hover:border-react-blue"><FiGithub className="inline text-2xl"/> {NAME}</a>
+                                    <a key={index} target="_blank" rel="noreferrer" href={LINK} className="flex gap-2 p-2 border rounded-lg items-center hover:text-theme-muted-light-medium hover:border-theme-muted-light-medium"><FiGithub className="inline text-2xl"/> {NAME}</a>
                                 );
                             })
                         }
