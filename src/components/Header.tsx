@@ -39,7 +39,7 @@ const Header = ({languageCode, setLanguageCode}: {languageCode: string, setLangu
         setIsMenuOpen(!isMenuOpen);
     }
 
-    const [theme, setTheme] = useState(localStorage.getItem('theme_base') || "#20232d");
+    const [theme, setTheme] = useState("#20232d");
 
     const selectedLanguage = getLanguageName(languageCode);
     const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
@@ -61,8 +61,17 @@ const Header = ({languageCode, setLanguageCode}: {languageCode: string, setLangu
         document.documentElement.style.setProperty('--color-theme-muted-light-medium', palette.mutedLightMedium);
         document.documentElement.style.setProperty('--color-theme-muted-dark-medium', palette.mutedDarkMedium);
 
-        localStorage.setItem('theme_base', throttledTheme);
+        if (throttledTheme !== "#20232d") {
+            localStorage.setItem('theme_base', throttledTheme);
+        }
     }, [throttledTheme]);
+
+    useEffect(() => {
+        const storedTheme = localStorage.getItem('theme_base');
+        if (storedTheme) {
+            setTheme(storedTheme);
+        }
+    }, []);
 
     return (
         <>
