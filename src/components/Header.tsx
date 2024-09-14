@@ -88,7 +88,7 @@ const Header = ({languageCode, setLanguageCode}: {languageCode: string, setLangu
                         <div className="text-2xl group-hover:scale-125 transition-all duration-300"><IoMdArrowDropdownCircle /></div>
                         {
                             languageDropdownOpen && (
-                                <div className="absolute top-12 left-0 w-full flex flex-col gap-2 z-50">
+                                <div className="absolute top-14 md:top-12 left-0 w-full flex flex-col gap-3 md:gap-2 z-50">
                                     {Languages.map((language) => (
                                         <button
                                             key={language}
@@ -96,7 +96,7 @@ const Header = ({languageCode, setLanguageCode}: {languageCode: string, setLangu
                                                 setLanguageCode(language);
                                                 setLanguageDropdownOpen(false);
                                             }}
-                                            className="px-4 py-1 text-sm rounded-full bg-theme-muted-dark-medium hover:bg-theme-light hover:text-theme-dark-text transition-all duration-300"
+                                            className="shadow-lg px-4 py-2 md:py-1 text-sm rounded-full bg-theme-muted-dark-medium hover:bg-theme-light hover:text-theme-dark-text transition-all duration-300"
                                         >
                                             {getLanguageName(language)}
                                         </button>
