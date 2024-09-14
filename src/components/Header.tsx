@@ -94,6 +94,7 @@ const Header = ({languageCode, setLanguageCode}: {languageCode: string, setLangu
                                             key={language}
                                             onClick={() => {
                                                 setLanguageCode(language);
+                                                localStorage.setItem('language_code', language);
                                                 setLanguageDropdownOpen(false);
                                             }}
                                             className="shadow-lg px-4 py-2 md:py-1 text-sm rounded-full bg-theme-muted-dark-medium hover:bg-theme-light hover:text-theme-dark-text transition-all duration-300"

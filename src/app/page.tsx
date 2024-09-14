@@ -21,9 +21,6 @@ export default function Home() {
   useEffect(() => {
     const title = getTranslatedContent("NAME", "ABOUT", languageCode);
     document.title = title;
-    if (languageCode !== "eng") {
-      localStorage.setItem('language_code', languageCode); // Persist language setting in localStorage
-    }
   }, [languageCode]);
 
   return (
