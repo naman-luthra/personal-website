@@ -35,7 +35,7 @@ const AboutSection = ({languageCode}: {languageCode: string}) => {
                     {getTranslatedContent("BIO", "ABOUT", languageCode)}
                 </p>
                 <ProfileLinks />
-                <a target="_blank" rel="noreferrer" href={resumeLink}>
+                <a target="_blank" rel="noreferrer" aria-label={`Download ${getTranslatedContent("RESUME_BUTTON", "ABOUT", languageCode)}`} href={resumeLink}>
                     <div className="inline-block mt-8 p-3 rounded-md font-semibold border-theme-light-text border-2 hover:bg-theme-light-text hover:text-theme-dark-text">{getTranslatedContent("RESUME_BUTTON", "ABOUT", languageCode)}</div>
                 </a>
             </div>

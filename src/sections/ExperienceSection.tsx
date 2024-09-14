@@ -71,14 +71,14 @@ const ExperienceSection = ({languageCode}: {languageCode: string}) => {
             <div className="font-bold text-2xl text-center md:text-left">{getTranslatedContent("HEADER","EXP", languageCode)}</div>
             <div className="md:grid md:grid-cols-4 gap-8 w-full min-h-[36rem] md:min-h-[28rem] mt-8">
                 <div className="flex md:flex-col md:text-lg w-full h-fit overflow-x-auto max-w-[90vw]">
-                    <button disabled={selectedExperience===0} onClick={()=>{setSelectedExperience(i => i-1)}} className="md:hidden text-4xl pr-2 disabled:text-theme-darkest">
+                    <button disabled={selectedExperience===0} aria-label="Next Experience" onClick={()=>{setSelectedExperience(i => i-1)}} className="md:hidden text-4xl pr-2 disabled:text-theme-darkest">
                         <IoArrowBackCircleSharp />
                     </button>
                     {
                         experienceData.map((exp,index)=>{
                             return(
                                 <>
-                                    <div key={index} onClick={()=>{setSelectedExperience(index)}} className={`cursor-pointer grow border-t-2 md:border-t-0 md:border-l-2 py-3 px-4 ${selectedExperience===index ? "border-theme-light-text bg-theme-muted-dark-medium text-center md:text-left" : "hidden md:block border-gray-400 text-gray-400"}`}>
+                                    <div key={index} aria-label={`Show ${exp.company} experience details`} onClick={()=>{setSelectedExperience(index)}} className={`cursor-pointer grow border-t-2 md:border-t-0 md:border-l-2 py-3 px-4 ${selectedExperience===index ? "border-theme-light-text bg-theme-muted-dark-medium text-center md:text-left" : "hidden md:block border-gray-400 text-gray-400"}`}>
                                         <div className={`${selectedExperience===index ? "font-semibold" : ""}`}>
                                             {exp.company}
                                         </div>
@@ -87,7 +87,7 @@ const ExperienceSection = ({languageCode}: {languageCode: string}) => {
                             );
                         })
                     }
-                    <button disabled={selectedExperience===experienceData.length-1} onClick={()=>{setSelectedExperience(i => i+1)}} className="md:hidden text-4xl pl-2 disabled:text-theme-darkest">
+                    <button disabled={selectedExperience===experienceData.length-1} aria-label="Previous Experience" onClick={()=>{setSelectedExperience(i => i+1)}} className="md:hidden text-4xl pl-2 disabled:text-theme-darkest">
                         <IoArrowForwardCircleSharp />
                     </button>
                 </div>

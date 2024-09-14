@@ -21,8 +21,8 @@ function SideProject({name,description,techstack,codebase,deployment}: SideProje
         <div className="p-2 px-4 bg-theme-muted-dark-medium rounded-md">
             <div className={`flex justify-end my-5 font-sans text-2xl md:text-3xl font-bold`}>
                 <div className="grow"><AiOutlineFileDone className="w-12 h-12 inline mr-2 text-theme-muted-light-medium"/></div>
-                {codebase && <a target="_blank" rel="noreferrer" href={codebase}><FiGithub className="hover:text-theme-muted-light-medium inline mx-2"/></a>}
-                {deployment && <a target="_blank" rel="noreferrer" href={deployment}><MdOpenInNew className="hover:text-theme-muted-light-medium inline mx-2"/></a>}
+                {codebase && <a target="_blank" rel="noreferrer" aria-label={`Visit ${name} Codebase for project ${name}`} href={codebase}><FiGithub className="hover:text-theme-muted-light-medium inline mx-2"/></a>}
+                {deployment && <a target="_blank" rel="noreferrer" aria-label={`Visit ${name} Deployment for project ${name}`} href={deployment}><MdOpenInNew className="hover:text-theme-muted-light-medium inline mx-2"/></a>}
             </div>
             <div className="my-1 font-sans text-2xl md:text-3xl font-bold">{name}</div>
             <div className="my-4 font-sans text-base">

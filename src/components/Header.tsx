@@ -80,10 +80,10 @@ const Header = ({languageCode, setLanguageCode}: {languageCode: string, setLangu
                     <div className="flex text-base items-center gap-2 px-4 py-2 rounded-full bg-theme-muted-dark-medium group cursor-pointer border border-theme-muted-dark-medium hover:border-theme-light transition-all duration-300">
                         <div className="font-semibold">{getTranslatedContent("THEME","HEADER",languageCode)}</div>
                         <div className="color-picker-wrapper border border-theme-lightest w-5 h-5 rounded-full bg-theme relative cursor-pointer overflow-hidden group-hover:scale-125 transition-all duration-300" title="Change Theme Color">
-                            <input type="color" className="color-picker-input absolute w-full h-full opacity-0 cursor-pointer" value={theme} onChange={(e) => setTheme(e.target.value)}/>
+                            <input aria-label="Change Theme Color" type="color" className="color-picker-input absolute w-full h-full opacity-0 cursor-pointer" value={theme} onChange={(e) => setTheme(e.target.value)}/>
                         </div>
                     </div>
-                    <div onClick={()=>{setLanguageDropdownOpen(!languageDropdownOpen)}} className="flex text-base items-center gap-2 px-4 py-2 rounded-full bg-theme-muted-dark-medium group cursor-pointer border border-theme-muted-dark-medium hover:border-theme-light transition-all duration-300 relative">
+                    <div area-label="Choose Language" onClick={()=>{setLanguageDropdownOpen(!languageDropdownOpen)}} className="flex text-base items-center gap-2 px-4 py-2 rounded-full bg-theme-muted-dark-medium group cursor-pointer border border-theme-muted-dark-medium hover:border-theme-light transition-all duration-300 relative">
                         <div className="group-hover:text-theme-light">{selectedLanguage}</div>
                         <div className="text-2xl group-hover:scale-125 transition-all duration-300"><IoMdArrowDropdownCircle /></div>
                         {
@@ -111,6 +111,7 @@ const Header = ({languageCode, setLanguageCode}: {languageCode: string, setLangu
                     {sections.map((section) => (
                         <button
                             key={section.id}
+                            aria-label={`Go to ${section.displayText} section`}
                             onClick={() => scrollToSection(section.id)}
                             className="invert-0 mix-blend-difference transition-colors duration-300"
                         >
@@ -118,7 +119,7 @@ const Header = ({languageCode, setLanguageCode}: {languageCode: string, setLangu
                         </button>
                     ))}
                 </div>
-                <button className="md:hidden" onClick={toggleMenu}>
+                <button className="md:hidden" onClick={toggleMenu} aria-label="Open Navigation Menu">
                     <IoMenuOutline className="text-4xl"/>
                 </button>
                 {isMenuOpen && (
@@ -130,6 +131,7 @@ const Header = ({languageCode, setLanguageCode}: {languageCode: string, setLangu
                                     scrollToSection(section.id);
                                     toggleMenu();
                                 }}
+                                aria-label={`Go to ${section.displayText} section`}
                             >
                                 {section.displayText}
                             </button>
@@ -137,6 +139,7 @@ const Header = ({languageCode, setLanguageCode}: {languageCode: string, setLangu
                         <button
                             onClick={toggleMenu}
                             className="absolute top-10 right-10"
+                            aria-label="Close Navigation Menu"
                         >
                             <IoCloseCircleOutline className="text-5xl"/>
                         </button>

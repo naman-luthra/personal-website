@@ -26,7 +26,7 @@ export type ProjectProps = {
 function Project({name,description,techstack,repositories,deployment,credential,projectsnap,justify,specialimageclasses,languageCode}: ProjectProps){
     return (
         <div className="relative">
-            <a target="_blank" rel="noreferrer" className="hidden md:inline-block" href={deployment || repositories[0].LINK}>
+            <a target="_blank" rel="noreferrer" className="hidden md:inline-block" aria-label={`Visit ${name} Project`} href={deployment || repositories[0].LINK}>
                 <div className={`inline-block group absolute top-1 bottom-0 ${justify==="end" ? "left-0 right-1/2" : "right-0 left-1/2" } ${specialimageclasses ? specialimageclasses : "w-3/5"}`}>
                     <Image className="hover:opacity-100 opacity-60" fill={true} objectFit="contain" objectPosition={justify==="start" ? "right" : "left"} src={`/ProjectSnaps/${projectsnap}.png`} alt="" />
                     <MdOpenInNew className="mx-2 absolute w-6 h-6 top-2 right-2 hidden group-hover:block"/>
@@ -41,7 +41,7 @@ function Project({name,description,techstack,repositories,deployment,credential,
                         credential &&
                         <div className="mt-5 text-sm rounded-md bg-neutral-600 p-2 inline-block">
                             <div className="my-2 lg:my-0 lg:inline-block mx-2 font-bold">Sample Credentials :</div>
-                            <div onClick={()=>{
+                            <div aria-label="Copy Username" onClick={()=>{
                                     navigator.clipboard.writeText(credential.username); 
                                     const check=document.getElementById("check1");
                                     const copy=document.getElementById("copy1");
@@ -60,7 +60,7 @@ function Project({name,description,techstack,repositories,deployment,credential,
                                 <FiCheck id="check1" className="hidden text-mint-green animate-ping absolute top-1 right-1"/>
                                 <span className="inline-block m-3">{credential.username}</span>
                             </div>
-                            <div onClick={()=>{
+                            <div aria-label="Copy Password" onClick={()=>{
                                     navigator.clipboard.writeText(credential.password); 
                                     const check=document.getElementById("check2");
                                     const copy=document.getElementById("copy2");
@@ -97,7 +97,7 @@ function Project({name,description,techstack,repositories,deployment,credential,
                         {
                             repositories.map(({LINK,NAME},index)=>{
                                 return(
-                                    <a key={index} target="_blank" rel="noreferrer" href={LINK} className="flex gap-2 p-2 border rounded-lg items-center hover:text-theme-muted-light-medium hover:border-theme-muted-light-medium"><FiGithub className="inline text-2xl"/> {NAME}</a>
+                                    <a key={index} target="_blank" rel="noreferrer" aria-label={`Visit ${NAME} Repository for ${name} Project`} href={LINK} className="flex gap-2 p-2 border rounded-lg items-center hover:text-theme-muted-light-medium hover:border-theme-muted-light-medium"><FiGithub className="inline text-2xl"/> {NAME}</a>
                                 );
                             })
                         }
