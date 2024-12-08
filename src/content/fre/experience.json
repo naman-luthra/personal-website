@@ -29,7 +29,7 @@
         ],
         "START_DATE": "Juillet 2024",
         "END_DATE": "Présent",
-        "DESCRIPTION": "\u2022 Dirige le développement des capacités de communication et de gestion du changement dans l'expérience utilisateur de whatfix. Impliqué dans le processus de développement depuis le début.\n\u2022 Architecturé et développé un processus planificateur côté client qui agit comme un CRON côté client avancé avec des configurations étendues.\n\u2022 Impliqué activement dans les projets de recherche en IA exploratoire de Whatfix, en particulier travaillant sur la génération augmentée par récupération et la recherche d'entreprise."
+        "DESCRIPTION": "\u2022 Amélioration de la précision du produit IA basé sur RAG de Whatfix de 42% à 90%. Cela a impliqué la révision complète du pipeline augmenté de récupération avec des techniques modernes et l'ajustement des hyperparamètres.\n\u2022 Pilotage du développement du projet de Communications et de Gestion du Changement, qui permet de planifier et d'envoyer des communications à l'échelle de l'organisation de manière centralisée.\n\u2022 Conçu et développé un processus planificateur côté client qui agit comme un CRON côté client avancé avec des configurations étendues.\n\u2022 Impliqué activement dans les projets de recherche en IA exploratoire de Whatfix, travaillant notamment sur la génération augmentée par récupération et la recherche en entreprise."
     },
     "CLRFD_INTERN" : {
         "TITLE": "Stagiaire Ingénieur Logiciel",

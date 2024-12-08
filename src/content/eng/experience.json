@@ -29,7 +29,7 @@
         ],
         "START_DATE": "July 2024",
         "END_DATE": "Present",
-        "DESCRIPTION": "\u2022 Driving development of Communications and Change Management capabilities in whatfix end user experience. Involved in the development process from scratch.\n\u2022 Architected and developed a client-side scheduler process that acts like an advanced client-side CRON with extensive configurations.\n\u2022 Actively involved in Whatfix’s exploratory AI research projects, particularly working on retrieval augmented generation and enterprise search."
+        "DESCRIPTION": "\u2022 Improved Whatfix’s RAG-based AI product’s accuracy from 42% to 90%. This involved revamping the whole Retrieval Augmented Pipeline with modern techniques and tuning the hyperparameters.\n\u2022 Drove the development of the Communications and Change Management project, which enables organization-wide communications to be scheduled and sent centrally.\n\u2022 Architected and developed a client-side scheduler process that acts like an advanced client-side CRON with extensive configurations.\n\u2022 Actively involved in Whatfix’s exploratory AI research projects, particularly working on retrieval augmented generation and enterprise search."
     },
     "CLRFD_INTERN" : {
         "TITLE": "Software Engineer Intern",
