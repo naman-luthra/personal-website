@@ -1,7 +1,6 @@
 'use client';
 import * as d3 from "d3";
-import ReactDOM from 'react-dom/client';
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getTranslatedContent, getUntranslatedContent } from "@/util/getTranslate";
 
 /**
@@ -64,7 +63,9 @@ const MySkills = ({languageCode}: {languageCode: string}) => {
         "CASSANDRA",
         "ELASTICSEARCH",
         "CHROMIUM",
-        "NEXT"
+        "NEXT",
+        "GQL",
+        "VITE"
     ];
 
 

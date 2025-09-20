@@ -53,7 +53,7 @@ const ExperienceCard = ({exp, style, languageCode}: {
  * @returns The ExperienceSection component.
  */
 const ExperienceSection = ({languageCode}: {languageCode: string}) => {
-    const experienceKeys = ["WFX_FTE", "WFX_INTERN","CLRFD_INTERN","BYS_INTERN","BYT_INTERN"];
+    const experienceKeys = ["RBRK_G5","WFX_FTE", "WFX_INTERN", "CLRFD_INTERN", "BYS_INTERN", "BYT_INTERN"];
     const experienceData: Experience[] = experienceKeys.map((key)=>({
         title: getTranslatedContent(`${key}.TITLE`,"EXP",languageCode),
         company: getTranslatedContent(`${key}.COMPANY`,"EXP",languageCode),

@@ -28,8 +28,23 @@
             "openai"
         ],
         "START_DATE": "Julio 2024",
-        "END_DATE": "Presente",
+        "END_DATE": "Mayo 2025",
         "DESCRIPTION": "\u2022 Mejoró la precisión del producto de IA basado en RAG de Whatfix del 42% al 90%. Esto involucró la renovación completa del Pipeline de Recuperación Aumentada con técnicas modernas y la afinación de los hiperparámetros.\n\u2022 Dirigió el desarrollo del proyecto de Comunicaciones y Gestión del Cambio, que permite que las comunicaciones de toda la organización se programen y envíen de manera centralizada.\n\u2022 Arquitectó y desarrolló un proceso de programador en el lado del cliente que actúa como un CRON avanzado en el lado del cliente con configuraciones extensas.\n\u2022 Participó activamente en los proyectos de investigación de IA exploratoria de Whatfix, trabajando especialmente en la generación aumentada por recuperación y la búsqueda empresarial."
+    },
+    "RBRK_G5": {
+        "TITLE": "Ingeniero de Software - G5",
+        "COMPANY": "Rubrik",
+        "LOGO": "/rubrik-logo.png",
+        "TECHSTACK": [
+            "typescript",
+            "graphql",
+            "react",
+            "vite",
+            "jest"
+        ],
+        "START_DATE": "Mayo 2025",
+        "END_DATE": "Presente",
+        "DESCRIPTION": "\u2022 Trabajando en el equipo de UI principal contribuyendo a características e infraestructura de UI"
     },
     "CLRFD_INTERN" : {
         "TITLE": "Pasante de Ingeniería de Software",

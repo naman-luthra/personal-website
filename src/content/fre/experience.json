@@ -28,8 +28,23 @@
             "openai"
         ],
         "START_DATE": "Juillet 2024",
-        "END_DATE": "Présent",
+        "END_DATE": "Mai 2025",
         "DESCRIPTION": "\u2022 Amélioration de la précision du produit IA basé sur RAG de Whatfix de 42% à 90%. Cela a impliqué la révision complète du pipeline augmenté de récupération avec des techniques modernes et l'ajustement des hyperparamètres.\n\u2022 Pilotage du développement du projet de Communications et de Gestion du Changement, qui permet de planifier et d'envoyer des communications à l'échelle de l'organisation de manière centralisée.\n\u2022 Conçu et développé un processus planificateur côté client qui agit comme un CRON côté client avancé avec des configurations étendues.\n\u2022 Impliqué activement dans les projets de recherche en IA exploratoire de Whatfix, travaillant notamment sur la génération augmentée par récupération et la recherche en entreprise."
+    },
+    "RBRK_G5": {
+        "TITLE": "Ingénieur Logiciel - G5",
+        "COMPANY": "Rubrik",
+        "LOGO": "/rubrik-logo.png",
+        "TECHSTACK": [
+            "typescript",
+            "graphql",
+            "react",
+            "vite",
+            "jest"
+        ],
+        "START_DATE": "Mai 2025",
+        "END_DATE": "Présent",
+        "DESCRIPTION": "\u2022 Travail dans l'équipe UI principale en contribuant aux fonctionnalités et à l'infrastructure UI"
     },
     "CLRFD_INTERN" : {
         "TITLE": "Stagiaire Ingénieur Logiciel",
