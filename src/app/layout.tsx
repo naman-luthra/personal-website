@@ -1,14 +1,31 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const bricolage = localFont({
+  src: "./fonts/BricolageGrotesque-Latin.woff2",
+  variable: "--font-display",
+  display: "swap",
+  weight: "200 800",
+});
 
 export const metadata: Metadata = {
-  title: "Naman Luthra - Software Engineer | Whatfix",
-  description: "I am Naman Luthra, a dedicated Software Engineer from BITS Pilani, currently innovating at Whatfix. Explore my journey through AI projects, including RAG and chain of thought models, and gain insights into my professional experiences and technical skills in B2B SaaS environments. Discover my approach to problem-solving and how I apply cutting-edge technologies to drive results in the software industry.",
-  icons: "/icons/nl.png"
-}
+  metadataBase: new URL("https://namanluthra.me"),
+  title: "Naman Luthra — Software Engineer",
+  description:
+    "Software Engineer at Rubrik. BITS Pilani graduate. Working on UI infrastructure, developer experience, and applied AI.",
+  icons: "/icon.svg",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Naman Luthra — Software Engineer",
+    description:
+      "Hi, I’m Naman. Software engineer at Rubrik, BITS Pilani graduate, and previously working on applied AI at Whatfix.",
+    url: "https://namanluthra.me",
+    siteName: "Naman Luthra",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
+};
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -16,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={bricolage.variable}>{children}</body>
     </html>
   );
 }

@@ -1,0 +1,1399 @@
+[
+  [
+    "Choose language",
+    "भाषा चुनें",
+    "Choisir la langue",
+    "Elegir idioma",
+    "选择语言"
+  ],
+  [
+    "Skip to content",
+    "मुख्य सामग्री पर जाएँ",
+    "Aller au contenu",
+    "Ir al contenido",
+    "跳至正文"
+  ],
+  [
+    "SOFTWARE ENGINEER",
+    "सॉफ़्टवेयर इंजीनियर",
+    "INGÉNIEUR LOGICIEL",
+    "INGENIERO DE SOFTWARE",
+    "软件工程师"
+  ],
+  ["Work", "काम", "Travaux", "Trabajo", "工作成果"],
+  ["Experience", "अनुभव", "Parcours", "Experiencia", "工作经历"],
+  ["Projects", "परियोजनाएँ", "Projets", "Proyectos", "个人项目"],
+  ["Let’s talk", "बात करते हैं", "Discutons", "Hablemos", "聊一聊"],
+  [
+    "A LITTLE ABOUT ME",
+    "मेरे बारे में",
+    "QUELQUES MOTS SUR MOI",
+    "UN POCO SOBRE MÍ",
+    "关于我"
+  ],
+  [
+    "Hi, I’m Naman",
+    "नमस्ते, मैं नमन हूँ",
+    "Bonjour, moi c’est Naman",
+    "Hola, soy Naman",
+    "你好，我是 Naman"
+  ],
+  [
+    "A software engineer who likes understanding how things work—and making them work a little better.",
+    "मैं एक सॉफ़्टवेयर इंजीनियर हूँ। मुझे चीज़ों को समझना और उन्हें थोड़ा बेहतर बनाना पसंद है।",
+    "Ingénieur logiciel, j’aime comprendre comment les choses fonctionnent et les améliorer.",
+    "Soy ingeniero de software. Me gusta entender cómo funcionan las cosas y hacer que funcionen un poco mejor.",
+    "我是一名软件工程师，喜欢探索事物的工作原理，并让它们变得更好。"
+  ],
+  [
+    "I work on UI infrastructure at Rubrik: build systems, developer tooling, and the foundations other engineers build on. Before that, I worked on applied AI at Whatfix. I studied Computer Science at BITS Pilani.",
+    "मैं Rubrik में UI इन्फ्रास्ट्रक्चर पर काम करता हूँ: बिल्ड सिस्टम, डेवलपर टूलिंग और वे नींव जिन पर अन्य इंजीनियर काम करते हैं। इससे पहले मैंने Whatfix में एप्लाइड AI पर काम किया। मैंने BITS Pilani से कंप्यूटर साइंस की पढ़ाई की है।",
+    "Chez Rubrik, je travaille sur l’infrastructure UI : systèmes de build, outils de développement et fondations utilisées par les autres ingénieurs. Auparavant, je travaillais sur l’IA appliquée chez Whatfix. J’ai étudié l’informatique à BITS Pilani.",
+    "En Rubrik trabajo en infraestructura de interfaces: sistemas de compilación, herramientas y bases sobre las que construyen otros ingenieros. Antes trabajé en IA aplicada en Whatfix. Estudié Informática en BITS Pilani.",
+    "我在 Rubrik 从事 UI 基础设施工作，负责构建系统、开发工具以及其他工程师赖以开发的基础平台。此前，我在 Whatfix 从事应用 AI 工作。我毕业于 BITS Pilani，主修计算机科学。"
+  ],
+  [
+    "Some things I’ve worked on",
+    "मेरे कुछ काम",
+    "Quelques réalisations",
+    "Algunos de mis trabajos",
+    "看看我的工作"
+  ],
+  [
+    "Nice to meet you.",
+    "आपसे मिलकर अच्छा लगा।",
+    "Ravi de vous rencontrer.",
+    "Un gusto conocerte.",
+    "很高兴认识你。"
+  ],
+  [
+    "NOW / RUBRIK",
+    "अभी / RUBRIK",
+    "AUJOURD’HUI / RUBRIK",
+    "AHORA / RUBRIK",
+    "现在 / RUBRIK"
+  ],
+  [
+    "Infrastructure & developer experience",
+    "इन्फ्रास्ट्रक्चर और डेवलपर अनुभव",
+    "Infrastructure et expérience développeur",
+    "Infraestructura y experiencia de desarrollo",
+    "基础设施与开发者体验"
+  ],
+  [
+    "Software Engineer, G6 · UI Platform",
+    "सॉफ़्टवेयर इंजीनियर, G6 · UI प्लेटफ़ॉर्म",
+    "Ingénieur logiciel, G6 · Plateforme UI",
+    "Ingeniero de software, G6 · Plataforma UI",
+    "软件工程师，G6 · UI 平台"
+  ],
+  [
+    "BEFORE / WHATFIX",
+    "पहले / WHATFIX",
+    "AUPARAVANT / WHATFIX",
+    "ANTES / WHATFIX",
+    "此前 / WHATFIX"
+  ],
+  [
+    "Applied AI & product engineering",
+    "एप्लाइड AI और प्रोडक्ट इंजीनियरिंग",
+    "IA appliquée et développement produit",
+    "IA aplicada e ingeniería de producto",
+    "应用 AI 与产品工程"
+  ],
+  [
+    "Retrieval, enterprise search, and the web",
+    "रिट्रीवल, एंटरप्राइज़ सर्च और वेब",
+    "Recherche d’information, recherche d’entreprise et web",
+    "Recuperación, búsqueda empresarial y web",
+    "信息检索、企业搜索与 Web"
+  ],
+  [
+    "FOUNDATIONS / BITS PILANI",
+    "नींव / BITS PILANI",
+    "FORMATION / BITS PILANI",
+    "FORMACIÓN / BITS PILANI",
+    "教育背景 / BITS PILANI"
+  ],
+  [
+    "Computer Science, class of 2024",
+    "कंप्यूटर साइंस, 2024 बैच",
+    "Informatique, promotion 2024",
+    "Informática, promoción de 2024",
+    "计算机科学，2024 届"
+  ],
+  [
+    "Ranked first in Data Structures & Algorithms",
+    "डेटा स्ट्रक्चर्स और एल्गोरिदम में प्रथम स्थान",
+    "Premier du cours de structures de données et algorithmes",
+    "Primer puesto en Estructuras de Datos y Algoritmos",
+    "数据结构与算法课程第一名"
+  ],
+  [
+    "A selection of my work below",
+    "नीचे मेरे कुछ चुने हुए काम",
+    "Une sélection de mes travaux ci-dessous",
+    "Una selección de mi trabajo, a continuación",
+    "下方是部分工作成果"
+  ],
+  [
+    "Motion on",
+    "ऐनिमेशन चालू",
+    "Animations activées",
+    "Animación activada",
+    "动画已开启"
+  ],
+  [
+    "Motion off",
+    "ऐनिमेशन बंद",
+    "Animations désactivées",
+    "Animación desactivada",
+    "动画已关闭"
+  ],
+  [
+    "Open navigation",
+    "नेविगेशन खोलें",
+    "Ouvrir le menu",
+    "Abrir navegación",
+    "打开导航"
+  ],
+  [
+    "Close navigation",
+    "नेविगेशन बंद करें",
+    "Fermer le menu",
+    "Cerrar navegación",
+    "关闭导航"
+  ],
+  [
+    "Main navigation",
+    "मुख्य नेविगेशन",
+    "Navigation principale",
+    "Navegación principal",
+    "主导航"
+  ],
+  [
+    "THE JOURNEY SO FAR",
+    "अब तक का सफ़र",
+    "MON PARCOURS",
+    "MI TRAYECTORIA",
+    "一路走来"
+  ],
+  [
+    "Always learning.",
+    "सीखना जारी है।",
+    "Toujours apprendre.",
+    "Siempre aprendiendo.",
+    "不断学习。"
+  ],
+  [
+    "Always building.",
+    "बनाना जारी है।",
+    "Toujours créer.",
+    "Siempre creando.",
+    "持续创造。"
+  ],
+  [
+    "A few good teams.",
+    "कुछ बेहतरीन टीमें।",
+    "De belles équipes.",
+    "Buenos equipos.",
+    "优秀的团队。"
+  ],
+  [
+    "A lot of interesting problems.",
+    "ढेरों दिलचस्प समस्याएँ।",
+    "Beaucoup de défis intéressants.",
+    "Muchos retos interesantes.",
+    "许多有趣的挑战。"
+  ],
+  ["CURRENT", "वर्तमान", "EN POSTE", "ACTUAL", "在职"],
+  [
+    "WHERE IT STARTED",
+    "जहाँ से शुरुआत हुई",
+    "LE POINT DE DÉPART",
+    "DONDE EMPEZÓ TODO",
+    "起点"
+  ],
+  [
+    "B.E. Computer Science Engineering · 2020–2024",
+    "B.E. कंप्यूटर साइंस इंजीनियरिंग · 2020–2024",
+    "B.E. en informatique · 2020–2024",
+    "B.E. en Ingeniería Informática · 2020–2024",
+    "计算机科学工程学士 · 2020–2024"
+  ],
+  [
+    "OOP Teaching Assistant · Full Stack + API course development",
+    "OOP शिक्षण सहायक · फ़ुल स्टैक + API पाठ्यक्रम विकास",
+    "Assistant pédagogique en POO · Conception d’un cours Full Stack + API",
+    "Ayudante de docencia de POO · Desarrollo de un curso Full Stack + API",
+    "面向对象编程助教 · 参与全栈与 API 课程设计"
+  ],
+  [
+    "01 / HACKATHON",
+    "01 / हैकाथॉन",
+    "01 / HACKATHON",
+    "01 / HACKATÓN",
+    "01 / 黑客马拉松"
+  ],
+  ["First place", "प्रथम स्थान", "Première place", "Primer puesto", "第一名"],
+  [
+    "02 / FOUNDATIONS",
+    "02 / नींव",
+    "02 / FONDATIONS",
+    "02 / FUNDAMENTOS",
+    "02 / 基础"
+  ],
+  [
+    "Top of the class",
+    "कक्षा में प्रथम",
+    "Premier de la classe",
+    "Primero de la clase",
+    "班级第一"
+  ],
+  [
+    "Data Structures & Algorithms · BITS Pilani",
+    "डेटा स्ट्रक्चर्स और एल्गोरिदम · BITS Pilani",
+    "Structures de données et algorithmes · BITS Pilani",
+    "Estructuras de Datos y Algoritmos · BITS Pilani",
+    "数据结构与算法 · BITS Pilani"
+  ],
+  [
+    "03 / THE BEGINNING",
+    "03 / शुरुआत",
+    "03 / LES DÉBUTS",
+    "03 / EL COMIENZO",
+    "03 / 最初"
+  ],
+  ["percentile", "पर्सेंटाइल", "percentile", "percentil", "百分位"],
+  [
+    "SOME TOOLS I WORK WITH",
+    "मेरे कुछ काम के टूल",
+    "QUELQUES OUTILS QUE J’UTILISE",
+    "ALGUNAS HERRAMIENTAS QUE USO",
+    "我使用的部分工具"
+  ],
+  [
+    "BUILT OUT OF CURIOSITY",
+    "जिज्ञासा से बने प्रोजेक्ट",
+    "CRÉÉS PAR CURIOSITÉ",
+    "CREADOS POR CURIOSIDAD",
+    "源于好奇心"
+  ],
+  [
+    "Ideas are good.",
+    "विचार अच्छे हैं।",
+    "Les idées, c’est bien.",
+    "Las ideas son buenas.",
+    "有想法很好。"
+  ],
+  [
+    "Making is better.",
+    "उन्हें बनाना और बेहतर।",
+    "Les concrétiser, c’est mieux.",
+    "Hacerlas realidad, mejor.",
+    "实现它们更好。"
+  ],
+  [
+    "More on GitHub",
+    "GitHub पर और देखें",
+    "Plus sur GitHub",
+    "Más en GitHub",
+    "更多内容见 GitHub"
+  ],
+  [
+    "GOOD THINGS START WITH A CONVERSATION",
+    "अच्छी शुरुआत एक बातचीत से होती है",
+    "TOUT COMMENCE PAR UNE CONVERSATION",
+    "TODO EMPIEZA CON UNA CONVERSACIÓN",
+    "从一次交流开始"
+  ],
+  [
+    "OPEN TO INTERESTING IDEAS",
+    "दिलचस्प विचारों का स्वागत है",
+    "OUVERT AUX IDÉES INTÉRESSANTES",
+    "ABIERTO A IDEAS INTERESANTES",
+    "欢迎有趣的想法"
+  ],
+  [
+    "Looking for an engineer",
+    "इंजीनियर की तलाश है",
+    "Vous cherchez un ingénieur",
+    "¿Buscas un ingeniero",
+    "在寻找工程师吗"
+  ],
+  [
+    "Infrastructure, web, or applied AI.",
+    "इन्फ्रास्ट्रक्चर, वेब या एप्लाइड AI।",
+    "Infrastructure, web ou IA appliquée.",
+    "Infraestructura, web o IA aplicada.",
+    "基础设施、Web 或应用 AI。"
+  ],
+  [
+    "Let’s talk about what you’re building.",
+    "आप जो बना रहे हैं, उसके बारे में बात करें।",
+    "Parlons de ce que vous construisez.",
+    "Hablemos de lo que estás construyendo.",
+    "聊聊你正在打造的产品。"
+  ],
+  [
+    "Copy email address",
+    "ईमेल पता कॉपी करें",
+    "Copier l’adresse e-mail",
+    "Copiar correo electrónico",
+    "复制邮箱地址"
+  ],
+  [
+    "Email copied!",
+    "ईमेल कॉपी हो गया!",
+    "Adresse copiée !",
+    "¡Correo copiado!",
+    "邮箱已复制！"
+  ],
+  [
+    "Please select the email to copy it.",
+    "कॉपी करने के लिए ईमेल चुनें।",
+    "Sélectionnez l’adresse pour la copier.",
+    "Selecciona el correo para copiarlo.",
+    "请选择邮箱地址进行复制。"
+  ],
+  [
+    "Thoughtfully engineered.",
+    "सोच-समझकर बनाया।",
+    "Conçu avec soin.",
+    "Creado con cuidado.",
+    "用心构建。"
+  ],
+  [
+    "Endlessly curious.",
+    "जिज्ञासा का अंत नहीं।",
+    "Toujours curieux.",
+    "Siempre curioso.",
+    "始终好奇。"
+  ],
+  ["Say hello", "नमस्ते कहें", "Dites bonjour", "Saluda", "打个招呼"],
+  ["BASED IN INDIA", "भारत में स्थित", "BASÉ EN INDE", "EN INDIA", "常驻印度"],
+  ["BACK TO TOP", "ऊपर जाएँ", "RETOUR EN HAUT", "VOLVER ARRIBA", "返回顶部"],
+  [
+    "INSIDE WORK / RUBRIK & WHATFIX",
+    "मेरे काम / RUBRIK और WHATFIX",
+    "MES TRAVAUX / RUBRIK & WHATFIX",
+    "MI TRABAJO / RUBRIK Y WHATFIX",
+    "工作成果 / RUBRIK 与 WHATFIX"
+  ],
+  ["Good code.", "अच्छा कोड।", "Du bon code.", "Buen código.", "好的代码。"],
+  [
+    "Real difference.",
+    "असली फ़र्क।",
+    "Un vrai impact.",
+    "Un impacto real.",
+    "切实的改变。"
+  ],
+  [
+    "From the build pipeline",
+    "बिल्ड पाइपलाइन से",
+    "Du pipeline de build",
+    "Desde la compilación",
+    "从构建流水线"
+  ],
+  [
+    "to the people using the product.",
+    "लेकर प्रोडक्ट इस्तेमाल करने वालों तक।",
+    "aux personnes qui utilisent le produit.",
+    "hasta las personas que usan el producto.",
+    "到使用产品的人。"
+  ],
+  [
+    "Try the Slack workflow",
+    "Slack वर्कफ़्लो आज़माएँ",
+    "Essayer le workflow Slack",
+    "Probar el flujo de Slack",
+    "体验 Slack 工作流"
+  ],
+  [
+    "Tool / measure",
+    "टूल / माप",
+    "Outil / mesure",
+    "Herramienta / medida",
+    "工具 / 指标"
+  ],
+  ["Before", "पहले", "Avant", "Antes", "之前"],
+  ["After", "बाद में", "Après", "Después", "之后"],
+  ["BEFORE", "पहले", "AVANT", "ANTES", "之前"],
+  ["AFTER", "बाद में", "APRÈS", "DESPUÉS", "之后"],
+  ["Improvement", "सुधार", "Amélioration", "Mejora", "改善"],
+  [
+    "A CLOSER LOOK",
+    "थोड़ा और विस्तार",
+    "DE PLUS PRÈS",
+    "MÁS DE CERCA",
+    "进一步了解"
+  ],
+  [
+    "GO MIGRATION BENCHMARKS",
+    "GO माइग्रेशन बेंचमार्क",
+    "BENCHMARKS DE LA MIGRATION GO",
+    "BENCHMARKS DE LA MIGRACIÓN A GO",
+    "GO 迁移性能测试"
+  ],
+  [
+    "SUPPORTING BUILD IMPROVEMENTS",
+    "बिल्ड में अतिरिक्त सुधार",
+    "OPTIMISATIONS DU BUILD",
+    "MEJORAS ADICIONALES DE COMPILACIÓN",
+    "配套构建优化"
+  ],
+  [
+    "THE REST OF THE SKETCHBOOK",
+    "कुछ और प्रयोग",
+    "LE RESTE DU CARNET",
+    "EL RESTO DEL CUADERNO",
+    "更多尝试"
+  ],
+  [
+    "Small projects.",
+    "छोटे प्रोजेक्ट।",
+    "Petits projets.",
+    "Pequeños proyectos.",
+    "小项目。"
+  ],
+  [
+    "Big learning curves.",
+    "बड़ी सीख।",
+    "Grands apprentissages.",
+    "Grandes aprendizajes.",
+    "大收获。"
+  ],
+  [
+    "A few earlier builds, experiments,",
+    "कुछ पुराने प्रोजेक्ट, प्रयोग,",
+    "Des projets plus anciens, des expériences,",
+    "Proyectos anteriores, experimentos,",
+    "一些早期作品、实验，"
+  ],
+  [
+    "and things made just to figure them out.",
+    "और समझने के लिए बनाई गई चीज़ें।",
+    "et des choses créées pour comprendre.",
+    "y cosas creadas para aprender.",
+    "以及为了探索而做的小东西。"
+  ],
+  ["/ EXPLORATIONS", "/ प्रयोग", "/ EXPLORATIONS", "/ EXPLORACIONES", "/ 探索"],
+  [
+    "ILLUSTRATED SNAPSHOTS FROM THE LEARNING YEARS.",
+    "सीखने के वर्षों के प्रोजेक्ट की झलकियाँ।",
+    "APERÇUS ILLUSTRÉS DES ANNÉES D’APPRENTISSAGE.",
+    "VISTAZOS ILUSTRADOS DE LOS AÑOS DE APRENDIZAJE.",
+    "学习岁月中的项目示意图。"
+  ],
+  ["View code", "कोड देखें", "Voir le code", "Ver código", "查看代码"],
+  [
+    "Visit project",
+    "प्रोजेक्ट देखें",
+    "Voir le projet",
+    "Visitar proyecto",
+    "访问项目"
+  ],
+  [
+    "Signaling server",
+    "सिग्नलिंग सर्वर",
+    "Serveur de signalisation",
+    "Servidor de señalización",
+    "信令服务器"
+  ],
+  [
+    "View original snapshot",
+    "पुराना स्क्रीनशॉट देखें",
+    "Voir la capture d’origine",
+    "Ver captura original",
+    "查看原始截图"
+  ],
+  [
+    "RUBRIK / DEV SERVER ARCHITECTURE",
+    "RUBRIK / DEV सर्वर आर्किटेक्चर",
+    "RUBRIK / ARCHITECTURE DU SERVEUR DE DÉVELOPPEMENT",
+    "RUBRIK / ARQUITECTURA DEL SERVIDOR DE DESARROLLO",
+    "RUBRIK / 开发服务器架构"
+  ],
+  [
+    "Giving time back to the builders.",
+    "डेवलपर्स का समय बचाना।",
+    "Rendre du temps aux développeurs.",
+    "Devolver tiempo a quienes construyen.",
+    "把时间还给开发者。"
+  ],
+  [
+    "Vite’s unbundled dev-server approach had become a bottleneck for our large UI codebase. I independently investigated the problem, authored the RFC, and led the development server’s migration to Rust-based Rsbuild. Initial page loads dropped from 40s to 8s and reloads from 20s to 5s, saving time for 50+ engineers every day.",
+    "हमारे बड़े UI कोडबेस के लिए Vite का बिना बंडल वाला dev-server तरीका एक बाधा बन गया था। मैंने स्वतंत्र रूप से समस्या की जाँच की, RFC लिखा और डेवलपमेंट सर्वर को Rust-आधारित Rsbuild पर ले जाने का नेतृत्व किया। शुरुआती पेज लोड 40s से 8s और रीलोड 20s से 5s हो गया, जिससे 50+ इंजीनियरों का रोज़ समय बचता है।",
+    "L’approche sans bundling du serveur de développement Vite était devenue un frein pour notre vaste codebase UI. J’ai identifié et étudié le problème, rédigé la RFC et piloté la migration vers Rsbuild, basé sur Rust. Le premier chargement est passé de 40s à 8s et les rechargements de 20s à 5s, au bénéfice quotidien de plus de 50 ingénieurs.",
+    "El enfoque sin empaquetado del servidor de desarrollo de Vite se había convertido en un cuello de botella para nuestra gran base de código UI. Investigué el problema por iniciativa propia, redacté la RFC y lideré la migración a Rsbuild, basado en Rust. La carga inicial pasó de 40s a 8s y las recargas de 20s a 5s, ahorrando tiempo a más de 50 ingenieros cada día.",
+    "对于我们庞大的 UI 代码库，Vite 开发服务器的无打包方式已成为瓶颈。我主动调查问题、撰写 RFC，并主导迁移至基于 Rust 的 Rsbuild。开发环境的首次页面加载从 40s 降至 8s，重新加载从 20s 降至 5s，每天为 50 多名工程师节省时间。"
+  ],
+  [
+    "faster initial page loads",
+    "तेज़ शुरुआती पेज लोड",
+    "chargements initiaux plus rapides",
+    "más rapidez en la carga inicial",
+    "首次页面加载加速"
+  ],
+  [
+    "Reloads: 20s → 5s. Recognized with an organization-wide shout-out.",
+    "रीलोड: 20s → 5s। पूरे संगठन में सराहना मिली।",
+    "Rechargements : 20s → 5s. Reconnaissance à l’échelle de l’organisation.",
+    "Recargas: 20s → 5s. Reconocido en toda la organización.",
+    "重新加载：20s → 5s。获得组织范围内的公开表彰。"
+  ],
+  [
+    "RUBRIK / DEVELOPER EXPERIENCE",
+    "RUBRIK / डेवलपर अनुभव",
+    "RUBRIK / EXPÉRIENCE DÉVELOPPEUR",
+    "RUBRIK / EXPERIENCIA DE DESARROLLO",
+    "RUBRIK / 开发者体验"
+  ],
+  [
+    "Start building. Let the rest catch up.",
+    "काम शुरू करें। बाकी पीछे से पूरा हो।",
+    "Commencer à développer. Le reste suit.",
+    "Empieza a construir. Lo demás sigue en segundo plano.",
+    "先开始开发，其余任务随后完成。"
+  ],
+  [
+    "I decomposed the monolithic Bazel prebuild into two stages: non-TypeScript bootstrap targets first, then GraphQL type generation in the background while the dev server starts serving. Parallel prebuilds and event-driven compile signals helped bring a roughly five-minute wait below a minute in the baseline workflow.",
+    "मैंने एक बड़े Bazel prebuild को दो चरणों में बाँटा: पहले non-TypeScript bootstrap targets, फिर dev server शुरू होते ही पीछे GraphQL types का generation। समानांतर prebuild और event-driven compile signals से बेसलाइन वर्कफ़्लो में लगभग पाँच मिनट का इंतज़ार एक मिनट से कम हो गया।",
+    "J’ai séparé le prébuild Bazel monolithique en deux étapes : les cibles de démarrage non-TypeScript, puis la génération des types GraphQL en arrière-plan pendant que le serveur démarre. La parallélisation et les signaux de compilation événementiels ont ramené l’attente d’environ cinq minutes à moins d’une minute dans le workflow de référence.",
+    "Dividí el prebuild monolítico de Bazel en dos etapas: primero los objetivos de arranque no TypeScript y después la generación de tipos GraphQL en segundo plano mientras el servidor empieza a servir. Los prebuilds paralelos y las señales de compilación por eventos redujeron la espera de unos cinco minutos a menos de uno en el flujo base.",
+    "我将单体 Bazel 预构建拆成两个阶段：先完成非 TypeScript 的启动目标，再在开发服务器提供服务的同时于后台生成 GraphQL 类型。通过并行预构建和事件驱动的编译信号，基础工作流的等待时间从约五分钟降至一分钟以内。"
+  ],
+  [
+    "Parallelized stage-one prebuilds: 39.5s → 30.9s.",
+    "पहले चरण के prebuild समानांतर किए: 39.5s → 30.9s।",
+    "Prébuilds de première étape parallélisés : 39,5s → 30,9s.",
+    "Prebuilds de la primera etapa en paralelo: 39,5s → 30,9s.",
+    "第一阶段预构建并行化：39.5s → 30.9s。"
+  ],
+  [
+    "Replaced polling with a native watcher: roughly 80% → near-zero idle CPU, and 500 MB → 100 MB of watcher memory.",
+    "पोलिंग की जगह native watcher: निष्क्रिय CPU लगभग 80% से लगभग शून्य और watcher मेमोरी 500 MB से 100 MB।",
+    "Remplacement du polling par un watcher natif : CPU au repos d’environ 80% à presque zéro, mémoire de 500 MB à 100 MB.",
+    "Sustituí el sondeo por un observador nativo: CPU en reposo de aproximadamente 80% a casi cero y memoria de 500 MB a 100 MB.",
+    "以原生文件监听替代轮询：空闲 CPU 占用从约 80% 降至接近零，监听器内存从 500 MB 降至 100 MB。"
+  ],
+  [
+    "faster baseline dev startup",
+    "तेज़ बेसलाइन dev startup",
+    "démarrage de référence plus rapide",
+    "más rapidez en el arranque base",
+    "基础开发启动加速"
+  ],
+  [
+    "59s baseline; 83s with Panda targets included (3.6× faster).",
+    "बेसलाइन 59s; Panda targets के साथ 83s (3.6× तेज़)।",
+    "59s en référence ; 83s avec les cibles Panda (3,6× plus rapide).",
+    "59s en el flujo base; 83s con los objetivos Panda (3,6× más rápido).",
+    "基础启动 59s；包含 Panda 目标时为 83s（加速 3.6 倍）。"
+  ],
+  [
+    "RUBRIK / TYPESCRIPT → GO MIGRATION",
+    "RUBRIK / TYPESCRIPT → GO माइग्रेशन",
+    "RUBRIK / MIGRATION TYPESCRIPT → GO",
+    "RUBRIK / MIGRACIÓN TYPESCRIPT → GO",
+    "RUBRIK / TYPESCRIPT → GO 迁移"
+  ],
+  [
+    "A little less waiting. A lot more building.",
+    "कम इंतज़ार। ज़्यादा काम।",
+    "Moins attendre. Plus développer.",
+    "Menos espera. Más desarrollo.",
+    "少些等待，多些创造。"
+  ],
+  [
+    "I proposed migrating frontend infrastructure tooling from TypeScript to Go and proved the approach with a concurrent codebase scanner and code generator: 70 seconds became less than one. We made heavy use of goroutines for parallel work and mutexes to coordinate shared state. Working with a Staff Engineer on the wider migration, I also implemented the translation-ID and Aura illustration, animation, and icon generators.",
+    "मैंने फ़्रंटएंड इन्फ्रास्ट्रक्चर टूलिंग को TypeScript से Go पर ले जाने का प्रस्ताव दिया और concurrent codebase scanner व code generator से साबित किया: 70 सेकंड से एक सेकंड से भी कम। समानांतर काम के लिए goroutines और shared state के तालमेल के लिए mutexes का व्यापक उपयोग किया। बड़े माइग्रेशन में एक Staff Engineer के साथ काम करते हुए मैंने translation-ID और Aura के illustration, animation व icon generators भी बनाए।",
+    "J’ai proposé de migrer les outils d’infrastructure frontend de TypeScript vers Go et validé l’approche avec un scanner de codebase et un générateur concurrents : de 70 secondes à moins d’une. Nous avons largement utilisé les goroutines pour paralléliser et les mutex pour coordonner l’état partagé. Avec un Staff Engineer, j’ai aussi implémenté les générateurs d’identifiants de traduction et d’illustrations, animations et icônes Aura.",
+    "Propuse migrar las herramientas de infraestructura frontend de TypeScript a Go y validé la idea con un escáner y generador de código concurrentes: de 70 segundos a menos de uno. Usamos intensivamente goroutines para paralelizar y mutexes para coordinar el estado compartido. Junto con un Staff Engineer, implementé también los generadores de identificadores de traducción y de ilustraciones, animaciones e iconos de Aura.",
+    "我提议将前端基础设施工具从 TypeScript 迁移至 Go，并通过并发代码扫描器和代码生成器验证了方案：耗时从 70 秒降至不足 1 秒。我们大量使用 goroutine 并行执行任务，用 mutex 协调共享状态。在与一位 Staff Engineer 合作推进整体迁移时，我还实现了翻译 ID 以及 Aura 插图、动画和图标生成器。"
+  ],
+  [
+    "faster scanner and code generation",
+    "तेज़ स्कैनिंग और कोड जनरेशन",
+    "analyse et génération de code plus rapides",
+    "más rapidez en el escaneo y la generación",
+    "扫描与代码生成加速"
+  ],
+  [
+    "One tooling migration, from the original proof of concept to production generators.",
+    "एक टूलिंग माइग्रेशन: शुरुआती प्रयोग से प्रोडक्शन generators तक।",
+    "Une migration, de la preuve de concept aux générateurs en production.",
+    "Una migración, desde la prueba de concepto hasta los generadores de producción.",
+    "一次工具迁移，从最初的概念验证到生产环境生成器。"
+  ],
+  [
+    "Translation-ID timings include Bazel across all packages. Direct Go execution: <0.5s for all translation IDs; 95ms for icons.",
+    "Translation-ID के समय में सभी पैकेजों का Bazel शामिल है। सीधे Go से: सभी translation IDs <0.5s; icons 95ms।",
+    "Les temps des identifiants de traduction incluent Bazel sur tous les packages. Exécution Go directe : <0,5s pour tous les identifiants ; 95ms pour les icônes.",
+    "Los tiempos de identificadores de traducción incluyen Bazel en todos los paquetes. Ejecución directa en Go: <0,5s para todos los identificadores; 95ms para iconos.",
+    "翻译 ID 耗时包含所有包的 Bazel 开销。直接运行 Go：全部翻译 ID 不足 0.5s，图标为 95ms。"
+  ],
+  [
+    "Scanner + codegen",
+    "स्कैनर + कोड जनरेशन",
+    "Analyse + génération de code",
+    "Escáner + generación de código",
+    "扫描器与代码生成"
+  ],
+  [
+    "Translation IDs",
+    "अनुवाद IDs",
+    "Identifiants de traduction",
+    "Identificadores de traducción",
+    "翻译 ID"
+  ],
+  ["Illustrations", "इलस्ट्रेशन", "Illustrations", "Ilustraciones", "插图"],
+  ["Animations", "ऐनिमेशन", "Animations", "Animaciones", "动画"],
+  ["Icons", "आइकन", "Icônes", "Iconos", "图标"],
+  [
+    "RUBRIK / CSS INFRASTRUCTURE & RELEASES",
+    "RUBRIK / CSS इन्फ्रास्ट्रक्चर और रिलीज़",
+    "RUBRIK / INFRASTRUCTURE CSS ET RELEASES",
+    "RUBRIK / INFRAESTRUCTURA CSS Y VERSIONES",
+    "RUBRIK / CSS 基础设施与发布"
+  ],
+  [
+    "Compile-time CSS. Built for the whole platform.",
+    "कंपाइल-टाइम CSS। पूरे प्लेटफ़ॉर्म के लिए।",
+    "Du CSS à la compilation. Pour toute la plateforme.",
+    "CSS en compilación. Para toda la plataforma.",
+    "编译时 CSS，服务整个平台。"
+  ],
+  [
+    "I authored the architecture RFC and led the infrastructure integration for moving a roughly 111-package codebase from runtime Emotion CSS-in-JS to compile-time PandaCSS. The work spanned the build system, developer tooling, and complex release pipelines, enabling the migration alongside independently shipped micro-frontends.",
+    "मैंने आर्किटेक्चर RFC लिखा और लगभग 111 पैकेज वाले कोडबेस को runtime Emotion CSS-in-JS से compile-time PandaCSS पर ले जाने के लिए इन्फ्रास्ट्रक्चर इंटीग्रेशन का नेतृत्व किया। इसमें बिल्ड सिस्टम, डेवलपर टूलिंग और जटिल रिलीज़ पाइपलाइन शामिल थीं, जिससे अलग-अलग रिलीज़ होने वाले micro-frontends के साथ माइग्रेशन संभव हुआ।",
+    "J’ai rédigé la RFC d’architecture et piloté l’intégration permettant de passer une codebase d’environ 111 packages d’Emotion CSS-in-JS à l’exécution vers PandaCSS à la compilation. Le travail couvrait le système de build, les outils de développement et les pipelines de release complexes, en parallèle de micro-frontends livrés indépendamment.",
+    "Redacté la RFC de arquitectura y lideré la integración para migrar unos 111 paquetes de Emotion CSS-in-JS en ejecución a PandaCSS en compilación. El trabajo abarcó el sistema de build, las herramientas y complejos pipelines de publicación, permitiendo migrar junto a microfrontends con lanzamientos independientes.",
+    "我撰写架构 RFC 并主导基础设施集成，将约 111 个包的代码库从运行时 Emotion CSS-in-JS 转向编译时 PandaCSS。工作覆盖构建系统、开发工具及复杂的发布流水线，让迁移能与独立发布的微前端并行推进。"
+  ],
+  [
+    "Built per-package Bazel CSS generation, a shared merge-and-deduplication target, and Rsbuild/Vite watchers.",
+    "हर पैकेज के लिए Bazel CSS generation, साझा merge-and-deduplication target और Rsbuild/Vite watchers बनाए।",
+    "Génération CSS Bazel par package, cible commune de fusion et déduplication, et watchers Rsbuild/Vite.",
+    "Generación de CSS por paquete con Bazel, objetivo compartido de fusión y deduplicación, y observadores Rsbuild/Vite.",
+    "实现按包生成 Bazel CSS、共享的合并去重目标及 Rsbuild/Vite 文件监听。"
+  ],
+  [
+    "Changed micro-frontend deployment pipelines and introduced dual-release CSS loading (n−1 + n) to preserve backward compatibility across asynchronous release groups.",
+    "अलग-अलग समय पर रिलीज़ करने वाली टीमों में backward compatibility बनाए रखने के लिए micro-frontend deployment pipelines बदलीं और dual-release CSS loading (n−1 + n) जोड़ी।",
+    "Adaptation des pipelines de déploiement des micro-frontends et chargement CSS de deux releases (n−1 + n) pour préserver la rétrocompatibilité entre groupes de release asynchrones.",
+    "Adapté los pipelines de microfrontends e introduje la carga de CSS de dos versiones (n−1 + n) para mantener compatibilidad entre grupos con lanzamientos asíncronos.",
+    "调整微前端部署流水线，引入双版本 CSS 加载（n−1 + n），确保异步发布组之间的向后兼容性。"
+  ],
+  [
+    "packages in the migration’s infrastructure scope",
+    "माइग्रेशन इन्फ्रास्ट्रक्चर के दायरे में पैकेज",
+    "packages couverts par l’infrastructure de migration",
+    "paquetes incluidos en la infraestructura de migración",
+    "迁移基础设施覆盖的包"
+  ],
+  [
+    "Runtime → compile-time CSS, with backward-compatible releases throughout the transition.",
+    "Runtime → compile-time CSS, पूरे बदलाव में backward-compatible रिलीज़ के साथ।",
+    "CSS de l’exécution à la compilation, avec rétrocompatibilité pendant toute la transition.",
+    "CSS de ejecución a compilación, con versiones compatibles durante toda la transición.",
+    "从运行时 CSS 转向编译时 CSS，全程保持版本向后兼容。"
+  ],
+  [
+    "CSS generation moved out of the browser",
+    "CSS generation ब्राउज़र से बाहर",
+    "Génération CSS hors du navigateur",
+    "Generación de CSS fuera del navegador",
+    "将 CSS 生成移出浏览器"
+  ],
+  [
+    "Compile-time",
+    "कंपाइल-टाइम",
+    "À la compilation",
+    "En compilación",
+    "编译时"
+  ],
+  [
+    "Cold CSS builds",
+    "कोल्ड CSS बिल्ड",
+    "Builds CSS à froid",
+    "Compilaciones CSS en frío",
+    "CSS 冷构建"
+  ],
+  [
+    "Bazel actions",
+    "Bazel ऐक्शन",
+    "Actions Bazel",
+    "Acciones de Bazel",
+    "Bazel 操作"
+  ],
+  [
+    "Merged CSS build",
+    "मर्ज किए CSS का बिल्ड",
+    "Build CSS fusionné",
+    "Compilación CSS combinada",
+    "合并 CSS 构建"
+  ],
+  ["7× faster", "7× तेज़", "7× plus rapide", "7× más rápido", "加速 7 倍"],
+  [
+    "~103× fewer",
+    "लगभग 103× कम",
+    "~103× moins",
+    "~103× menos",
+    "减少约 103 倍"
+  ],
+  [
+    "~30% less time",
+    "लगभग 30% कम समय",
+    "~30% de temps en moins",
+    "~30% menos tiempo",
+    "耗时减少约 30%"
+  ],
+  [
+    "Supporting performance work: cold-build benchmarks covered 33,852 cache-busted source files. Incremental CSS generation stays under 3s.",
+    "अतिरिक्त प्रदर्शन सुधार: कोल्ड-बिल्ड बेंचमार्क में 33,852 बिना कैश वाली स्रोत फ़ाइलें शामिल थीं। Incremental CSS generation 3s से कम रहती है।",
+    "Optimisations complémentaires : benchmarks à froid sur 33 852 fichiers source sans cache. La génération CSS incrémentale reste sous 3s.",
+    "Optimización adicional: benchmarks en frío sobre 33.852 archivos fuente sin caché. La generación incremental de CSS se mantiene por debajo de 3s.",
+    "配套性能优化：冷构建测试覆盖 33,852 个未命中缓存的源文件。增量 CSS 生成保持在 3s 以内。"
+  ],
+  [
+    "RUBRIK / ENGINEERING INITIATIVES",
+    "RUBRIK / इंजीनियरिंग पहल",
+    "RUBRIK / INITIATIVES D’INGÉNIERIE",
+    "RUBRIK / INICIATIVAS DE INGENIERÍA",
+    "RUBRIK / 工程倡议"
+  ],
+  [
+    "The form type-safety initiative.",
+    "फ़ॉर्म टाइप-सेफ़्टी की पहल।",
+    "L’initiative de typage sûr des formulaires.",
+    "La iniciativa de formularios con tipos seguros.",
+    "表单类型安全计划。"
+  ],
+  [
+    "I made our form library type-safe by introducing the complex ConditionalPaths type utility, which validates nested field names and value types at compile time. I led the codebase-wide migration as a crowdsourced initiative, with engineers across teams contributing through shared tooling, developer guides, and lint guardrails.",
+    "मैंने जटिल ConditionalPaths type utility से हमारी फ़ॉर्म लाइब्रेरी को type-safe बनाया। यह compile time पर nested field names और value types जाँचती है। पूरे कोडबेस का माइग्रेशन मैंने एक सामूहिक पहल के रूप में चलाया, जिसमें अलग-अलग टीमों के इंजीनियरों ने साझा टूलिंग, गाइड और lint नियमों की मदद से योगदान दिया।",
+    "J’ai rendu notre bibliothèque de formulaires type-safe grâce à l’utilitaire complexe ConditionalPaths, qui valide les chemins imbriqués et les types de valeurs à la compilation. J’ai piloté la migration de toute la codebase comme une initiative collective, avec des ingénieurs de plusieurs équipes, des outils communs, des guides et des règles de lint.",
+    "Hice segura a nivel de tipos nuestra biblioteca de formularios mediante la utilidad compleja ConditionalPaths, que valida nombres de campos anidados y tipos de valores al compilar. Lideré la migración de toda la base de código como una iniciativa colaborativa entre equipos, con herramientas compartidas, guías y reglas de lint.",
+    "我引入复杂的 ConditionalPaths 类型工具，在编译时验证嵌套字段路径和值类型，使表单库具备类型安全。我以跨团队众包协作的方式主导全代码库迁移，通过共享工具、开发指南及 lint 规则帮助各团队工程师参与。"
+  ],
+  [
+    "form field usages stress-tested",
+    "फ़ॉर्म फ़ील्ड उपयोगों का स्ट्रेस-टेस्ट",
+    "utilisations de champs testées en charge",
+    "usos de campos sometidos a pruebas de carga",
+    "参与压力测试的表单字段用法"
+  ],
+  [
+    "A migration I led, with contributions from engineers across the codebase.",
+    "मेरे नेतृत्व में पूरे कोडबेस के इंजीनियरों का साझा योगदान।",
+    "Une migration que j’ai pilotée, avec les contributions de toute la codebase.",
+    "Una migración que lideré con contribuciones de ingenieros de toda la base de código.",
+    "由我主导、来自整个代码库的工程师共同参与的迁移。"
+  ],
+  [
+    "Coverage in the recorded stress test",
+    "रिकॉर्ड किए स्ट्रेस-टेस्ट में कवरेज",
+    "Couverture du test de charge mesuré",
+    "Cobertura en la prueba de carga registrada",
+    "记录中的压力测试覆盖率"
+  ],
+  [
+    "TsGo compile time in that test",
+    "उस टेस्ट में TsGo कंपाइल समय",
+    "Temps de compilation TsGo lors du test",
+    "Tiempo de compilación TsGo en esa prueba",
+    "该测试中的 TsGo 编译时间"
+  ],
+  [
+    "Award for the type-safety initiative",
+    "टाइप-सेफ़्टी पहल के लिए पुरस्कार",
+    "Prix pour l’initiative de typage sûr",
+    "Premio por la iniciativa de seguridad de tipos",
+    "类型安全计划获奖"
+  ],
+  [
+    "RUBRIK / AI DEVELOPER TOOLING",
+    "RUBRIK / AI डेवलपर टूलिंग",
+    "RUBRIK / OUTILS DE DÉVELOPPEMENT IA",
+    "RUBRIK / HERRAMIENTAS DE DESARROLLO CON IA",
+    "RUBRIK / AI 开发工具"
+  ],
+  [
+    "Your session. Wherever you are.",
+    "आपका सेशन। आप जहाँ भी हों।",
+    "Votre session. Où que vous soyez.",
+    "Tu sesión. Estés donde estés.",
+    "无论身在何处，都能掌控会话。"
+  ],
+  [
+    "I built slack-notify end to end so engineers could approve, answer, and steer their Claude Code sessions from Slack. Milano brings the session to your DMs when it needs you. Running on a DevPod with tmux, the work keeps going even when your laptop is asleep.",
+    "मैंने slack-notify को शुरू से अंत तक बनाया ताकि इंजीनियर Slack से Claude Code सेशन में अनुमतियाँ दें, सवालों के जवाब दें और अगला निर्देश भेजें। ज़रूरत पड़ने पर Milano सेशन को आपके DM में लाता है। DevPod और tmux पर काम लैपटॉप के सोने पर भी चलता रहता है।",
+    "J’ai construit slack-notify de bout en bout pour permettre aux ingénieurs d’approuver, de répondre et de piloter leurs sessions Claude Code depuis Slack. Milano vous contacte en DM lorsque la session a besoin de vous. Sur un DevPod avec tmux, le travail continue même lorsque votre ordinateur est en veille.",
+    "Construí slack-notify de principio a fin para que los ingenieros pudieran aprobar, responder y dirigir sesiones de Claude Code desde Slack. Milano lleva la sesión a tus mensajes directos cuando te necesita. Con DevPod y tmux, el trabajo continúa aunque el portátil esté suspendido.",
+    "我端到端构建了 slack-notify，让工程师能通过 Slack 审批、回答问题并引导 Claude Code 会话。需要你时，Milano 会将会话带到私信中。运行在 DevPod 和 tmux 上时，即使笔记本休眠，任务也会继续。"
+  ],
+  [
+    "Owned the full stack: local Claude hooks, Redis-backed polling, Slack service interactions, and database changes.",
+    "पूरे स्टैक की ज़िम्मेदारी: स्थानीय Claude hooks, Redis polling, Slack सेवा इंटरैक्शन और डेटाबेस बदलाव।",
+    "Responsabilité de toute la pile : hooks Claude locaux, polling Redis, interactions avec le service Slack et modifications de la base de données.",
+    "Responsabilidad de toda la pila: hooks locales de Claude, sondeo con Redis, interacciones con el servicio Slack y cambios de base de datos.",
+    "负责完整技术栈：本地 Claude hooks、基于 Redis 的轮询、Slack 服务交互及数据库变更。"
+  ],
+  [
+    "Approve or decline with a reason, answer questions, view session context, and send the next instruction—all from a Slack DM.",
+    "अनुमति दें या कारण के साथ मना करें, सवालों के जवाब दें, सेशन संदर्भ देखें और अगला निर्देश भेजें—सब Slack DM से।",
+    "Approuver ou refuser avec un motif, répondre, consulter le contexte et envoyer la suite : tout depuis un DM Slack.",
+    "Aprobar o rechazar con un motivo, responder, ver el contexto y enviar la siguiente instrucción, todo desde un mensaje de Slack.",
+    "批准或附理由拒绝、回答问题、查看会话上下文、发送后续指令，全都可在 Slack 私信中完成。"
+  ],
+  [
+    "requests in the first 2 days",
+    "पहले 2 दिनों में अनुरोध",
+    "requêtes dans les 2 premiers jours",
+    "solicitudes en los primeros 2 días",
+    "前两天的请求量"
+  ],
+  [
+    "From local hooks to your phone, with the session context alongside every decision.",
+    "स्थानीय hooks से आपके फ़ोन तक, हर निर्णय के साथ सेशन का संदर्भ।",
+    "Des hooks locaux à votre téléphone, avec le contexte de la session pour chaque décision.",
+    "De los hooks locales a tu teléfono, con contexto para cada decisión.",
+    "从本地 hooks 到手机，每次决策都有会话上下文相伴。"
+  ],
+  [
+    "Control from a Slack DM",
+    "Slack DM से नियंत्रण",
+    "Contrôle depuis un DM Slack",
+    "Control desde un mensaje de Slack",
+    "通过 Slack 私信控制"
+  ],
+  [
+    "WHATFIX / APPLIED AI",
+    "WHATFIX / एप्लाइड AI",
+    "WHATFIX / IA APPLIQUÉE",
+    "WHATFIX / IA APLICADA",
+    "WHATFIX / 应用 AI"
+  ],
+  [
+    "Better answers. Built from the ground up.",
+    "बेहतर जवाब। नींव से सुधार।",
+    "De meilleures réponses. Dès les fondations.",
+    "Mejores respuestas. Desde la base.",
+    "从基础改进，获得更好的答案。"
+  ],
+  [
+    "I introduced hybrid search and a reranking model into Whatfix’s retrieval-augmented generation pipeline, improving product accuracy from 42% to 90%. I also built a benchmarking pipeline for observability and experiments, combining deterministic checks with LLM-as-a-judge evaluations—an approach that was still relatively novel at the time.",
+    "मैंने Whatfix की RAG पाइपलाइन में hybrid search और reranking model जोड़ा, जिससे प्रोडक्ट की सटीकता 42% से 90% हुई। निगरानी और प्रयोगों के लिए एक benchmarking pipeline भी बनाई, जिसमें deterministic checks और LLM-as-a-judge मूल्यांकन साथ थे—उस समय यह तरीका अपेक्षाकृत नया था।",
+    "J’ai introduit la recherche hybride et un modèle de reranking dans le pipeline RAG de Whatfix, faisant passer la précision de 42% à 90%. J’ai aussi créé un pipeline de benchmarking pour l’observabilité et les expérimentations, combinant des contrôles déterministes et des évaluations LLM-as-a-judge, une approche encore relativement nouvelle à l’époque.",
+    "Introduje búsqueda híbrida y un modelo de reranking en el pipeline RAG de Whatfix, elevando la precisión del 42% al 90%. También construí un pipeline de benchmarking para observabilidad y experimentación, combinando comprobaciones deterministas con evaluaciones LLM-as-a-judge, un enfoque todavía relativamente novedoso entonces.",
+    "我在 Whatfix 的 RAG 流水线中引入混合搜索和重排序模型，将产品准确率从 42% 提升至 90%。我还构建了用于可观测性和实验的基准评估流水线，将确定性检查与 LLM-as-a-judge 评估结合；在当时，这仍是一种相对新颖的方法。"
+  ],
+  [
+    "RAG product accuracy",
+    "RAG प्रोडक्ट की सटीकता",
+    "précision du produit RAG",
+    "precisión del producto RAG",
+    "RAG 产品准确率"
+  ],
+  [
+    "Up from a 42% baseline, through retrieval-pipeline improvements and tuning.",
+    "रिट्रीवल पाइपलाइन सुधार और ट्यूनिंग से 42% बेसलाइन से ऊपर।",
+    "À partir d’une référence de 42%, grâce à l’amélioration et au réglage du pipeline de recherche.",
+    "Desde una base del 42%, mediante mejoras y ajustes del pipeline de recuperación.",
+    "通过改进与调优检索流水线，从 42% 的基线提升。"
+  ],
+  [
+    "WHATFIX / CROSS-PLATFORM TESTING",
+    "WHATFIX / क्रॉस-प्लेटफ़ॉर्म टेस्टिंग",
+    "WHATFIX / TESTS MULTIPLATEFORMES",
+    "WHATFIX / PRUEBAS MULTIPLATAFORMA",
+    "WHATFIX / 跨平台测试"
+  ],
+  [
+    "One framework. Web and native, together.",
+    "एक फ़्रेमवर्क। वेब और नेटिव, साथ में।",
+    "Un framework. Web et natif réunis.",
+    "Un framework. Web y nativo juntos.",
+    "一个框架，统一 Web 与原生测试。"
+  ],
+  [
+    "I designed and built a Node.js UI testing framework from scratch for web, hybrid, and native desktop applications on macOS and Windows. It handles application startup and uses Puppeteer over the Chrome DevTools Protocol (CDP) for web interactions, alongside XCTest for native macOS automation. A common interface lets the same test code drive web and native UI. Thin adapters reuse Java/TestNG test cases, with REST and STDIN/OUT pipes connecting the processes.",
+    "मैंने macOS और Windows के web, hybrid और native desktop ऐप्स के लिए शुरू से Node.js UI testing framework बनाया। यह ऐप शुरू करता है, वेब इंटरैक्शन के लिए Chrome DevTools Protocol (CDP) पर Puppeteer और native macOS automation के लिए XCTest इस्तेमाल करता है। साझा इंटरफ़ेस से एक ही टेस्ट कोड web और native UI चलाता है। हल्के adapters Java/TestNG टेस्ट दोबारा इस्तेमाल करते हैं; प्रक्रियाएँ REST और STDIN/OUT pipes से जुड़ती हैं।",
+    "J’ai conçu de zéro un framework Node.js de tests UI pour les applications web, hybrides et natives sur macOS et Windows. Il gère le lancement de l’application et utilise Puppeteer via CDP pour le web, ainsi que XCTest pour l’automatisation native macOS. Une interface commune permet au même code de test de piloter le web et le natif. Des adaptateurs réutilisent les tests Java/TestNG, avec REST et des pipes STDIN/OUT entre les processus.",
+    "Diseñé desde cero un framework Node.js de pruebas UI para aplicaciones web, híbridas y nativas de macOS y Windows. Gestiona el inicio de la aplicación y usa Puppeteer mediante CDP para la web, junto con XCTest para automatización nativa de macOS. Una interfaz común permite usar el mismo código de prueba en ambas capas. Adaptadores ligeros reutilizan pruebas Java/TestNG, conectando procesos con REST y pipes STDIN/OUT.",
+    "我从零设计并构建了 Node.js UI 测试框架，支持 macOS 和 Windows 上的 Web、混合及原生桌面应用。框架负责启动应用，通过 Puppeteer 和 Chrome DevTools Protocol（CDP）控制 Web 界面，并使用 XCTest 自动化原生 macOS 交互。统一接口让同一份测试代码驱动 Web 与原生 UI。轻量适配器复用 Java/TestNG 测试，进程间通过 REST 和 STDIN/OUT 管道通信。"
+  ],
+  ["One", "एक", "Un seul", "Uno", "一个"],
+  [
+    "framework for web, hybrid, and native apps",
+    "वेब, हाइब्रिड और नेटिव ऐप्स के लिए फ़्रेमवर्क",
+    "framework pour les apps web, hybrides et natives",
+    "framework para apps web, híbridas y nativas",
+    "覆盖 Web、混合和原生应用的框架"
+  ],
+  [
+    "Shared test code covers native and web interactions within the same hybrid application.",
+    "एक ही हाइब्रिड ऐप में साझा टेस्ट कोड नेटिव और वेब इंटरैक्शन दोनों जाँचता है।",
+    "Le même code couvre les interactions natives et web d’une application hybride.",
+    "El mismo código cubre interacciones nativas y web dentro de una aplicación híbrida.",
+    "同一份测试代码覆盖混合应用中的原生与 Web 交互。"
+  ],
+  [
+    "Desktop platforms",
+    "डेस्कटॉप प्लेटफ़ॉर्म",
+    "Plateformes desktop",
+    "Plataformas de escritorio",
+    "桌面平台"
+  ],
+  [
+    "Software Engineer · G6",
+    "सॉफ़्टवेयर इंजीनियर · G6",
+    "Ingénieur logiciel · G6",
+    "Ingeniero de software · G6",
+    "软件工程师 · G6"
+  ],
+  [
+    "Software Engineer",
+    "सॉफ़्टवेयर इंजीनियर",
+    "Ingénieur logiciel",
+    "Ingeniero de software",
+    "软件工程师"
+  ],
+  [
+    "Software Engineer Intern",
+    "सॉफ़्टवेयर इंजीनियर इंटर्न",
+    "Stagiaire en ingénierie logicielle",
+    "Becario de ingeniería de software",
+    "软件工程实习生"
+  ],
+  [
+    "Full Stack Intern",
+    "फ़ुल स्टैक इंटर्न",
+    "Stagiaire Full Stack",
+    "Becario Full Stack",
+    "全栈实习生"
+  ],
+  [
+    "MAY 2025 — PRESENT",
+    "मई 2025 — वर्तमान",
+    "MAI 2025 — AUJOURD’HUI",
+    "MAY 2025 — ACTUALIDAD",
+    "2025 年 5 月 — 至今"
+  ],
+  [
+    "JUL 2024 — MAY 2025",
+    "जुलाई 2024 — मई 2025",
+    "JUIL. 2024 — MAI 2025",
+    "JUL 2024 — MAY 2025",
+    "2024 年 7 月 — 2025 年 5 月"
+  ],
+  [
+    "JAN 2024 — JUN 2024",
+    "जनवरी 2024 — जून 2024",
+    "JANV. 2024 — JUIN 2024",
+    "ENE 2024 — JUN 2024",
+    "2024 年 1 月 — 6 月"
+  ],
+  [
+    "AUG 2022 — APR 2023",
+    "अगस्त 2022 — अप्रैल 2023",
+    "AOÛT 2022 — AVR. 2023",
+    "AGO 2022 — ABR 2023",
+    "2022 年 8 月 — 2023 年 4 月"
+  ],
+  [
+    "Promoted from G5 to G6 in May 2026",
+    "मई 2026 में G5 से G6 पदोन्नति",
+    "Promotion de G5 à G6 en mai 2026",
+    "Ascenso de G5 a G6 en mayo de 2026",
+    "2026 年 5 月由 G5 晋升为 G6"
+  ],
+  [
+    "Building the UI platform and the products it powers.",
+    "UI प्लेटफ़ॉर्म और उस पर चलने वाले प्रोडक्ट बनाना।",
+    "Construire la plateforme UI et les produits qu’elle soutient.",
+    "Construir la plataforma UI y los productos que impulsa.",
+    "构建 UI 平台及其支撑的产品。"
+  ],
+  [
+    "Authored the RFC and led the Vite-to-Rsbuild migration: dev-server initial page loads dropped from 40s to 8s and reloads from 20s to 5s for 50+ engineers.",
+    "RFC लिखा और Vite से Rsbuild माइग्रेशन का नेतृत्व किया: 50+ इंजीनियरों के लिए dev-server का शुरुआती पेज लोड 40s से 8s और रीलोड 20s से 5s हुआ।",
+    "RFC et pilotage de la migration Vite vers Rsbuild : premier chargement du serveur de développement de 40s à 8s, rechargements de 20s à 5s pour plus de 50 ingénieurs.",
+    "Redacté la RFC y lideré la migración de Vite a Rsbuild: la carga inicial del servidor pasó de 40s a 8s y las recargas de 20s a 5s para más de 50 ingenieros.",
+    "撰写 RFC 并主导 Vite 至 Rsbuild 迁移：为 50 多名工程师将开发服务器首次加载从 40s 降至 8s，重新加载从 20s 降至 5s。"
+  ],
+  [
+    "Split dev startup into staged prebuilds: 4m 58s became 59s baseline, or 83s with Panda targets. Replaced polling with a native file watcher to bring idle CPU from roughly 80% to near zero.",
+    "डेव स्टार्टअप को चरणों में बाँटा: 4m 58s से बेसलाइन 59s, या Panda targets के साथ 83s। पोलिंग की जगह native file watcher से निष्क्रिय CPU लगभग 80% से लगभग शून्य हुआ।",
+    "Prébuilds en étapes : de 4m 58s à 59s en référence, ou 83s avec Panda. Le watcher natif remplaçant le polling a ramené le CPU au repos d’environ 80% à presque zéro.",
+    "Dividí el arranque en prebuilds por etapas: de 4m 58s a 59s base, o 83s con Panda. Sustituí el sondeo por un observador nativo, bajando la CPU en reposo de cerca del 80% a casi cero.",
+    "将开发启动拆为分阶段预构建：从 4m 58s 降至基础 59s，包含 Panda 时为 83s。用原生文件监听替代轮询，将空闲 CPU 从约 80% 降至接近零。"
+  ],
+  [
+    "Proposed the TypeScript-to-Go tooling migration, proved it with a scanner and code generator running in under 1s instead of 70s, and implemented translation-ID and asset generators in collaboration with a Staff Engineer.",
+    "TypeScript से Go टूलिंग माइग्रेशन का प्रस्ताव दिया; scanner और code generator को 70s से <1s करके साबित किया। Staff Engineer के साथ translation-ID और asset generators बनाए।",
+    "Proposition de migration TypeScript vers Go, validée par un scanner et un générateur passant de 70s à moins d’1s, puis implémentation de générateurs d’identifiants de traduction et d’assets avec un Staff Engineer.",
+    "Propuse migrar herramientas de TypeScript a Go y lo validé con un escáner y generador que pasó de 70s a menos de 1s. Implementé generadores de traducciones y recursos junto con un Staff Engineer.",
+    "提议将工具从 TypeScript 迁移至 Go，通过将扫描器和代码生成器从 70s 优化至不足 1s 验证方案，并与 Staff Engineer 合作实现翻译 ID 和资源生成器。"
+  ],
+  [
+    "Authored the PandaCSS architecture RFC and integrated runtime-to-compile-time CSS infrastructure across a roughly 111-package monorepo. Reworked micro-frontend release pipelines with dual-release CSS loading to maintain backward compatibility; subsequently optimized cold CSS builds from 497s to 71s.",
+    "PandaCSS आर्किटेक्चर RFC लिखा और लगभग 111 पैकेजों में runtime से compile-time CSS इन्फ्रास्ट्रक्चर जोड़ा। दो रिलीज़ का CSS लोड करके micro-frontend पाइपलाइन में backward compatibility रखी; बाद में कोल्ड CSS बिल्ड 497s से 71s किए।",
+    "RFC d’architecture PandaCSS et intégration du CSS à la compilation dans un monorepo d’environ 111 packages. Adaptation des pipelines micro-frontends au chargement de deux releases CSS pour la rétrocompatibilité, puis réduction des builds CSS à froid de 497s à 71s.",
+    "Redacté la RFC de PandaCSS e integré CSS en compilación en un monorepo de unos 111 paquetes. Adapté los pipelines de microfrontends con carga CSS de dos versiones para conservar compatibilidad; después reduje los builds en frío de 497s a 71s.",
+    "撰写 PandaCSS 架构 RFC，将约 111 个包的 monorepo 从运行时 CSS 转向编译时 CSS。重构微前端发布流水线，以双版本 CSS 加载保持向后兼容，随后将 CSS 冷构建从 497s 优化至 71s。"
+  ],
+  [
+    "Led the form type-safety initiative: introduced the complex ConditionalPaths type utility and coordinated a crowdsourced, codebase-wide migration with engineers across teams, supported by shared tooling, developer guides, and lint guardrails.",
+    "फ़ॉर्म type-safety पहल का नेतृत्व किया: ConditionalPaths utility जोड़ी और साझा टूलिंग, गाइड तथा lint नियमों से अलग-अलग टीमों के इंजीनियरों के साथ पूरे कोडबेस का सामूहिक माइग्रेशन चलाया।",
+    "Pilotage du typage sûr des formulaires : utilitaire complexe ConditionalPaths et migration collective de toute la codebase, avec plusieurs équipes, des outils partagés, des guides et des règles de lint.",
+    "Lideré la iniciativa de formularios con tipos seguros: introduje ConditionalPaths y coordiné una migración colaborativa entre equipos, respaldada por herramientas, guías y reglas de lint.",
+    "主导表单类型安全计划：引入复杂的 ConditionalPaths 类型工具，借助共享工具、开发指南及 lint 规则，协调跨团队工程师共同迁移整个代码库。"
+  ],
+  [
+    "Designed isolated form testing and migrated 1,000+ test files across 40 PRs using AST codemods and AI-assisted developer guides.",
+    "अलग से फ़ॉर्म टेस्टिंग डिज़ाइन की और AST codemods व AI-सहायता वाले गाइड से 40 PR में 1,000+ टेस्ट फ़ाइलें माइग्रेट कीं।",
+    "Conception de tests de formulaires isolés et migration de plus de 1 000 fichiers dans 40 PR, avec des codemods AST et des guides assistés par IA.",
+    "Diseñé pruebas aisladas de formularios y migré más de 1.000 archivos en 40 PR con codemods AST y guías asistidas por IA.",
+    "设计独立表单测试，使用 AST codemod 和 AI 辅助开发指南，通过 40 个 PR 迁移 1,000 多个测试文件。"
+  ],
+  [
+    "R&D Global Hackathon 2024 · First place",
+    "R&D Global Hackathon 2024 · प्रथम स्थान",
+    "R&D Global Hackathon 2024 · Première place",
+    "R&D Global Hackathon 2024 · Primer puesto",
+    "2024 年全球研发黑客马拉松 · 第一名"
+  ],
+  [
+    "Applied AI, enterprise search, and software that connects people.",
+    "एप्लाइड AI, एंटरप्राइज़ सर्च और लोगों को जोड़ने वाला सॉफ़्टवेयर।",
+    "IA appliquée, recherche d’entreprise et logiciels qui relient les personnes.",
+    "IA aplicada, búsqueda empresarial y software que conecta personas.",
+    "应用 AI、企业搜索及连接人与人的软件。"
+  ],
+  [
+    "Improved RAG product accuracy from 42% to 90% with hybrid search and reranking. Built a benchmarking pipeline for observability and experiments using deterministic checks and LLM-as-a-judge evaluations.",
+    "Hybrid search और reranking से RAG सटीकता 42% से 90% की। Deterministic checks और LLM-as-a-judge मूल्यांकन से निगरानी व प्रयोगों की benchmarking pipeline बनाई।",
+    "Précision RAG de 42% à 90% grâce à la recherche hybride et au reranking. Pipeline de benchmarking pour l’observabilité et les expériences, avec contrôles déterministes et évaluations LLM-as-a-judge.",
+    "Mejoré la precisión RAG del 42% al 90% con búsqueda híbrida y reranking. Creé un pipeline de benchmarking para observabilidad y experimentos con comprobaciones deterministas y evaluaciones LLM-as-a-judge.",
+    "通过混合搜索和重排序，将 RAG 准确率从 42% 提升至 90%。构建基准评估流水线，以确定性检查和 LLM-as-a-judge 评估支持可观测性与实验。"
+  ],
+  [
+    "Drove a communications and change management product for centrally scheduled organization-wide messages.",
+    "पूरे संगठन में केंद्रीय रूप से निर्धारित संदेशों के लिए communications और change management प्रोडक्ट का नेतृत्व किया।",
+    "Développement d’un produit de communication et de gestion du changement pour planifier centralement les messages de toute l’organisation.",
+    "Impulsé un producto de comunicación y gestión del cambio para programar mensajes de forma centralizada en toda la organización.",
+    "推动开发沟通与变更管理产品，支持集中安排面向整个组织的消息。"
+  ],
+  [
+    "Architected an advanced client-side scheduler with configurable time-based event triggers.",
+    "समय-आधारित event triggers के लिए कॉन्फ़िगर करने योग्य उन्नत client-side scheduler डिज़ाइन किया।",
+    "Architecture d’un ordonnanceur côté client avancé, avec déclencheurs temporels configurables.",
+    "Diseñé un planificador avanzado del lado del cliente con disparadores temporales configurables.",
+    "设计高级客户端调度器，支持可配置的定时事件触发。"
+  ],
+  [
+    "Cross-platform systems, from the inside out",
+    "क्रॉस-प्लेटफ़ॉर्म सिस्टम की गहरी समझ",
+    "Les systèmes multiplateformes de l’intérieur",
+    "Sistemas multiplataforma desde dentro",
+    "深入跨平台系统"
+  ],
+  [
+    "One testing framework. Web, hybrid, and native desktop apps.",
+    "एक टेस्टिंग फ़्रेमवर्क। वेब, हाइब्रिड और नेटिव डेस्कटॉप ऐप्स।",
+    "Un framework de test. Apps web, hybrides et natives.",
+    "Un framework de pruebas. Apps web, híbridas y nativas.",
+    "一个测试框架，覆盖 Web、混合及原生桌面应用。"
+  ],
+  [
+    "Designed and built a Node.js UI testing framework from scratch for web, hybrid, and native desktop apps on macOS and Windows. Handled application startup, web control through Puppeteer/CDP, and native macOS automation with XCTest. A shared interface lets the same test code drive both web and native interactions; thin adapters reuse existing Java/TestNG test cases through REST and STDIN/OUT IPC.",
+    "macOS और Windows के लिए Node.js UI testing framework शुरू से बनाया। ऐप स्टार्टअप, Puppeteer/CDP से वेब नियंत्रण और XCTest से native macOS automation संभाला। साझा इंटरफ़ेस से एक ही टेस्ट कोड web और native UI चलाता है; हल्के adapters REST और STDIN/OUT IPC से Java/TestNG टेस्ट दोबारा उपयोग करते हैं।",
+    "Création de zéro d’un framework Node.js de tests UI pour macOS et Windows. Lancement d’applications, contrôle web via Puppeteer/CDP et automatisation native macOS avec XCTest. Interface commune pour le web et le natif, et réutilisation des tests Java/TestNG via des adaptateurs REST et STDIN/OUT.",
+    "Creé desde cero un framework Node.js de pruebas UI para macOS y Windows. Gestioné el inicio de apps, el control web con Puppeteer/CDP y la automatización nativa de macOS con XCTest. Una interfaz común reutiliza el mismo código en web y nativo, con adaptadores Java/TestNG mediante REST y STDIN/OUT.",
+    "从零构建适用于 macOS 与 Windows 的 Node.js UI 测试框架。负责应用启动、Puppeteer/CDP Web 控制及 XCTest 原生 macOS 自动化。统一接口让同一份测试代码覆盖 Web 与原生交互，并通过 REST 和 STDIN/OUT IPC 复用 Java/TestNG 测试。"
+  ],
+  [
+    "Contributed to architectural design discussions and spent a month resolving critical customer issues as a Success Engineer.",
+    "आर्किटेक्चर चर्चाओं में योगदान दिया और Success Engineer के रूप में एक महीने तक ग्राहकों की गंभीर समस्याएँ हल कीं।",
+    "Participation aux discussions d’architecture et résolution d’incidents clients critiques pendant un mois comme Success Engineer.",
+    "Participé en decisiones de arquitectura y dediqué un mes a resolver incidencias críticas de clientes como Success Engineer.",
+    "参与架构设计讨论，并以 Success Engineer 的角色，用一个月时间解决关键客户问题。"
+  ],
+  [
+    "Selected from 2,860 candidates",
+    "2,860 उम्मीदवारों में से चयन",
+    "Sélectionné parmi 2 860 candidats",
+    "Seleccionado entre 2.860 candidatos",
+    "从 2,860 名候选人中入选"
+  ],
+  [
+    "From system architecture to a healthcare product in the wild.",
+    "सिस्टम आर्किटेक्चर से वास्तविक हेल्थकेयर प्रोडक्ट तक।",
+    "De l’architecture système au produit de santé en service.",
+    "De la arquitectura a un producto de salud en uso.",
+    "从系统架构到实际落地的医疗产品。"
+  ],
+  [
+    "Led development of the premier web application for healthcare providers and insurance companies.",
+    "हेल्थकेयर प्रदाताओं और बीमा कंपनियों के मुख्य वेब ऐप के विकास का नेतृत्व किया।",
+    "Pilotage du développement de l’application web principale pour les prestataires de santé et les assureurs.",
+    "Lideré el desarrollo de la aplicación web principal para proveedores sanitarios y aseguradoras.",
+    "主导开发面向医疗服务提供方与保险公司的核心 Web 应用。"
+  ],
+  [
+    "Designed the end-to-end architecture and database schema, connecting React and Redux to Node.js, Express, and AWS.",
+    "पूरी आर्किटेक्चर और डेटाबेस स्कीमा बनाई; React और Redux को Node.js, Express तथा AWS से जोड़ा।",
+    "Conception de l’architecture complète et du schéma de base de données, reliant React et Redux à Node.js, Express et AWS.",
+    "Diseñé la arquitectura completa y el esquema de base de datos, conectando React y Redux con Node.js, Express y AWS.",
+    "设计端到端架构与数据库结构，将 React、Redux 与 Node.js、Express 和 AWS 连接起来。"
+  ],
+  [
+    "A connection. Without the middleman.",
+    "सीधा संपर्क। बिना बिचौलिए।",
+    "Une connexion. Sans intermédiaire.",
+    "Una conexión. Sin intermediarios.",
+    "直接连接，无需中间人。"
+  ],
+  [
+    "A fully peer-to-peer video experience with screen sharing, chat, authorized access, and a custom layout engine that finds room for everyone.",
+    "पूरी तरह peer-to-peer वीडियो अनुभव, जिसमें स्क्रीन शेयरिंग, चैट, अधिकृत ऐक्सेस और सभी के लिए जगह बनाने वाला कस्टम लेआउट इंजन है।",
+    "Une expérience vidéo entièrement pair-à-pair avec partage d’écran, chat, accès autorisé et moteur de mise en page adaptatif pour chaque participant.",
+    "Videollamadas totalmente entre pares con pantalla compartida, chat, acceso autorizado y un motor de diseño que hace sitio para todos.",
+    "完全点对点的视频体验，支持屏幕共享、聊天、授权访问及为每位参与者合理布局的自定义引擎。"
+  ],
+  [
+    "A healthier you. A smarter starting point.",
+    "बेहतर सेहत। समझदार शुरुआत।",
+    "Une meilleure santé. Un départ plus intelligent.",
+    "Más salud. Un mejor punto de partida.",
+    "更健康的你，更智能的起点。"
+  ],
+  [
+    "Personalized meal plans, workout routines, and health metrics in one place. Built with OpenAI, a secure Node.js backend, and a thoughtfully simple interface.",
+    "व्यक्तिगत भोजन योजना, व्यायाम और स्वास्थ्य आँकड़े एक जगह। OpenAI, सुरक्षित Node.js backend और सरल इंटरफ़ेस के साथ बनाया।",
+    "Plans de repas personnalisés, entraînements et indicateurs de santé réunis. Avec OpenAI, un backend Node.js sécurisé et une interface simple.",
+    "Planes de alimentación, rutinas y métricas de salud personalizados en un solo lugar. Con OpenAI, un backend Node.js seguro y una interfaz sencilla.",
+    "在一处提供个性化饮食计划、训练安排和健康指标。采用 OpenAI、安全的 Node.js 后端及简洁易用的界面。"
+  ],
+  [
+    "Finding order. In every dimension.",
+    "हर आयाम में। सही क्रम।",
+    "Trouver l’ordre. Dans chaque dimension.",
+    "Encontrar orden. En cada dimensión.",
+    "在每个维度中寻找秩序。"
+  ],
+  [
+    "A C++ implementation of the Hilbert R-tree, bringing fractal geometry to spatial indexing. Hilbert ordering helps organize multidimensional data for efficient storage and spatial queries.",
+    "Hilbert R-tree का C++ implementation, जो spatial indexing में fractal geometry लाता है। Hilbert क्रम multidimensional data को कुशल स्टोरेज और spatial queries के लिए व्यवस्थित करता है।",
+    "Une implémentation C++ du Hilbert R-tree, appliquant la géométrie fractale à l’indexation spatiale. L’ordre de Hilbert organise les données multidimensionnelles pour un stockage et des requêtes efficaces.",
+    "Implementación en C++ del Hilbert R-tree que lleva la geometría fractal a la indexación espacial. El orden de Hilbert organiza datos multidimensionales para almacenarlos y consultarlos eficientemente.",
+    "用 C++ 实现 Hilbert R-tree，将分形几何应用于空间索引。Hilbert 排序帮助组织多维数据，实现高效存储与空间查询。"
+  ],
+  [
+    "REAL-TIME / PEER-TO-PEER",
+    "रियल-टाइम / पीयर-टू-पीयर",
+    "TEMPS RÉEL / PAIR-À-PAIR",
+    "TIEMPO REAL / ENTRE PARES",
+    "实时 / 点对点"
+  ],
+  [
+    "APPLIED AI / FULL STACK",
+    "एप्लाइड AI / फ़ुल स्टैक",
+    "IA APPLIQUÉE / FULL STACK",
+    "IA APLICADA / FULL STACK",
+    "应用 AI / 全栈"
+  ],
+  [
+    "ALGORITHMS / SPATIAL DATA STRUCTURES",
+    "एल्गोरिदम / स्थानिक डेटा स्ट्रक्चर",
+    "ALGORITHMES / STRUCTURES SPATIALES",
+    "ALGORITMOS / ESTRUCTURAS ESPACIALES",
+    "算法 / 空间数据结构"
+  ],
+  [
+    "Timetable Generator",
+    "टाइमटेबल जनरेटर",
+    "Générateur d’emplois du temps",
+    "Generador de horarios",
+    "课程表生成器"
+  ],
+  [
+    "Personal Website V2",
+    "पर्सनल वेबसाइट V2",
+    "Site personnel V2",
+    "Sitio personal V2",
+    "个人网站 V2"
+  ],
+  ["Retro Games", "रेट्रो गेम्स", "Jeux rétro", "Juegos retro", "复古游戏"],
+  [
+    "Doubt Redressal",
+    "सवालों के जवाब",
+    "Questions et réponses",
+    "Resolución de dudas",
+    "答疑平台"
+  ],
+  [
+    "Track My Health",
+    "ट्रैक माय हेल्थ",
+    "Suivi de santé",
+    "Seguimiento de salud",
+    "健康追踪"
+  ],
+  ["DNS Server", "DNS सर्वर", "Serveur DNS", "Servidor DNS", "DNS 服务器"],
+  [
+    "Personal Website V1",
+    "पर्सनल वेबसाइट V1",
+    "Site personnel V1",
+    "Sitio personal V1",
+    "个人网站 V1"
+  ],
+  [
+    "Automated timetable generation for educational institutions, bringing classes, rooms, and resources into one schedule.",
+    "शैक्षणिक संस्थानों के लिए स्वचालित टाइमटेबल: कक्षाएँ, कमरे और संसाधन एक शेड्यूल में।",
+    "Génération automatique d’emplois du temps pour les établissements, réunissant cours, salles et ressources dans un même planning.",
+    "Generación automática de horarios para centros educativos, combinando clases, aulas y recursos en una planificación.",
+    "为教育机构自动生成课程表，将课程、教室与资源统一安排。"
+  ],
+  [
+    "An earlier portfolio built with reusable React components, hooks, and a responsive Tailwind layout.",
+    "पुनः उपयोग योग्य React components, hooks और responsive Tailwind layout से बना मेरा पिछला पोर्टफ़ोलियो।",
+    "Un ancien portfolio avec composants React réutilisables, hooks et mise en page responsive Tailwind.",
+    "Un portfolio anterior con componentes React reutilizables, hooks y diseño adaptable con Tailwind.",
+    "早期作品集，采用可复用 React 组件、hooks 和 Tailwind 响应式布局。"
+  ],
+  [
+    "Small browser games, including Snake and Simon, exploring JavaScript through a little nostalgia.",
+    "Snake और Simon जैसे छोटे ब्राउज़र गेम्स से JavaScript सीखी, थोड़ी पुरानी यादों के साथ।",
+    "De petits jeux de navigateur, dont Snake et Simon, pour explorer JavaScript avec un peu de nostalgie.",
+    "Pequeños juegos de navegador, como Snake y Simon, para explorar JavaScript con algo de nostalgia.",
+    "通过贪吃蛇和 Simon 等浏览器小游戏，在怀旧中探索 JavaScript。"
+  ],
+  [
+    "A place for students’ questions and answers, built across React, Redux, a Node API, and MongoDB.",
+    "छात्रों के सवालों और जवाबों का मंच, React, Redux, Node API और MongoDB से बनाया।",
+    "Un espace de questions-réponses pour les étudiants, avec React, Redux, une API Node et MongoDB.",
+    "Un espacio de preguntas y respuestas para estudiantes, con React, Redux, una API Node y MongoDB.",
+    "使用 React、Redux、Node API 和 MongoDB，为学生构建问答平台。"
+  ],
+  [
+    "Health data visualizations, authentication, and an Electron desktop app built around a full-stack web application.",
+    "हेल्थ डेटा विज़ुअलाइज़ेशन, ऑथेंटिकेशन और फ़ुल स्टैक वेब ऐप पर आधारित Electron डेस्कटॉप ऐप।",
+    "Visualisation de données de santé, authentification et application desktop Electron autour d’une application web Full Stack.",
+    "Visualizaciones de salud, autenticación y una aplicación de escritorio Electron sobre una aplicación web Full Stack.",
+    "围绕全栈 Web 应用，提供健康数据可视化、身份认证及 Electron 桌面应用。"
+  ],
+  [
+    "A web interface for querying and managing DNS records, backed by Express, MySQL, and AWS.",
+    "Express, MySQL और AWS पर आधारित DNS रिकॉर्ड की खोज और प्रबंधन का वेब इंटरफ़ेस।",
+    "Une interface web pour interroger et gérer les enregistrements DNS, avec Express, MySQL et AWS.",
+    "Interfaz web para consultar y gestionar registros DNS, con Express, MySQL y AWS.",
+    "基于 Express、MySQL 和 AWS 的 DNS 记录查询与管理 Web 界面。"
+  ],
+  [
+    "My first personal website. HTML, CSS, Bootstrap, and the beginnings of a habit of building in public.",
+    "मेरी पहली पर्सनल वेबसाइट। HTML, CSS, Bootstrap और अपना काम खुले में साझा करने की शुरुआत।",
+    "Mon premier site personnel. HTML, CSS, Bootstrap, et le début de l’habitude de partager mes créations.",
+    "Mi primer sitio personal. HTML, CSS, Bootstrap y el comienzo de compartir lo que construyo.",
+    "我的第一个个人网站。使用 HTML、CSS 和 Bootstrap，也由此开始公开分享自己的作品。"
+  ],
+  [
+    "A commercial website for an agriculture company, built with a peer and deployed on Google Cloud.",
+    "एक साथी के साथ कृषि कंपनी की व्यावसायिक वेबसाइट बनाई और Google Cloud पर डिप्लॉय की।",
+    "Un site commercial pour une entreprise agricole, créé avec un camarade et déployé sur Google Cloud.",
+    "Sitio comercial para una empresa agrícola, creado con un compañero y desplegado en Google Cloud.",
+    "与同伴共同开发农业公司的商业网站，并部署在 Google Cloud 上。"
+  ],
+  [
+    "Completed the Cloud Engineering and Data Science & ML tracks, with hands-on work in hosting, Cloud DNS, and Maps APIs.",
+    "Cloud Engineering और Data Science & ML ट्रैक पूरे किए; hosting, Cloud DNS और Maps API पर व्यावहारिक काम किया।",
+    "Parcours Cloud Engineering et Data Science & ML terminés, avec pratique de l’hébergement, de Cloud DNS et des API Maps.",
+    "Completé los itinerarios de Cloud Engineering y Data Science & ML, con práctica en alojamiento, Cloud DNS y APIs de Maps.",
+    "完成云工程及数据科学与机器学习学习路径，实践托管、Cloud DNS 与 Maps API。"
+  ],
+  [
+    "SCHEDULING / AUTOMATION",
+    "शेड्यूलिंग / ऑटोमेशन",
+    "PLANIFICATION / AUTOMATISATION",
+    "PLANIFICACIÓN / AUTOMATIZACIÓN",
+    "排课 / 自动化"
+  ],
+  [
+    "WEB / ITERATION 02",
+    "वेब / संस्करण 02",
+    "WEB / VERSION 02",
+    "WEB / VERSIÓN 02",
+    "WEB / 第二版"
+  ],
+  [
+    "PLAY / JAVASCRIPT",
+    "खेल / JAVASCRIPT",
+    "JEUX / JAVASCRIPT",
+    "JUEGOS / JAVASCRIPT",
+    "游戏 / JAVASCRIPT"
+  ],
+  [
+    "EDUCATION / MERN",
+    "शिक्षा / MERN",
+    "ÉDUCATION / MERN",
+    "EDUCACIÓN / MERN",
+    "教育 / MERN"
+  ],
+  [
+    "HEALTH / DESKTOP + WEB",
+    "स्वास्थ्य / डेस्कटॉप + वेब",
+    "SANTÉ / DESKTOP + WEB",
+    "SALUD / ESCRITORIO + WEB",
+    "健康 / 桌面与 WEB"
+  ],
+  [
+    "NETWORKS / FULL STACK",
+    "नेटवर्क / फ़ुल स्टैक",
+    "RÉSEAUX / FULL STACK",
+    "REDES / FULL STACK",
+    "网络 / 全栈"
+  ],
+  [
+    "WEB / WHERE IT STARTED",
+    "वेब / शुरुआत",
+    "WEB / LES DÉBUTS",
+    "WEB / EL COMIENZO",
+    "WEB / 起点"
+  ],
+  [
+    "CLIENT WORK / COLLABORATION",
+    "क्लाइंट काम / सहयोग",
+    "CLIENT / COLLABORATION",
+    "CLIENTES / COLABORACIÓN",
+    "客户项目 / 协作"
+  ],
+  [
+    "LEARNING / CLOUD SYSTEMS",
+    "सीखना / क्लाउड सिस्टम",
+    "APPRENTISSAGE / CLOUD",
+    "APRENDIZAJE / CLOUD",
+    "学习 / 云系统"
+  ],
+  [
+    "Read about",
+    "इसके बारे में पढ़ें:",
+    "En savoir plus :",
+    "Leer sobre",
+    "了解"
+  ],
+  [
+    "Impact chapters",
+    "काम के अध्याय",
+    "Chapitres des réalisations",
+    "Capítulos de trabajo",
+    "工作章节"
+  ],
+  [
+    "Approve · Answer · Steer",
+    "अनुमति दें · जवाब दें · निर्देश दें",
+    "Approuver · Répondre · Piloter",
+    "Aprobar · Responder · Dirigir",
+    "审批 · 回答 · 引导"
+  ]
+]

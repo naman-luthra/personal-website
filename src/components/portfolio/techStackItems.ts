@@ -1,0 +1,61 @@
+import {
+  SiGo,
+  SiNodedotjs,
+  SiPython,
+  SiReact,
+  SiTypescript,
+} from "react-icons/si";
+
+// Positions are relative to the portrait, so the icons keep framing it at any size.
+export const techStackItems = [
+  {
+    id: "react",
+    name: "React",
+    Icon: SiReact,
+    color: "#8bc9e0",
+    x: 0,
+    y: 0.16,
+    size: 76,
+    tilt: -12,
+  },
+  {
+    id: "typescript",
+    name: "TypeScript",
+    Icon: SiTypescript,
+    color: "#68aff0",
+    x: 0.94,
+    y: 0.01,
+    size: 65,
+    tilt: 11,
+  },
+  {
+    id: "go",
+    name: "Go",
+    Icon: SiGo,
+    color: "#9ecddb",
+    x: -0.015,
+    y: 0.72,
+    size: 80,
+    tilt: -9,
+  },
+  {
+    id: "python",
+    name: "Python",
+    Icon: SiPython,
+    color: "#91b7df",
+    x: 1,
+    y: 0.64,
+    size: 70,
+    tilt: 12,
+  },
+  {
+    id: "node",
+    name: "Node.js",
+    Icon: SiNodedotjs,
+    color: "#abc4ac",
+    x: 0.72,
+    y: 1,
+    size: 62,
+    tilt: -8,
+  },
+] as const;
