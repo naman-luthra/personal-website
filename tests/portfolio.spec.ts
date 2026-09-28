@@ -1,6 +1,6 @@
-import { expect, test, chromium } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
-test("renders the 3D scene without browser errors and remembers motion preferences", async ({
+test("renders the introduction without browser errors and remembers motion preferences", async ({
   page,
 }) => {
   const errors: string[] = [];
@@ -9,7 +9,7 @@ test("renders the 3D scene without browser errors and remembers motion preferenc
   await expect(
     page.getByRole("heading", { name: "Hi, I’m Naman." }),
   ).toBeVisible();
-  await expect(page.locator(".sculpture-canvas.is-ready canvas")).toBeVisible();
+  await expect(page.locator(".bento-tile")).toHaveCount(7);
   await page.getByRole("button", { name: "Motion on" }).click();
   await expect(
     page.getByRole("button", { name: "Motion off" }),
@@ -24,10 +24,25 @@ test("introduces Naman before work, experience, and personal projects", async ({
   page,
 }) => {
   await page.goto("/");
-  await expect(page.locator(".intro-copy")).toContainText("BITS Pilani");
-  await expect(page.locator(".intro-copy")).toContainText("UI infrastructure");
-  await expect(page.locator(".intro-copy")).toContainText("Whatfix");
-  await expect(page.locator(".intro-photo img")).toBeVisible();
+  const intro = page.locator("#home");
+  await expect(page.locator(".bento-intro")).toContainText("UI infrastructure");
+  await expect(page.locator(".bento-intro")).toContainText("Whatfix");
+  await expect(page.locator(".bento-photo img")).toBeVisible();
+  await expect(page.locator(".bento-now")).toContainText(
+    "Software Engineer, G6",
+  );
+  await expect(page.locator(".bento-edu")).toContainText("BITS Pilani");
+  await expect(page.locator(".bento-place")).toContainText("Bengaluru");
+  await expect(intro.getByRole("link", { name: /Read it/ })).toHaveAttribute(
+    "href",
+    /docs\.google\.com\/document\/d\/.+\/preview$/,
+  );
+  await expect(
+    intro.getByRole("link", { name: /Download PDF/ }),
+  ).toHaveAttribute("href", /export\?format=pdf$/);
+  // Headline metrics belong to the work stories, not the introduction.
+  await expect(intro).not.toContainText("90%");
+  await expect(intro).not.toContainText("Rust");
   expect(
     await page
       .locator("main > section")
@@ -42,7 +57,11 @@ test("restores all five languages with persistent translated content and working
 }) => {
   await page.setViewportSize({ width: 973, height: 936 });
   await page.goto("/");
-  const selector = page.locator(".language-switcher select");
+  const trigger = page.locator(".lang-trigger");
+  const choose = async (code: string) => {
+    await trigger.click();
+    await page.locator(`#lang-${code}`).click();
+  };
   for (const [code, lang, greeting, work, project] of [
     ["hin", "hi", "नमस्ते, मैं नमन हूँ", "मैंने", "टाइमटेबल जनरेटर"],
     [
@@ -55,7 +74,7 @@ test("restores all five languages with persistent translated content and working
     ["spa", "es", "Hola, soy Naman", "desarrollo", "Generador de horarios"],
     ["chi", "zh", "你好，我是 Naman", "开发服务器", "课程表生成器"],
   ]) {
-    await selector.selectOption(code);
+    await choose(code);
     await expect(page.locator("html")).toHaveAttribute("lang", lang);
     await expect(page.locator("h1")).toContainText(greeting);
     await expect(page.locator("#app-bundler > p").first()).toContainText(work);
@@ -70,7 +89,7 @@ test("restores all five languages with persistent translated content and working
         `${code} at ${width}px`,
       ).toBe(true);
       const headerFits = await page
-        .locator(".site-header")
+        .locator(".nav-shell")
         .evaluate((element) =>
           [...element.children]
             .filter((child) => getComputedStyle(child).display !== "none")
@@ -81,14 +100,23 @@ test("restores all five languages with persistent translated content and working
       expect(headerFits, `${code} header at ${width}px`).toBe(true);
     }
   }
-  await selector.selectOption("spa");
+  await choose("spa");
   await page.reload();
-  await expect(selector).toHaveValue("spa");
+  await expect(trigger).toContainText("Español");
   await expect(page.locator("h1")).toContainText("Hola, soy Naman");
   await expect(page.locator("html")).toHaveAttribute("lang", "es");
-  await selector.selectOption("eng");
+  // The menu is keyboard operable: open, move, select, and close with Escape.
+  await trigger.focus();
+  await page.keyboard.press("ArrowDown");
+  await expect(page.getByRole("listbox")).toBeVisible();
+  await page.keyboard.press("Home");
+  await page.keyboard.press("Enter");
   await expect(page.locator("h1")).toHaveText("Hi, I’m Naman.");
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(trigger).toBeFocused();
+  await trigger.click();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("listbox")).toHaveCount(0);
 });
 
 test("scrolling and chapter links select the matching impact visualization", async ({
@@ -232,18 +260,33 @@ test("slack-notify demo supports decisions, answers, follow-ups and keyboard dia
   );
 });
 
-test("career details expand and email can be copied", async ({
+test("work and education timelines expand, and email can be copied", async ({
   page,
   context,
 }) => {
   await context.grantPermissions(["clipboard-read", "clipboard-write"]);
   await page.goto("/");
-  const item = page.locator(".experience-item").nth(1);
-  await item.locator("summary").click();
-  await expect(item).toHaveAttribute("open", "");
-  await expect(item.locator(".experience-content")).toContainText("42% to 90%");
-  await item.locator("summary").click();
-  await expect(item).not.toHaveAttribute("open");
+  const groups = page.locator("#journey .tl-group");
+  await expect(groups.nth(0).locator(".tl-group-head")).toContainText("Work");
+  await expect(groups.nth(0).locator(".tl-item")).toHaveCount(4);
+  await expect(groups.nth(1)).toHaveAttribute("id", "education");
+  await expect(groups.nth(1).locator(".tl-item").first()).toContainText(
+    "BITS Pilani",
+  );
+  const rubrik = groups.nth(0).locator(".tl-item").first();
+  await expect(rubrik).toContainText("40s to 8s");
+  await expect(rubrik).not.toContainText("1,000+ test files");
+  const more = rubrik.getByRole("button", { name: "4 more" });
+  await more.click();
+  await expect(rubrik).toContainText("1,000+ test files");
+  await expect(
+    rubrik.getByRole("button", { name: "Show less" }),
+  ).toHaveAttribute("aria-expanded", "true");
+  await rubrik.getByRole("button", { name: "Show less" }).click();
+  await expect(rubrik).not.toContainText("1,000+ test files");
+  await expect(groups.nth(0).locator(".tl-item").nth(1)).toContainText(
+    "42% to 90%",
+  );
   await page.getByRole("button", { name: "Copy email address" }).click();
   await expect(page.locator("#contact").getByRole("status")).toHaveText(
     "Email copied!",
@@ -296,7 +339,7 @@ test("respects reduced motion and has no horizontal overflow across screen sizes
       `overflow at ${width}px`,
     ).toBe(true);
     const titleFits = await page
-      .locator(".intro-copy h1")
+      .locator(".bento-intro h1")
       .evaluateAll((elements) =>
         elements.every(
           (element) => element.getBoundingClientRect().right <= innerWidth,
@@ -323,7 +366,8 @@ test("the content and tech icons remain usable without JavaScript", async ({
   await expect(
     page.getByRole("heading", { name: "Hi, I’m Naman." }),
   ).toBeVisible();
-  await expect(page.locator(".tech-stack-fallback")).toBeVisible();
+  await expect(page.locator(".bento-stack")).toBeVisible();
+  await expect(page.locator(".bento-marquee svg").first()).toBeVisible();
   await expect(page.locator(".impact-chapter")).toHaveCount(8);
   await expect(page.locator(".project-row")).toHaveCount(3);
   await expect(page.locator("#hilbert-r-tree .hilbert-map")).toBeVisible();
@@ -339,20 +383,41 @@ test("the content and tech icons remain usable without JavaScript", async ({
   await context.close();
 });
 
-test("falls back gracefully when WebGL is unavailable", async () => {
-  const browser = await chromium.launch({
-    channel: "chrome",
-    args: ["--disable-webgl"],
+test("contact form posts to Netlify Forms and falls back to email on failure", async ({
+  page,
+}) => {
+  let body = "";
+  await page.route("**/__forms.html", async (route) => {
+    body = route.request().postData() ?? "";
+    await route.fulfill({ status: 200, body: "" });
   });
-  try {
-    const page = await browser.newPage();
-    await page.goto("http://127.0.0.1:3000");
-    await expect(
-      page.getByRole("heading", { name: "Hi, I’m Naman." }),
-    ).toBeVisible();
-    await expect(page.locator(".tech-stack-fallback")).toBeVisible();
-    await expect(page.locator(".sculpture-canvas.is-ready")).toHaveCount(0);
-  } finally {
-    await browser.close();
-  }
+  await page.goto("/#contact");
+  const form = page.locator("form.contact-form");
+  await form.getByPlaceholder("Your name").fill("Ada");
+  await form.getByPlaceholder("Where I can reply").fill("ada@example.com");
+  await form.getByRole("radio", { name: "A project idea" }).click();
+  await form.getByPlaceholder("What are you building?").fill("A compiler");
+  await form.getByRole("button", { name: /Send it/ }).click();
+  await expect(form.getByRole("status")).toContainText("Message delivered.");
+  const fields = new URLSearchParams(body);
+  expect(fields.get("form-name")).toBe("contact");
+  expect(fields.get("name")).toBe("Ada");
+  expect(fields.get("email")).toBe("ada@example.com");
+  expect(fields.get("topic")).toBe("A project idea");
+  expect(fields.get("message")).toBe("A compiler");
+  expect(fields.get("bot-field")).toBe("");
+
+  await form.getByRole("button", { name: /Send another/ }).click();
+  await page.unroute("**/__forms.html");
+  await page.route("**/__forms.html", (route) =>
+    route.fulfill({ status: 500, body: "" }),
+  );
+  await form.getByPlaceholder("Your name").fill("Ada");
+  await form.getByPlaceholder("Where I can reply").fill("ada@example.com");
+  await form.getByPlaceholder("What are you building?").fill("A compiler");
+  await form.getByRole("button", { name: /Send it/ }).click();
+  await expect(form.getByRole("alert").getByRole("link")).toHaveAttribute(
+    "href",
+    "mailto:namanluthra31@gmail.com",
+  );
 });

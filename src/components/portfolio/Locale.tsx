@@ -117,31 +117,3 @@ export function Localized({ children }: { children: ReactNode }) {
     });
   return <>{visit(children)}</>;
 }
-
-export function LanguageSwitcher() {
-  const { code, setLanguage, t } = useLocale();
-  return (
-    <label className="language-switcher">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M3 5h12M9 3v2m4 0c-1 6-4 9-9 11m1-8c1 4 4 7 8 8m1 5 4-11 4 11m-6-4h4" />
-      </svg>
-      <select
-        aria-label={t("Choose language")}
-        value={code}
-        onChange={(event) => {
-          if (isLanguage(event.target.value)) setLanguage(event.target.value);
-        }}
-      >
-        {languages.map((language) => (
-          <option
-            key={language.code}
-            value={language.code}
-            lang={language.lang}
-          >
-            {language.name}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-}

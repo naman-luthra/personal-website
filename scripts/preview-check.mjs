@@ -25,10 +25,6 @@ await page.screenshot({
   animations: "disabled",
   path: `${output}/desktop-hero.png`,
 });
-console.log(
-  "Scene ready:",
-  await page.locator(".sculpture-canvas.is-ready").count(),
-);
 for (const [selector, filename] of [
   ["#work", "desktop-impact"],
   ["#tooling", "desktop-go-migrations"],
@@ -89,7 +85,8 @@ console.log(
 );
 if (feedback) {
   for (const code of ["hin", "fre", "spa", "chi", "eng"]) {
-    await page.locator(".language-switcher select").selectOption(code);
+    await page.locator(".lang-trigger").click();
+    await page.locator(`#lang-${code}`).click();
     await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
     await page.waitForTimeout(900);
     await page.screenshot({
@@ -140,10 +137,10 @@ for (const [selector, filename] of [
   });
 }
 if (introOnly) {
-  await page.locator(".intro-art").scrollIntoViewIfNeeded();
+  await page.locator(".bento-stack").scrollIntoViewIfNeeded();
   await page.waitForTimeout(300);
   await page.screenshot({
-    path: `${output}/mobile-tech-stack.png`,
+    path: `${output}/mobile-intro-tiles.png`,
     animations: "disabled",
   });
   const fallbackContext = await browser.newContext({
@@ -152,8 +149,8 @@ if (introOnly) {
   });
   const fallbackPage = await fallbackContext.newPage();
   await fallbackPage.goto("http://127.0.0.1:3000");
-  await fallbackPage.locator(".intro-art").scrollIntoViewIfNeeded();
-  await fallbackPage.screenshot({ path: `${output}/mobile-tech-fallback.png` });
+  await fallbackPage.locator(".bento-stack").scrollIntoViewIfNeeded();
+  await fallbackPage.screenshot({ path: `${output}/mobile-intro-no-js.png` });
   await fallbackContext.close();
 }
 console.log(

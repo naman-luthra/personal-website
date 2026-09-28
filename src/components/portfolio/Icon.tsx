@@ -95,22 +95,3 @@ export function Icon({
     </svg>
   );
 }
-
-export function Asterisk({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      width="56"
-      height="56"
-      viewBox="0 0 64 64"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M32 3v58M3 32h58M11.5 11.5l41 41m-41 0 41-41"
-        stroke="currentColor"
-        strokeWidth="10"
-      />
-    </svg>
-  );
-}

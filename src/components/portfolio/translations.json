@@ -39,7 +39,7 @@
     "你好，我是 Naman"
   ],
   [
-    "A software engineer who likes understanding how things work—and making them work a little better.",
+    "A software engineer who likes understanding how things work and making them work a little better.",
     "मैं एक सॉफ़्टवेयर इंजीनियर हूँ। मुझे चीज़ों को समझना और उन्हें थोड़ा बेहतर बनाना पसंद है।",
     "Ingénieur logiciel, j’aime comprendre comment les choses fonctionnent et les améliorer.",
     "Soy ingeniero de software. Me gusta entender cómo funcionan las cosas y hacer que funcionen un poco mejor.",
@@ -215,11 +215,11 @@
     "起点"
   ],
   [
-    "B.E. Computer Science Engineering · 2020–2024",
-    "B.E. कंप्यूटर साइंस इंजीनियरिंग · 2020–2024",
-    "B.E. en informatique · 2020–2024",
-    "B.E. en Ingeniería Informática · 2020–2024",
-    "计算机科学工程学士 · 2020–2024"
+    "B.E. Computer Science Engineering · 2020 to 2024",
+    "B.E. कंप्यूटर साइंस इंजीनियरिंग · 2020 से 2024",
+    "B.E. en informatique · 2020 à 2024",
+    "B.E. en Ingeniería Informática · 2020 a 2024",
+    "计算机科学工程学士 · 2020 至 2024"
   ],
   [
     "OOP Teaching Assistant · Full Stack + API course development",
@@ -357,21 +357,20 @@
     "请选择邮箱地址进行复制。"
   ],
   [
-    "Thoughtfully engineered.",
-    "सोच-समझकर बनाया।",
-    "Conçu avec soin.",
-    "Creado con cuidado.",
-    "用心构建。"
-  ],
-  [
-    "Endlessly curious.",
-    "जिज्ञासा का अंत नहीं।",
-    "Toujours curieux.",
-    "Siempre curioso.",
-    "始终好奇。"
+    "Software engineer at Rubrik, based in Bengaluru.",
+    "Rubrik में सॉफ़्टवेयर इंजीनियर, बेंगलुरु में।",
+    "Ingénieur logiciel chez Rubrik, basé à Bengaluru.",
+    "Ingeniero de software en Rubrik, con base en Bengaluru.",
+    "Rubrik 软件工程师，常驻班加罗尔。"
   ],
   ["Say hello", "नमस्ते कहें", "Dites bonjour", "Saluda", "打个招呼"],
-  ["BASED IN INDIA", "भारत में स्थित", "BASÉ EN INDE", "EN INDIA", "常驻印度"],
+  [
+    "BASED IN BENGALURU",
+    "बेंगलुरु में स्थित",
+    "BASÉ À BENGALURU",
+    "EN BENGALURU",
+    "常驻班加罗尔"
+  ],
   ["BACK TO TOP", "ऊपर जाएँ", "RETOUR EN HAUT", "VOLVER ARRIBA", "返回顶部"],
   [
     "INSIDE WORK / RUBRIK & WHATFIX",
@@ -841,8 +840,8 @@
     "负责完整技术栈：本地 Claude hooks、基于 Redis 的轮询、Slack 服务交互及数据库变更。"
   ],
   [
-    "Approve or decline with a reason, answer questions, view session context, and send the next instruction—all from a Slack DM.",
-    "अनुमति दें या कारण के साथ मना करें, सवालों के जवाब दें, सेशन संदर्भ देखें और अगला निर्देश भेजें—सब Slack DM से।",
+    "Approve or decline with a reason, answer questions, view session context, and send the next instruction, all from a Slack DM.",
+    "अनुमति दें या कारण के साथ मना करें, सवालों के जवाब दें, सेशन संदर्भ देखें और अगला निर्देश भेजें, सब Slack DM से।",
     "Approuver ou refuser avec un motif, répondre, consulter le contexte et envoyer la suite : tout depuis un DM Slack.",
     "Aprobar o rechazar con un motivo, responder, ver el contexto y enviar la siguiente instrucción, todo desde un mensaje de Slack.",
     "批准或附理由拒绝、回答问题、查看会话上下文、发送后续指令，全都可在 Slack 私信中完成。"
@@ -883,8 +882,8 @@
     "从基础改进，获得更好的答案。"
   ],
   [
-    "I introduced hybrid search and a reranking model into Whatfix’s retrieval-augmented generation pipeline, improving product accuracy from 42% to 90%. I also built a benchmarking pipeline for observability and experiments, combining deterministic checks with LLM-as-a-judge evaluations—an approach that was still relatively novel at the time.",
-    "मैंने Whatfix की RAG पाइपलाइन में hybrid search और reranking model जोड़ा, जिससे प्रोडक्ट की सटीकता 42% से 90% हुई। निगरानी और प्रयोगों के लिए एक benchmarking pipeline भी बनाई, जिसमें deterministic checks और LLM-as-a-judge मूल्यांकन साथ थे—उस समय यह तरीका अपेक्षाकृत नया था।",
+    "I introduced hybrid search and a reranking model into Whatfix’s retrieval-augmented generation pipeline, improving product accuracy from 42% to 90%. I also built a benchmarking pipeline for observability and experiments, combining deterministic checks with LLM-as-a-judge evaluations, an approach that was still relatively novel at the time.",
+    "मैंने Whatfix की RAG पाइपलाइन में hybrid search और reranking model जोड़ा, जिससे प्रोडक्ट की सटीकता 42% से 90% हुई। निगरानी और प्रयोगों के लिए एक benchmarking pipeline भी बनाई, जिसमें deterministic checks और LLM-as-a-judge मूल्यांकन साथ थे। उस समय यह तरीका अपेक्षाकृत नया था।",
     "J’ai introduit la recherche hybride et un modèle de reranking dans le pipeline RAG de Whatfix, faisant passer la précision de 42% à 90%. J’ai aussi créé un pipeline de benchmarking pour l’observabilité et les expérimentations, combinant des contrôles déterministes et des évaluations LLM-as-a-judge, une approche encore relativement nouvelle à l’époque.",
     "Introduje búsqueda híbrida y un modelo de reranking en el pipeline RAG de Whatfix, elevando la precisión del 42% al 90%. También construí un pipeline de benchmarking para observabilidad y experimentación, combinando comprobaciones deterministas con evaluaciones LLM-as-a-judge, un enfoque todavía relativamente novedoso entonces.",
     "我在 Whatfix 的 RAG 流水线中引入混合搜索和重排序模型，将产品准确率从 42% 提升至 90%。我还构建了用于可观测性和实验的基准评估流水线，将确定性检查与 LLM-as-a-judge 评估结合；在当时，这仍是一种相对新颖的方法。"
@@ -975,32 +974,32 @@
     "全栈实习生"
   ],
   [
-    "MAY 2025 — PRESENT",
-    "मई 2025 — वर्तमान",
-    "MAI 2025 — AUJOURD’HUI",
-    "MAY 2025 — ACTUALIDAD",
-    "2025 年 5 月 — 至今"
+    "MAY 2025 → PRESENT",
+    "मई 2025 → वर्तमान",
+    "MAI 2025 → AUJOURD’HUI",
+    "MAY 2025 → ACTUALIDAD",
+    "2025 年 5 月 → 至今"
   ],
   [
-    "JUL 2024 — MAY 2025",
-    "जुलाई 2024 — मई 2025",
-    "JUIL. 2024 — MAI 2025",
-    "JUL 2024 — MAY 2025",
-    "2024 年 7 月 — 2025 年 5 月"
+    "JUL 2024 → MAY 2025",
+    "जुलाई 2024 → मई 2025",
+    "JUIL. 2024 → MAI 2025",
+    "JUL 2024 → MAY 2025",
+    "2024 年 7 月 → 2025 年 5 月"
   ],
   [
-    "JAN 2024 — JUN 2024",
-    "जनवरी 2024 — जून 2024",
-    "JANV. 2024 — JUIN 2024",
-    "ENE 2024 — JUN 2024",
-    "2024 年 1 月 — 6 月"
+    "JAN 2024 → JUN 2024",
+    "जनवरी 2024 → जून 2024",
+    "JANV. 2024 → JUIN 2024",
+    "ENE 2024 → JUN 2024",
+    "2024 年 1 月 → 6 月"
   ],
   [
-    "AUG 2022 — APR 2023",
-    "अगस्त 2022 — अप्रैल 2023",
-    "AOÛT 2022 — AVR. 2023",
-    "AGO 2022 — ABR 2023",
-    "2022 年 8 月 — 2023 年 4 月"
+    "AUG 2022 → APR 2023",
+    "अगस्त 2022 → अप्रैल 2023",
+    "AOÛT 2022 → AVR. 2023",
+    "AGO 2022 → ABR 2023",
+    "2022 年 8 月 → 2023 年 4 月"
   ],
   [
     "Promoted from G5 to G6 in May 2026",
@@ -1395,5 +1394,197 @@
     "Approuver · Répondre · Piloter",
     "Aprobar · Responder · Dirigir",
     "审批 · 回答 · 引导"
-  ]
+  ],
+  ["Contact", "संपर्क", "Contact", "Contacto", "联系"],
+  [
+    "Naman Luthra, home",
+    "नमन लूथरा, होम",
+    "Naman Luthra, accueil",
+    "Naman Luthra, inicio",
+    "Naman Luthra，首页"
+  ],
+  ["NOW", "अभी", "ACTUELLEMENT", "AHORA", "现在"],
+  [
+    "Software Engineer, G6",
+    "सॉफ़्टवेयर इंजीनियर, G6",
+    "Ingénieur logiciel, G6",
+    "Ingeniero de software, G6",
+    "软件工程师，G6"
+  ],
+  [
+    "UI Platform · infrastructure and developer experience",
+    "UI प्लेटफ़ॉर्म · इन्फ्रास्ट्रक्चर और डेवलपर अनुभव",
+    "Plateforme UI · infrastructure et expérience développeur",
+    "Plataforma de UI · infraestructura y experiencia de desarrollo",
+    "UI 平台 · 基础设施与开发者体验"
+  ],
+  ["EDUCATION", "शिक्षा", "FORMATION", "EDUCACIÓN", "教育"],
+  [
+    "B.E. Computer Science",
+    "B.E. कंप्यूटर साइंस",
+    "B.E. en informatique",
+    "B.E. en Ingeniería Informática",
+    "计算机科学工程学士"
+  ],
+  ["Class of 2024", "2024 बैच", "Promotion 2024", "Promoción 2024", "2024 届"],
+  ["RESUME", "रिज़्यूमे", "CV", "CURRÍCULUM", "简历"],
+  [
+    "The one-page version",
+    "एक पन्ने में",
+    "La version d’une page",
+    "La versión de una página",
+    "一页纸版本"
+  ],
+  [
+    "Experience, projects and education in one place.",
+    "अनुभव, प्रोजेक्ट और शिक्षा, सब एक जगह।",
+    "Expérience, projets et formation au même endroit.",
+    "Experiencia, proyectos y educación en un solo lugar.",
+    "经历、项目和教育背景，一目了然。"
+  ],
+  ["Read it", "पढ़ें", "Le lire", "Leerlo", "阅读"],
+  [
+    "Download PDF",
+    "PDF डाउनलोड करें",
+    "Télécharger le PDF",
+    "Descargar PDF",
+    "下载 PDF"
+  ],
+  ["BASED IN", "स्थान", "BASÉ À", "CON BASE EN", "常驻"],
+  ["Bengaluru", "बेंगलुरु", "Bengaluru", "Bengaluru", "班加罗尔"],
+  [
+    "4 ROLES · 2022 → NOW",
+    "4 भूमिकाएँ · 2022 → अब",
+    "4 POSTES · 2022 → AUJOURD’HUI",
+    "4 PUESTOS · 2022 → HOY",
+    "4 段经历 · 2022 → 至今"
+  ],
+  ["more", "और", "de plus", "más", "条更多"],
+  ["Show less", "कम दिखाएँ", "Afficher moins", "Mostrar menos", "收起"],
+  ["Education", "शिक्षा", "Formation", "Educación", "教育"],
+  [
+    "COMPUTER SCIENCE · BITS PILANI",
+    "कंप्यूटर साइंस · BITS पिलानी",
+    "INFORMATIQUE · BITS PILANI",
+    "INFORMÁTICA · BITS PILANI",
+    "计算机科学 · BITS PILANI"
+  ],
+  [
+    "Teaching Assistant for Object-Oriented Programming.",
+    "ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग के लिए टीचिंग असिस्टेंट।",
+    "Assistant d’enseignement en programmation orientée objet.",
+    "Asistente de docencia de Programación Orientada a Objetos.",
+    "面向对象编程课程助教。"
+  ],
+  [
+    "Helped develop the Full Stack + API course.",
+    "Full Stack + API कोर्स तैयार करने में मदद की।",
+    "Participation à la conception du cours Full Stack + API.",
+    "Ayudé a desarrollar el curso de Full Stack + API.",
+    "参与开发 Full Stack + API 课程。"
+  ],
+  ["JEE Mains", "JEE मेन्स", "JEE Mains", "JEE Mains", "JEE Mains"],
+  [
+    "National engineering entrance",
+    "राष्ट्रीय इंजीनियरिंग प्रवेश परीक्षा",
+    "Concours national d’ingénierie",
+    "Examen nacional de ingreso a ingeniería",
+    "全国工程类入学考试"
+  ],
+  [
+    "99.84+ percentile",
+    "99.84+ पर्सेंटाइल",
+    "99,84+ centile",
+    "percentil 99,84+",
+    "99.84+ 百分位"
+  ],
+  [
+    "Infrastructure, web, or applied AI. Tell me what you’re building and I’ll get back to you, usually within a day.",
+    "इन्फ्रास्ट्रक्चर, वेब या एप्लाइड AI। बताइए आप क्या बना रहे हैं, मैं आमतौर पर एक दिन में जवाब देता हूँ।",
+    "Infrastructure, web ou IA appliquée. Dites-moi ce que vous construisez et je vous réponds, généralement sous 24 heures.",
+    "Infraestructura, web o IA aplicada. Cuéntame qué estás construyendo y te responderé, normalmente en un día.",
+    "基础设施、Web 或应用 AI。告诉我你在做什么，我通常会在一天内回复。"
+  ],
+  [
+    "Leave this empty",
+    "इसे खाली छोड़ें",
+    "Laissez ce champ vide",
+    "Deja esto vacío",
+    "请留空"
+  ],
+  [
+    "A role on my team",
+    "मेरी टीम में एक भूमिका",
+    "Un poste dans mon équipe",
+    "Un puesto en mi equipo",
+    "我的团队有职位"
+  ],
+  [
+    "A project idea",
+    "एक प्रोजेक्ट आइडिया",
+    "Une idée de projet",
+    "Una idea de proyecto",
+    "一个项目想法"
+  ],
+  [
+    "Just saying hi",
+    "बस नमस्ते कहना था",
+    "Juste dire bonjour",
+    "Solo saludar",
+    "打个招呼"
+  ],
+  [
+    "GOES STRAIGHT TO MY INBOX",
+    "सीधे मेरे इनबॉक्स में",
+    "ARRIVE DIRECTEMENT DANS MA BOÎTE",
+    "LLEGA DIRECTO A MI BANDEJA",
+    "直达我的收件箱"
+  ],
+  ["Send it", "भेजें", "Envoyer", "Enviar", "发送"],
+  ["Sending…", "भेजा जा रहा है…", "Envoi…", "Enviando…", "发送中…"],
+  ["Your name", "आपका नाम", "Votre nom", "Tu nombre", "你的名字"],
+  [
+    "Where I can reply",
+    "जवाब के लिए आपका ईमेल",
+    "Où vous répondre",
+    "Dónde puedo responderte",
+    "回复邮箱"
+  ],
+  ["Topic", "विषय", "Sujet", "Tema", "主题"],
+  [
+    "What are you building?",
+    "आप क्या बना रहे हैं?",
+    "Que construisez-vous ?",
+    "¿Qué estás construyendo?",
+    "你在做什么？"
+  ],
+  [
+    "Message delivered.",
+    "संदेश पहुँच गया।",
+    "Message envoyé.",
+    "Mensaje enviado.",
+    "消息已送达。"
+  ],
+  [
+    "Thanks for reaching out. I’ll reply soon.",
+    "संपर्क करने के लिए धन्यवाद। मैं जल्द जवाब दूँगा।",
+    "Merci de m’avoir écrit. Je vous réponds bientôt.",
+    "Gracias por escribir. Te responderé pronto.",
+    "感谢联系，我会尽快回复。"
+  ],
+  [
+    "Send another",
+    "एक और भेजें",
+    "En envoyer un autre",
+    "Enviar otro",
+    "再发一条"
+  ],
+  [
+    "That didn’t go through. Please email me directly at",
+    "संदेश नहीं भेजा जा सका। कृपया मुझे सीधे ईमेल करें:",
+    "L’envoi a échoué. Écrivez-moi directement à",
+    "No se pudo enviar. Escríbeme directamente a",
+    "发送失败。请直接发邮件至"
+  ],
+  ["Back to top", "ऊपर जाएँ", "Retour en haut", "Volver arriba", "返回顶部"]
 ]

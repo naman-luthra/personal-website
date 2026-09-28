@@ -3,13 +3,15 @@ export const contact = {
   phone: "+919991343007",
   github: "https://github.com/naman-luthra",
   linkedin: "https://www.linkedin.com/in/namanluthra/",
+  resume:
+    "https://docs.google.com/document/d/12SmlycNbI3C9dkyu3QEqVEUnBhpFjLUe4OjOXyWqwHk",
 };
 
 export const experience = [
   {
     company: "Rubrik",
     role: "Software Engineer · G6",
-    date: "MAY 2025 — PRESENT",
+    date: "MAY 2025 → PRESENT",
     note: "Promoted from G5 to G6 in May 2026",
     current: true,
     summary: "Building the UI platform and the products it powers.",
@@ -26,7 +28,7 @@ export const experience = [
   {
     company: "Whatfix",
     role: "Software Engineer",
-    date: "JUL 2024 — MAY 2025",
+    date: "JUL 2024 → MAY 2025",
     note: "R&D Global Hackathon 2024 · First place",
     current: false,
     summary:
@@ -41,7 +43,7 @@ export const experience = [
   {
     company: "Whatfix",
     role: "Software Engineer Intern",
-    date: "JAN 2024 — JUN 2024",
+    date: "JAN 2024 → JUN 2024",
     note: "Cross-platform systems, from the inside out",
     current: false,
     summary: "One testing framework. Web, hybrid, and native desktop apps.",
@@ -54,7 +56,7 @@ export const experience = [
   {
     company: "Basys.ai",
     role: "Full Stack Intern",
-    date: "AUG 2022 — APR 2023",
+    date: "AUG 2022 → APR 2023",
     note: "Selected from 2,860 candidates",
     current: false,
     summary: "From system architecture to a healthcare product in the wild.",

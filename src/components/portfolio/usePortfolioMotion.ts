@@ -43,16 +43,6 @@ export function usePortfolioMotion(
           },
         );
       });
-      gsap.to(".contact-asterisk", {
-        rotate: 160,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#contact",
-          start: "top bottom",
-          end: "bottom bottom",
-          scrub: 1,
-        },
-      });
       gsap.from(".hilbert-trace", {
         strokeDashoffset: 1,
         duration: 2.5,

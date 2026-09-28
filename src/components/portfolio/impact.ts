@@ -30,7 +30,7 @@ export type ImpactStory = ImpactBase &
     | { visual: "facts"; facts: { value: string; label: string }[] }
   );
 
-// Selected, measured outcomes from Naman's CV and February–July 2026 review.
+// Selected, measured outcomes from Naman's CV and February to July 2026 review.
 // Keep benchmark conditions alongside the results; forecasts are not shipped work.
 export const impact: ImpactStory[] = [
   {
@@ -198,7 +198,7 @@ export const impact: ImpactStory[] = [
       "I built slack-notify end to end so engineers could approve, answer, and steer their Claude Code sessions from Slack. Milano brings the session to your DMs when it needs you. Running on a DevPod with tmux, the work keeps going even when your laptop is asleep.",
     highlights: [
       "Owned the full stack: local Claude hooks, Redis-backed polling, Slack service interactions, and database changes.",
-      "Approve or decline with a reason, answer questions, view session context, and send the next instruction—all from a Slack DM.",
+      "Approve or decline with a reason, answer questions, view session context, and send the next instruction, all from a Slack DM.",
     ],
     tags: ["Claude Code", "Slack", "Redis", "Full-stack engineering"],
     metric: "10,000+",
@@ -217,7 +217,7 @@ export const impact: ImpactStory[] = [
     company: "WHATFIX / APPLIED AI",
     title: "Better answers.\nBuilt from the ground up.",
     description:
-      "I introduced hybrid search and a reranking model into Whatfix’s retrieval-augmented generation pipeline, improving product accuracy from 42% to 90%. I also built a benchmarking pipeline for observability and experiments, combining deterministic checks with LLM-as-a-judge evaluations—an approach that was still relatively novel at the time.",
+      "I introduced hybrid search and a reranking model into Whatfix’s retrieval-augmented generation pipeline, improving product accuracy from 42% to 90%. I also built a benchmarking pipeline for observability and experiments, combining deterministic checks with LLM-as-a-judge evaluations, an approach that was still relatively novel at the time.",
     tags: ["RAG", "Hybrid search", "Reranking", "LLM evaluation"],
     metric: "90%",
     label: "RAG product accuracy",

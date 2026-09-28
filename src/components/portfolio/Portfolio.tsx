@@ -1,23 +1,18 @@
 "use client";
 
-import { Localized, LanguageSwitcher } from "./Locale";
+import { Localized } from "./Locale";
 
-import Image from "next/image";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { Asterisk, Icon } from "./Icon";
-import { contact, experience, projects } from "./data";
-import ImpactSection from "./ImpactSection";
+import { Icon } from "./Icon";
+import { contact, projects } from "./data";
+import Contact from "./Contact";
+import Hero from "./Hero";
 import HilbertPreview from "./HilbertPreview";
+import ImpactSection from "./ImpactSection";
+import Journey from "./Journey";
+import SiteNav from "./SiteNav";
 import SmallProjects from "./SmallProjects";
-import Monogram from "./Monogram";
-import TechStack from "./TechStack";
 import { usePortfolioMotion } from "./usePortfolioMotion";
-
-const navigation = [
-  { id: "work", label: "Work" },
-  { id: "journey", label: "Experience" },
-  { id: "projects", label: "Projects" },
-];
 
 function ExternalLink({
   href,
@@ -190,10 +185,8 @@ function FitnessPreview() {
 export default function Portfolio() {
   const root = useRef<HTMLDivElement>(null);
   const progress = useRef<HTMLDivElement>(null);
-  const menuButton = useRef<HTMLButtonElement>(null);
   const copyTimeout = useRef<ReturnType<typeof setTimeout>>();
   const [motion, setMotion] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [copyState, setCopyState] = useState<"idle" | "copied" | "failed">(
     "idle",
@@ -256,18 +249,6 @@ export default function Portfolio() {
     };
   }, [motion]);
 
-  useEffect(() => {
-    if (!menuOpen) return;
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setMenuOpen(false);
-        menuButton.current?.focus();
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [menuOpen]);
-
   const toggleMotion = () => {
     const next = !motion;
     setMotion(next);
@@ -296,250 +277,17 @@ export default function Portfolio() {
           Skip to content
         </a>
         <div className="scroll-progress" ref={progress} aria-hidden="true" />
-        <header className="site-header">
-          <a
-            href="#home"
-            className="header-monogram"
-            aria-label="Naman Luthra, home"
-          >
-            <Monogram />
-          </a>
-          <nav
-            aria-label="Main navigation"
-            id="main-navigation"
-            className={menuOpen ? "main-nav is-open" : "main-nav"}
-          >
-            {navigation.map((item) => (
-              <a
-                href={`#${item.id}`}
-                key={item.id}
-                aria-current={
-                  activeSection === item.id ? "location" : undefined
-                }
-                onClick={() => setMenuOpen(false)}
-              >
-                <span className="nav-dot" />
-                {item.label}
-              </a>
-            ))}
-            <a
-              href="#contact"
-              className="nav-contact"
-              onClick={() => setMenuOpen(false)}
-            >
-              Let’s talk <Icon name="arrow" />
-            </a>
-          </nav>
-          <LanguageSwitcher />
-          <button
-            className="menu-toggle"
-            ref={menuButton}
-            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-            aria-expanded={menuOpen}
-            aria-controls="main-navigation"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <Icon name={menuOpen ? "close" : "menu"} />
-          </button>
-        </header>
+        <SiteNav activeSection={activeSection} />
 
         <main id="main">
-          <section
-            className="introduction section-shell"
-            id="home"
-            aria-labelledby="hero-heading"
-          >
-            <div className="intro-layout">
-              <div className="intro-copy">
-                <span className="eyebrow intro-kicker">A LITTLE ABOUT ME</span>
-                <h1 id="hero-heading">
-                  Hi, I’m Naman<span>.</span>
-                </h1>
-                <p className="intro-lead">
-                  A software engineer who likes understanding how things
-                  work—and making them work a little better.
-                </p>
-                <p>
-                  I work on UI infrastructure at Rubrik: build systems,
-                  developer tooling, and the foundations other engineers build
-                  on. Before that, I worked on applied AI at Whatfix. I studied
-                  Computer Science at BITS Pilani.
-                </p>
-                <div className="intro-links">
-                  <a className="button button-accent" href="#work">
-                    Some things I’ve worked on <Icon name="down" />
-                  </a>
-                  <ExternalLink
-                    href={contact.github}
-                    className="text-link social-link"
-                  >
-                    <Icon name="github" /> GitHub
-                  </ExternalLink>
-                  <ExternalLink
-                    href={contact.linkedin}
-                    className="text-link social-link"
-                  >
-                    <Icon name="linkedin" /> LinkedIn
-                  </ExternalLink>
-                </div>
-              </div>
-              <div className="intro-portrait">
-                <div className="intro-photo">
-                  <Image
-                    src="/profilePicFull.jpg"
-                    alt="Naman Luthra"
-                    fill
-                    priority
-                    sizes="(max-width: 760px) 75vw, 360px"
-                  />
-                </div>
-                <div className="intro-photo-note">
-                  <span>Nice to meet you.</span>
-                </div>
-                <TechStack enabled={motion} />
-              </div>
-            </div>
-            <div className="intro-highlights">
-              <a href="#journey">
-                <span className="eyebrow">NOW / RUBRIK</span>
-                <h2>Infrastructure & developer experience</h2>
-                <p>Software Engineer, G6 · UI Platform</p>
-              </a>
-              <a href="#intelligence">
-                <span className="eyebrow">BEFORE / WHATFIX</span>
-                <h2>Applied AI & product engineering</h2>
-                <p>Retrieval, enterprise search, and the web</p>
-              </a>
-              <a href="#education">
-                <span className="eyebrow">FOUNDATIONS / BITS PILANI</span>
-                <h2>Computer Science, class of 2024</h2>
-                <p>Ranked first in Data Structures & Algorithms</p>
-              </a>
-            </div>
-            <div className="intro-bottom">
-              <a href="#work">
-                A selection of my work below <Icon name="down" />
-              </a>
-              <button
-                className="motion-toggle"
-                aria-pressed={motion}
-                onClick={toggleMotion}
-              >
-                <Icon name={motion ? "pause" : "play"} />
-                <span>{motion ? "Motion on" : "Motion off"}</span>
-              </button>
-            </div>
-          </section>
+          <Hero
+            motion={motion}
+            toggleMotion={toggleMotion}
+            localTime={localTime}
+          />
 
           <ImpactSection />
-
-          <section id="journey" className="journey-section section-shell">
-            <div className="section-heading" data-reveal>
-              <SectionLabel number="02">THE JOURNEY SO FAR</SectionLabel>
-              <h2>
-                Always learning.
-                <br />
-                <span className="muted">Always building.</span>
-              </h2>
-              <p>
-                A few good teams.
-                <br />A lot of interesting problems.
-              </p>
-            </div>
-            <div className="experience-list">
-              {experience.map((job, index) => (
-                <details
-                  className="experience-item"
-                  key={`${job.company}-${job.role}`}
-                  open={index === 0 ? true : undefined}
-                  data-reveal
-                >
-                  <summary>
-                    <span className="experience-date eyebrow">
-                      {job.date}
-                      {job.current && (
-                        <span className="current-badge">
-                          <i className="status-dot" /> CURRENT
-                        </span>
-                      )}
-                    </span>
-                    <span className="experience-company">{job.company}</span>
-                    <span className="experience-role">{job.role}</span>
-                    <span className="experience-toggle">
-                      <Icon name="plus" />
-                    </span>
-                  </summary>
-                  <div className="experience-content">
-                    <p className="experience-note">{job.note}</p>
-                    <div>
-                      <h3>{job.summary}</h3>
-                      <ul>
-                        {job.details.map((detail) => (
-                          <li key={detail}>{detail}</li>
-                        ))}
-                      </ul>
-                      <p className="eyebrow experience-stack">{job.stack}</p>
-                    </div>
-                  </div>
-                </details>
-              ))}
-            </div>
-            <div className="career-foundations">
-              <div className="education" id="education">
-                <span className="education-icon" aria-hidden="true">
-                  ⌘
-                </span>
-                <div>
-                  <span className="eyebrow">WHERE IT STARTED</span>
-                  <h3>BITS Pilani</h3>
-                  <p>B.E. Computer Science Engineering · 2020–2024</p>
-                  <small>
-                    OOP Teaching Assistant · Full Stack + API course development
-                  </small>
-                </div>
-              </div>
-              <div className="achievement-strip" data-reveal>
-                <div>
-                  <span>01 / HACKATHON</span>
-                  <strong>First place</strong>
-                  <p>Whatfix R&D Global Hackathon, 2024</p>
-                </div>
-                <div>
-                  <span>02 / FOUNDATIONS</span>
-                  <strong>Top of the class</strong>
-                  <p>Data Structures & Algorithms · BITS Pilani</p>
-                </div>
-                <div>
-                  <span>03 / THE BEGINNING</span>
-                  <strong>
-                    99.84+<small>percentile</small>
-                  </strong>
-                  <p>JEE Mains, 2020</p>
-                </div>
-              </div>
-              <div className="toolbox">
-                <span className="eyebrow">SOME TOOLS I WORK WITH</span>
-                <div>
-                  {[
-                    "TypeScript",
-                    "React",
-                    "Next.js",
-                    "Go",
-                    "Rust",
-                    "Python",
-                    "C++",
-                    "Node.js",
-                    "Bazel",
-                    "SQL",
-                    "WebRTC",
-                    "Git",
-                  ].map((skill) => (
-                    <span key={skill}>{skill}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
+          <Journey />
 
           <section id="projects" className="projects-section section-shell">
             <div className="section-heading" data-reveal>
@@ -617,50 +365,7 @@ export default function Portfolio() {
             </div>
             <SmallProjects />
           </section>
-
-          <section id="contact" className="contact-section section-shell">
-            <div className="contact-top">
-              <SectionLabel number="04">
-                GOOD THINGS START WITH A CONVERSATION
-              </SectionLabel>
-              <span className="eyebrow">
-                <i className="status-dot" /> OPEN TO INTERESTING IDEAS
-              </span>
-            </div>
-            <a className="contact-heading" href={`mailto:${contact.email}`}>
-              <h2>
-                Looking for an engineer<span>?</span>
-              </h2>
-              <Asterisk className="contact-asterisk" />
-              <span className="contact-arrow">
-                <Icon name="arrow" />
-              </span>
-            </a>
-            <div className="contact-bottom">
-              <p>
-                Infrastructure, web, or applied AI.
-                <br />
-                Let’s talk about what you’re building.
-              </p>
-              <div className="email-group">
-                <a href={`mailto:${contact.email}`}>{contact.email}</a>
-                <button
-                  onClick={copyEmail}
-                  aria-label="Copy email address"
-                  className="copy-button"
-                >
-                  <Icon name={copyState === "copied" ? "check" : "copy"} />
-                </button>
-                <span className="copy-status" role="status">
-                  {copyState === "copied"
-                    ? "Email copied!"
-                    : copyState === "failed"
-                      ? "Please select the email to copy it."
-                      : ""}
-                </span>
-              </div>
-            </div>
-          </section>
+          <Contact copyEmail={copyEmail} copyState={copyState} />
         </main>
 
         <footer className="site-footer section-shell">
@@ -668,11 +373,7 @@ export default function Portfolio() {
             <a href="#home" className="wordmark" aria-label="Back to top">
               Naman Luthra
             </a>
-            <p>
-              Thoughtfully engineered.
-              <br />
-              Endlessly curious.
-            </p>
+            <p>Software engineer at Rubrik, based in Bengaluru.</p>
             <div className="footer-links">
               <ExternalLink href={contact.github}>GitHub</ExternalLink>
               <ExternalLink href={contact.linkedin}>LinkedIn</ExternalLink>
@@ -684,7 +385,7 @@ export default function Portfolio() {
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} NAMAN LUTHRA</span>
             <span>
-              BASED IN INDIA <span className="time-dot">·</span> {localTime}
+              BASED IN BENGALURU <span className="time-dot">·</span> {localTime}
             </span>
             <a href="#home">
               BACK TO TOP <Icon name="arrow" />
