@@ -20,14 +20,12 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Stock value screener (`/stocks`)
+## Stock value screener (`public/stock-tracker.html`)
 
-A screener over the S&P 500 (`src/content/stocks/universe.json`) that ranks companies by P/E or P/S and filters by market cap, sector and multi-year growth. Each company page shows ratio cards, annual/quarterly income statements, tagged news, Yahoo's "significant developments" and the top 5 competitors with their ratios.
+A self-contained, backend-free dashboard: open the file directly in a browser (or visit `/stock-tracker.html` on the site). It screens the S&P 500 (or any ticker list you paste) by P/E, P/S or PEG with minimum-market-cap, sector and multi-year growth filters, and each company page shows ratios, SEC-reported annual/quarterly results, tagged news and the top 5 competitors with their ratios.
 
-- Data comes from Yahoo Finance via [`yahoo-finance2`](https://github.com/gadicc/yahoo-finance2) — no API key needed.
-- Quotes for the whole universe load in ~5 batch calls; per-company fundamentals (P/S, growth history) are fetched in the background, largest companies first, and cached in memory for 12 hours. The table fills in as they arrive.
-- Because the cache is in-process, the screener suits `npm run dev` / `npm start` on a long-running server. On serverless hosts (Vercel) each cold start begins again and functions may time out before the universe is enriched.
-- To change the universe, edit `universe.json` (fields: `symbol`, `name`, `sector`, `industry`). Dotted tickers use `-` (e.g. `BRK-B`), as Yahoo expects.
+- Data comes from [Finnhub](https://finnhub.io) (free API key, called straight from the browser). The key and all fetched data stay in your browser's `localStorage`; metrics are cached for 24 hours.
+- The free tier allows 60 requests/minute, so the first full S&P 500 load takes about 9 minutes; the table fills in as rows arrive and you can stop/resume at any time.
 
 ## Learn More
 

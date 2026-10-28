@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Value Screener</title>
+<style>
+  :root {
+    --bg: #09090b; --panel: #18181b; --panel-2: #27272a; --border: #3f3f46;
+    --text: #f4f4f5; --muted: #a1a1aa; --dim: #71717a; --accent: #34d399; --accent-dim: #064e3b;
+    --up: #34d399; --down: #fb7185; --warn: #fbbf24;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 24px 16px; }
+  h1 { font-size: 22px; margin: 0; } h2 { font-size: 17px; margin: 0 0 10px; }
+  .sub { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .panel { background: rgba(24,24,27,.6); border: 1px solid var(--panel-2); border-radius: 8px; padding: 14px; margin-bottom: 16px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+  label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 4px; }
+  input, select, textarea, button { font: inherit; color: var(--text); background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 7px 10px; width: 100%; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+  button { cursor: pointer; width: auto; } button.primary { background: var(--accent-dim); border-color: var(--accent); }
+  button:disabled { opacity: .5; cursor: default; }
+  .help { font-size: 12px; color: var(--dim); margin-top: 4px; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .status { font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+  .bar { display: inline-block; width: 140px; height: 6px; background: var(--panel-2); border-radius: 3px; overflow: hidden; vertical-align: middle; }
+  .bar > span { display: block; height: 100%; background: var(--accent); transition: width .3s; }
+  .err { border: 1px solid #9f1239; background: rgba(136,19,55,.3); color: #fda4af; padding: 8px 12px; border-radius: 6px; font-size: 13px; margin-bottom: 10px; }
+  .warn { border: 1px solid #92400e; background: rgba(120,53,15,.3); color: #fcd34d; padding: 8px 12px; border-radius: 6px; font-size: 13px; margin-bottom: 10px; }
+  .tablewrap { overflow-x: auto; border: 1px solid var(--panel-2); border-radius: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); background: var(--panel); padding: 8px 10px; white-space: nowrap; cursor: pointer; user-select: none; }
+  th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td { padding: 7px 10px; border-top: 1px solid var(--panel-2); white-space: nowrap; }
+  tr:hover td { background: rgba(39,39,42,.5); }
+  tr.self td { background: rgba(6,78,59,.3); }
+  .small { font-size: 12px; color: var(--muted); max-width: 240px; overflow: hidden; text-overflow: ellipsis; }
+  .up { color: var(--up); } .down { color: var(--down); } .dim { color: var(--dim); }
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .stat { background: rgba(24,24,27,.6); border: 1px solid var(--panel-2); border-radius: 6px; padding: 8px 10px; }
+  .stat .l { font-size: 10px; text-transform: uppercase; letter-spacing: .04em; color: var(--dim); }
+  .stat .v { font-size: 16px; font-weight: 600; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .cols { display: grid; gap: 24px; grid-template-columns: 2fr 1fr; } @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } }
+  .news { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .news li { background: rgba(24,24,27,.6); border: 1px solid var(--panel-2); border-radius: 6px; padding: 10px; }
+  .news a { color: var(--text); font-weight: 500; } .news a:hover { color: var(--accent); }
+  .tag { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: .04em; background: var(--accent-dim); color: #6ee7b7; border-radius: 3px; padding: 1px 5px; margin: 4px 4px 0 0; }
+  .tag.other { background: var(--panel-2); color: var(--muted); }
+  .muted { color: var(--muted); } .foot { font-size: 12px; color: var(--dim); margin-top: 10px; }
+  details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+  .hidden { display: none; }
+  .pill { font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script>
+// ============================================================================
+// Universe: S&P 500 constituents. Larger / better-known names first so the
+// table is useful while the rest loads. Edit freely, or paste a custom list in the UI.
+// ============================================================================
+const UNIVERSE = [
+{"symbol":"NVDA","name":"Nvidia","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"MSFT","name":"Microsoft","sector":"Information Technology","industry":"Systems Software"},
+{"symbol":"AAPL","name":"Apple Inc.","sector":"Information Technology","industry":"Technology Hardware, Storage & Peripherals"},
+{"symbol":"AMZN","name":"Amazon","sector":"Consumer Discretionary","industry":"Broadline Retail"},
+{"symbol":"GOOGL","name":"Alphabet Inc. (Class A)","sector":"Communication Services","industry":"Interactive Media & Services"},
+{"symbol":"GOOG","name":"Alphabet Inc. (Class C)","sector":"Communication Services","industry":"Interactive Media & Services"},
+{"symbol":"META","name":"Meta Platforms","sector":"Communication Services","industry":"Interactive Media & Services"},
+{"symbol":"AVGO","name":"Broadcom","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"TSLA","name":"Tesla, Inc.","sector":"Consumer Discretionary","industry":"Automobile Manufacturers"},
+{"symbol":"BRK-B","name":"Berkshire Hathaway","sector":"Financials","industry":"Multi-Sector Holdings"},
+{"symbol":"JPM","name":"JPMorgan Chase","sector":"Financials","industry":"Diversified Banks"},
+{"symbol":"LLY","name":"Lilly (Eli)","sector":"Health Care","industry":"Pharmaceuticals"},
+{"symbol":"V","name":"Visa Inc.","sector":"Financials","industry":"Transaction & Payment Processing Services"},
+{"symbol":"WMT","name":"Walmart","sector":"Consumer Staples","industry":"Consumer Staples Merchandise Retail"},
+{"symbol":"XOM","name":"ExxonMobil","sector":"Energy","industry":"Integrated Oil & Gas"},
+{"symbol":"MA","name":"Mastercard","sector":"Financials","industry":"Transaction & Payment Processing Services"},
+{"symbol":"UNH","name":"UnitedHealth Group","sector":"Health Care","industry":"Managed Health Care"},
+{"symbol":"COST","name":"Costco","sector":"Consumer Staples","industry":"Consumer Staples Merchandise Retail"},
+{"symbol":"ORCL","name":"Oracle Corporation","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"NFLX","name":"Netflix","sector":"Communication Services","industry":"Movies & Entertainment"},
+{"symbol":"JNJ","name":"Johnson & Johnson","sector":"Health Care","industry":"Pharmaceuticals"},
+{"symbol":"PG","name":"Procter & Gamble","sector":"Consumer Staples","industry":"Personal Care Products"},
+{"symbol":"HD","name":"Home Depot (The)","sector":"Consumer Discretionary","industry":"Home Improvement Retail"},
+{"symbol":"ABBV","name":"AbbVie","sector":"Health Care","industry":"Biotechnology"},
+{"symbol":"BAC","name":"Bank of America","sector":"Financials","industry":"Diversified Banks"},
+{"symbol":"KO","name":"Coca-Cola Company (The)","sector":"Consumer Staples","industry":"Soft Drinks & Non-alcoholic Beverages"},
+{"symbol":"CRM","name":"Salesforce","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"CVX","name":"Chevron Corporation","sector":"Energy","industry":"Integrated Oil & Gas"},
+{"symbol":"PLTR","name":"Palantir Technologies","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"CSCO","name":"Cisco","sector":"Information Technology","industry":"Communications Equipment"},
+{"symbol":"TMUS","name":"T-Mobile US","sector":"Communication Services","industry":"Wireless Telecommunication Services"},
+{"symbol":"WFC","name":"Wells Fargo","sector":"Financials","industry":"Diversified Banks"},
+{"symbol":"AMD","name":"Advanced Micro Devices","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"PM","name":"Philip Morris International","sector":"Consumer Staples","industry":"Tobacco"},
+{"symbol":"MRK","name":"Merck & Co.","sector":"Health Care","industry":"Pharmaceuticals"},
+{"symbol":"IBM","name":"IBM","sector":"Information Technology","industry":"IT Consulting & Other Services"},
+{"symbol":"CAT","name":"Caterpillar Inc.","sector":"Industrials","industry":"Construction Machinery & Heavy Transportation Equipment"},
+{"symbol":"GE","name":"GE Aerospace","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"LIN","name":"Linde plc","sector":"Materials","industry":"Industrial Gases"},
+{"symbol":"MS","name":"Morgan Stanley","sector":"Financials","industry":"Investment Banking & Brokerage"},
+{"symbol":"ABT","name":"Abbott Laboratories","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"MCD","name":"McDonald's","sector":"Consumer Discretionary","industry":"Restaurants"},
+{"symbol":"ACN","name":"Accenture","sector":"Information Technology","industry":"IT Consulting & Other Services"},
+{"symbol":"AXP","name":"American Express","sector":"Financials","industry":"Consumer Finance"},
+{"symbol":"GS","name":"Goldman Sachs","sector":"Financials","industry":"Investment Banking & Brokerage"},
+{"symbol":"ISRG","name":"Intuitive Surgical","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"PEP","name":"PepsiCo","sector":"Consumer Staples","industry":"Soft Drinks & Non-alcoholic Beverages"},
+{"symbol":"DIS","name":"Walt Disney Company (The)","sector":"Communication Services","industry":"Movies & Entertainment"},
+{"symbol":"INTU","name":"Intuit","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"TMO","name":"Thermo Fisher Scientific","sector":"Health Care","industry":"Life Sciences Tools & Services"},
+{"symbol":"NOW","name":"ServiceNow","sector":"Information Technology","industry":"Systems Software"},
+{"symbol":"RTX","name":"RTX Corporation","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"QCOM","name":"Qualcomm","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"VZ","name":"Verizon","sector":"Communication Services","industry":"Integrated Telecommunication Services"},
+{"symbol":"T","name":"AT&T","sector":"Communication Services","industry":"Integrated Telecommunication Services"},
+{"symbol":"AMGN","name":"Amgen","sector":"Health Care","industry":"Biotechnology"},
+{"symbol":"TXN","name":"Texas Instruments","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"BKNG","name":"Booking Holdings","sector":"Consumer Discretionary","industry":"Hotels, Resorts & Cruise Lines"},
+{"symbol":"ADBE","name":"Adobe Inc.","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"PGR","name":"Progressive Corporation","sector":"Financials","industry":"Property & Casualty Insurance"},
+{"symbol":"SPGI","name":"S&P Global","sector":"Financials","industry":"Financial Exchanges & Data"},
+{"symbol":"UBER","name":"Uber","sector":"Industrials","industry":"Passenger Ground Transportation"},
+{"symbol":"CMCSA","name":"Comcast","sector":"Communication Services","industry":"Cable & Satellite"},
+{"symbol":"BSX","name":"Boston Scientific","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"DHR","name":"Danaher Corporation","sector":"Health Care","industry":"Life Sciences Tools & Services"},
+{"symbol":"SCHW","name":"Charles Schwab Corporation","sector":"Financials","industry":"Investment Banking & Brokerage"},
+{"symbol":"PFE","name":"Pfizer","sector":"Health Care","industry":"Pharmaceuticals"},
+{"symbol":"NEE","name":"NextEra Energy","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"HON","name":"Honeywell Technologies","sector":"Industrials","industry":"Industrial Conglomerates"},
+{"symbol":"BLK","name":"BlackRock","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"GILD","name":"Gilead Sciences","sector":"Health Care","industry":"Biotechnology"},
+{"symbol":"LOW","name":"Lowe's","sector":"Consumer Discretionary","industry":"Home Improvement Retail"},
+{"symbol":"UNP","name":"Union Pacific Corporation","sector":"Industrials","industry":"Rail Transportation"},
+{"symbol":"AMAT","name":"Applied Materials","sector":"Information Technology","industry":"Semiconductor Materials & Equipment"},
+{"symbol":"ETN","name":"Eaton Corporation","sector":"Industrials","industry":"Electrical Components & Equipment"},
+{"symbol":"C","name":"Citigroup","sector":"Financials","industry":"Diversified Banks"},
+{"symbol":"SYK","name":"Stryker Corporation","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"DE","name":"Deere & Company","sector":"Industrials","industry":"Agricultural & Farm Machinery"},
+{"symbol":"TJX","name":"TJX Companies","sector":"Consumer Discretionary","industry":"Apparel Retail"},
+{"symbol":"ADP","name":"Automatic Data Processing","sector":"Industrials","industry":"Human Resource & Employment Services"},
+{"symbol":"LMT","name":"Lockheed Martin","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"COP","name":"ConocoPhillips","sector":"Energy","industry":"Oil & Gas Exploration & Production"},
+{"symbol":"MU","name":"Micron Technology","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"PANW","name":"Palo Alto Networks","sector":"Information Technology","industry":"Systems Software"},
+{"symbol":"VRTX","name":"Vertex Pharmaceuticals","sector":"Health Care","industry":"Biotechnology"},
+{"symbol":"CB","name":"Chubb Limited","sector":"Financials","industry":"Property & Casualty Insurance"},
+{"symbol":"MDT","name":"Medtronic","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"BMY","name":"Bristol Myers Squibb","sector":"Health Care","industry":"Pharmaceuticals"},
+{"symbol":"ANET","name":"Arista Networks","sector":"Information Technology","industry":"Communications Equipment"},
+{"symbol":"PLD","name":"Prologis","sector":"Real Estate","industry":"Industrial REITs"},
+{"symbol":"SBUX","name":"Starbucks","sector":"Consumer Discretionary","industry":"Restaurants"},
+{"symbol":"BA","name":"Boeing","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"KKR","name":"KKR & Co.","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"LRCX","name":"Lam Research","sector":"Information Technology","industry":"Semiconductor Materials & Equipment"},
+{"symbol":"ADI","name":"Analog Devices","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"MO","name":"Altria","sector":"Consumer Staples","industry":"Tobacco"},
+{"symbol":"SO","name":"Southern Company","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"ICE","name":"Intercontinental Exchange","sector":"Financials","industry":"Financial Exchanges & Data"},
+{"symbol":"INTC","name":"Intel","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"CRWD","name":"CrowdStrike","sector":"Information Technology","industry":"Systems Software"},
+{"symbol":"KLAC","name":"KLA Corporation","sector":"Information Technology","industry":"Semiconductor Materials & Equipment"},
+{"symbol":"NKE","name":"Nike, Inc.","sector":"Consumer Discretionary","industry":"Apparel, Accessories & Luxury Goods"},
+{"symbol":"CME","name":"CME Group","sector":"Financials","industry":"Financial Exchanges & Data"},
+{"symbol":"DUK","name":"Duke Energy","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"SHW","name":"Sherwin-Williams","sector":"Materials","industry":"Specialty Chemicals"},
+{"symbol":"APH","name":"Amphenol","sector":"Information Technology","industry":"Electronic Components"},
+{"symbol":"WM","name":"Waste Management","sector":"Industrials","industry":"Environmental & Facilities Services"},
+{"symbol":"CI","name":"Cigna","sector":"Health Care","industry":"Health Care Services"},
+{"symbol":"MCK","name":"McKesson","sector":"Health Care","industry":"Health Care Distributors"},
+{"symbol":"ELV","name":"Elevance Health","sector":"Health Care","industry":"Managed Health Care"},
+{"symbol":"HCA","name":"HCA Healthcare","sector":"Health Care","industry":"Health Care Facilities"},
+{"symbol":"AMT","name":"American Tower","sector":"Real Estate","industry":"Telecom Tower REITs"},
+{"symbol":"PH","name":"Parker Hannifin","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"GEV","name":"GE Vernova","sector":"Industrials","industry":"Heavy Electrical Equipment"},
+{"symbol":"CTAS","name":"Cintas","sector":"Industrials","industry":"Diversified Support Services"},
+{"symbol":"TDG","name":"TransDigm Group","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"ORLY","name":"O'Reilly Automotive","sector":"Consumer Discretionary","industry":"Automotive Retail"},
+{"symbol":"ZTS","name":"Zoetis","sector":"Health Care","industry":"Pharmaceuticals"},
+{"symbol":"MDLZ","name":"Mondelez International","sector":"Consumer Staples","industry":"Packaged Foods & Meats"},
+{"symbol":"REGN","name":"Regeneron Pharmaceuticals","sector":"Health Care","industry":"Biotechnology"},
+{"symbol":"CVS","name":"CVS Health","sector":"Health Care","industry":"Health Care Services"},
+{"symbol":"PNC","name":"PNC Financial Services","sector":"Financials","industry":"Diversified Banks"},
+{"symbol":"MSI","name":"Motorola Solutions","sector":"Information Technology","industry":"Communications Equipment"},
+{"symbol":"AON","name":"Aon plc","sector":"Financials","industry":"Insurance Brokers"},
+{"symbol":"EQIX","name":"Equinix","sector":"Real Estate","industry":"Data Center REITs"},
+{"symbol":"CL","name":"Colgate-Palmolive","sector":"Consumer Staples","industry":"Household Products"},
+{"symbol":"CMG","name":"Chipotle Mexican Grill","sector":"Consumer Discretionary","industry":"Restaurants"},
+{"symbol":"USB","name":"U.S. Bancorp","sector":"Financials","industry":"Diversified Banks"},
+{"symbol":"APO","name":"Apollo Global Management","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"EMR","name":"Emerson Electric","sector":"Industrials","industry":"Electrical Components & Equipment"},
+{"symbol":"ITW","name":"Illinois Tool Works","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"WELL","name":"Welltower","sector":"Real Estate","industry":"Health Care REITs"},
+{"symbol":"COF","name":"Capital One","sector":"Financials","industry":"Consumer Finance"},
+{"symbol":"MAR","name":"Marriott International","sector":"Consumer Discretionary","industry":"Hotels, Resorts & Cruise Lines"},
+{"symbol":"NOC","name":"Northrop Grumman","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"GD","name":"General Dynamics","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"BDX","name":"Becton Dickinson","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"ECL","name":"Ecolab","sector":"Materials","industry":"Specialty Chemicals"},
+{"symbol":"MCO","name":"Moody's Corporation","sector":"Financials","industry":"Financial Exchanges & Data"},
+{"symbol":"FDX","name":"FedEx","sector":"Industrials","industry":"Air Freight & Logistics"},
+{"symbol":"CARR","name":"Carrier Global","sector":"Industrials","industry":"Building Products"},
+{"symbol":"TT","name":"Trane Technologies","sector":"Industrials","industry":"Building Products"},
+{"symbol":"CSX","name":"CSX Corporation","sector":"Industrials","industry":"Rail Transportation"},
+{"symbol":"ABNB","name":"Airbnb","sector":"Consumer Discretionary","industry":"Hotels, Resorts & Cruise Lines"},
+{"symbol":"TGT","name":"Target Corporation","sector":"Consumer Staples","industry":"Consumer Staples Merchandise Retail"},
+{"symbol":"SLB","name":"Schlumberger","sector":"Energy","industry":"Oil & Gas Equipment & Services"},
+{"symbol":"RSG","name":"Republic Services","sector":"Industrials","industry":"Environmental & Facilities Services"},
+{"symbol":"PYPL","name":"PayPal","sector":"Financials","industry":"Transaction & Payment Processing Services"},
+{"symbol":"ADSK","name":"Autodesk","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"HLT","name":"Hilton Worldwide","sector":"Consumer Discretionary","industry":"Hotels, Resorts & Cruise Lines"},
+{"symbol":"EOG","name":"EOG Resources","sector":"Energy","industry":"Oil & Gas Exploration & Production"},
+{"symbol":"NSC","name":"Norfolk Southern","sector":"Industrials","industry":"Rail Transportation"},
+{"symbol":"ROP","name":"Roper Technologies","sector":"Information Technology","industry":"Electronic Equipment & Instruments"},
+{"symbol":"WMB","name":"Williams Companies","sector":"Energy","industry":"Oil & Gas Storage & Transportation"},
+{"symbol":"JCI","name":"Johnson Controls","sector":"Industrials","industry":"Building Products"},
+{"symbol":"AJG","name":"Arthur J. Gallagher & Co.","sector":"Financials","industry":"Insurance Brokers"},
+{"symbol":"TFC","name":"Truist Financial","sector":"Financials","industry":"Diversified Banks"},
+{"symbol":"FCX","name":"Freeport-McMoRan","sector":"Materials","industry":"Copper"},
+{"symbol":"AFL","name":"Aflac","sector":"Financials","industry":"Life & Health Insurance"},
+{"symbol":"OKE","name":"Oneok","sector":"Energy","industry":"Oil & Gas Storage & Transportation"},
+{"symbol":"SRE","name":"Sempra","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"PCAR","name":"Paccar","sector":"Industrials","industry":"Construction Machinery & Heavy Transportation Equipment"},
+{"symbol":"CPRT","name":"Copart","sector":"Industrials","industry":"Diversified Support Services"},
+{"symbol":"AEP","name":"American Electric Power","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"PSX","name":"Phillips 66","sector":"Energy","industry":"Oil & Gas Refining & Marketing"},
+{"symbol":"MET","name":"MetLife","sector":"Financials","industry":"Life & Health Insurance"},
+{"symbol":"TRV","name":"Travelers Companies (The)","sector":"Financials","industry":"Property & Casualty Insurance"},
+{"symbol":"GM","name":"General Motors","sector":"Consumer Discretionary","industry":"Automobile Manufacturers"},
+{"symbol":"DLR","name":"Digital Realty","sector":"Real Estate","industry":"Data Center REITs"},
+{"symbol":"ALL","name":"Allstate","sector":"Financials","industry":"Property & Casualty Insurance"},
+{"symbol":"F","name":"Ford Motor Company","sector":"Consumer Discretionary","industry":"Automobile Manufacturers"},
+{"symbol":"O","name":"Realty Income","sector":"Real Estate","industry":"Retail REITs"},
+{"symbol":"AZO","name":"AutoZone","sector":"Consumer Discretionary","industry":"Automotive Retail"},
+{"symbol":"MPC","name":"Marathon Petroleum","sector":"Energy","industry":"Oil & Gas Refining & Marketing"},
+{"symbol":"NXPI","name":"NXP Semiconductors","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"FAST","name":"Fastenal","sector":"Industrials","industry":"Trading Companies & Distributors"},
+{"symbol":"AMP","name":"Ameriprise Financial","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"URI","name":"United Rentals","sector":"Industrials","industry":"Trading Companies & Distributors"},
+{"symbol":"PSA","name":"Public Storage","sector":"Real Estate","industry":"Self-Storage REITs"},
+{"symbol":"ROST","name":"Ross Stores","sector":"Consumer Discretionary","industry":"Apparel Retail"},
+{"symbol":"VLO","name":"Valero Energy","sector":"Energy","industry":"Oil & Gas Refining & Marketing"},
+{"symbol":"CCI","name":"Crown Castle","sector":"Real Estate","industry":"Telecom Tower REITs"},
+{"symbol":"PAYX","name":"Paychex","sector":"Industrials","industry":"Human Resource & Employment Services"},
+{"symbol":"D","name":"Dominion Energy","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"HWM","name":"Howmet Aerospace","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"KMI","name":"Kinder Morgan","sector":"Energy","industry":"Oil & Gas Storage & Transportation"},
+{"symbol":"MNST","name":"Monster Beverage","sector":"Consumer Staples","industry":"Soft Drinks & Non-alcoholic Beverages"},
+{"symbol":"LHX","name":"L3Harris","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"FTNT","name":"Fortinet","sector":"Information Technology","industry":"Systems Software"},
+{"symbol":"PWR","name":"Quanta Services","sector":"Industrials","industry":"Construction & Engineering"},
+{"symbol":"TEL","name":"TE Connectivity","sector":"Information Technology","industry":"Electronic Manufacturing Services"},
+{"symbol":"AIG","name":"American International Group","sector":"Financials","industry":"Multi-line Insurance"},
+{"symbol":"DHI","name":"D. R. Horton","sector":"Consumer Discretionary","industry":"Homebuilding"},
+{"symbol":"MSCI","name":"MSCI","sector":"Financials","industry":"Financial Exchanges & Data"},
+{"symbol":"VST","name":"Vistra Corp.","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"CMI","name":"Cummins","sector":"Industrials","industry":"Construction Machinery & Heavy Transportation Equipment"},
+{"symbol":"FANG","name":"Diamondback Energy","sector":"Energy","industry":"Oil & Gas Exploration & Production"},
+{"symbol":"KMB","name":"Kimberly-Clark","sector":"Consumer Staples","industry":"Household Products"},
+{"symbol":"GWW","name":"W. W. Grainger","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"PEG","name":"Public Service Enterprise Group","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"KVUE","name":"Kenvue","sector":"Consumer Staples","industry":"Personal Care Products"},
+{"symbol":"RCL","name":"Royal Caribbean Group","sector":"Consumer Discretionary","industry":"Hotels, Resorts & Cruise Lines"},
+{"symbol":"PRU","name":"Prudential Financial","sector":"Financials","industry":"Life & Health Insurance"},
+{"symbol":"AME","name":"Ametek","sector":"Industrials","industry":"Electrical Components & Equipment"},
+{"symbol":"COR","name":"Cencora","sector":"Health Care","industry":"Health Care Distributors"},
+{"symbol":"BKR","name":"Baker Hughes","sector":"Energy","industry":"Oil & Gas Equipment & Services"},
+{"symbol":"ODFL","name":"Old Dominion","sector":"Industrials","industry":"Cargo Ground Transportation"},
+{"symbol":"LEN","name":"Lennar","sector":"Consumer Discretionary","industry":"Homebuilding"},
+{"symbol":"EW","name":"Edwards Lifesciences","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"OTIS","name":"Otis Worldwide","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"EXC","name":"Exelon","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"IDXX","name":"Idexx Laboratories","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"DAL","name":"Delta Air Lines","sector":"Industrials","industry":"Passenger Airlines"},
+{"symbol":"GLW","name":"Corning Inc.","sector":"Information Technology","industry":"Electronic Components"},
+{"symbol":"A","name":"Agilent Technologies","sector":"Health Care","industry":"Life Sciences Tools & Services"},
+{"symbol":"KDP","name":"Keurig Dr Pepper","sector":"Consumer Staples","industry":"Soft Drinks & Non-alcoholic Beverages"},
+{"symbol":"YUM","name":"Yum! Brands","sector":"Consumer Discretionary","industry":"Restaurants"},
+{"symbol":"CTSH","name":"Cognizant","sector":"Information Technology","industry":"IT Consulting & Other Services"},
+{"symbol":"VRSK","name":"Verisk Analytics","sector":"Industrials","industry":"Research & Consulting Services"},
+{"symbol":"IT","name":"Gartner","sector":"Information Technology","industry":"IT Consulting & Other Services"},
+{"symbol":"XEL","name":"Xcel Energy","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"SYY","name":"Sysco","sector":"Consumer Staples","industry":"Food Distributors"},
+{"symbol":"NDAQ","name":"Nasdaq, Inc.","sector":"Financials","industry":"Financial Exchanges & Data"},
+{"symbol":"MCHP","name":"Microchip Technology","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"HIG","name":"Hartford (The)","sector":"Financials","industry":"Property & Casualty Insurance"},
+{"symbol":"DELL","name":"Dell Technologies","sector":"Information Technology","industry":"Technology Hardware, Storage & Peripherals"},
+{"symbol":"ACGL","name":"Arch Capital Group","sector":"Financials","industry":"Property & Casualty Insurance"},
+{"symbol":"GEHC","name":"GE HealthCare","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"ED","name":"Consolidated Edison","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"IR","name":"Ingersoll Rand","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"ROK","name":"Rockwell Automation","sector":"Industrials","industry":"Electrical Components & Equipment"},
+{"symbol":"MLM","name":"Martin Marietta Materials","sector":"Materials","industry":"Construction Materials"},
+{"symbol":"VMC","name":"Vulcan Materials Company","sector":"Materials","industry":"Construction Materials"},
+{"symbol":"EFX","name":"Equifax","sector":"Industrials","industry":"Research & Consulting Services"},
+{"symbol":"WAB","name":"Wabtec","sector":"Industrials","industry":"Construction Machinery & Heavy Transportation Equipment"},
+{"symbol":"HUM","name":"Humana","sector":"Health Care","industry":"Managed Health Care"},
+{"symbol":"ETR","name":"Entergy","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"CNC","name":"Centene Corporation","sector":"Health Care","industry":"Managed Health Care"},
+{"symbol":"TTWO","name":"Take-Two Interactive","sector":"Communication Services","industry":"Interactive Home Entertainment"},
+{"symbol":"CBRE","name":"CBRE Group","sector":"Real Estate","industry":"Real Estate Services"},
+{"symbol":"HPQ","name":"HP Inc.","sector":"Information Technology","industry":"Technology Hardware, Storage & Peripherals"},
+{"symbol":"GIS","name":"General Mills","sector":"Consumer Staples","industry":"Packaged Foods & Meats"},
+{"symbol":"WTW","name":"Willis Towers Watson","sector":"Financials","industry":"Insurance Brokers"},
+{"symbol":"NUE","name":"Nucor","sector":"Materials","industry":"Steel"},
+{"symbol":"DD","name":"DuPont","sector":"Industrials","industry":"Industrial Conglomerates"},
+{"symbol":"EXR","name":"Extra Space Storage","sector":"Real Estate","industry":"Self-Storage REITs"},
+{"symbol":"DOW","name":"Dow Inc.","sector":"Materials","industry":"Commodity Chemicals"},
+{"symbol":"MTB","name":"M&T Bank","sector":"Financials","industry":"Regional Banks"},
+{"symbol":"FITB","name":"Fifth Third Bancorp","sector":"Financials","industry":"Regional Banks"},
+{"symbol":"KHC","name":"Kraft Heinz","sector":"Consumer Staples","industry":"Packaged Foods & Meats"},
+{"symbol":"WEC","name":"WEC Energy Group","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"TSCO","name":"Tractor Supply","sector":"Consumer Discretionary","industry":"Other Specialty Retail"},
+{"symbol":"RMD","name":"ResMed","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"ON","name":"ON Semiconductor","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"HAL","name":"Halliburton","sector":"Energy","industry":"Oil & Gas Equipment & Services"},
+{"symbol":"EBAY","name":"eBay Inc.","sector":"Consumer Discretionary","industry":"Broadline Retail"},
+{"symbol":"CSGP","name":"CoStar Group","sector":"Real Estate","industry":"Real Estate Services"},
+{"symbol":"DXCM","name":"Dexcom","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"XYL","name":"Xylem Inc.","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"BRO","name":"Brown & Brown","sector":"Financials","industry":"Insurance Brokers"},
+{"symbol":"STT","name":"State Street Corporation","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"PPG","name":"PPG Industries","sector":"Materials","industry":"Specialty Chemicals"},
+{"symbol":"IRM","name":"Iron Mountain","sector":"Real Estate","industry":"Other Specialized REITs"},
+{"symbol":"CAH","name":"Cardinal Health","sector":"Health Care","industry":"Health Care Distributors"},
+{"symbol":"VICI","name":"Vici Properties","sector":"Real Estate","industry":"Hotel & Resort REITs"},
+{"symbol":"AWK","name":"American Water Works","sector":"Utilities","industry":"Water Utilities"},
+{"symbol":"FTV","name":"Fortive","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"LYB","name":"LyondellBasell","sector":"Materials","industry":"Specialty Chemicals"},
+{"symbol":"KEYS","name":"Keysight Technologies","sector":"Information Technology","industry":"Electronic Equipment & Instruments"},
+{"symbol":"DTE","name":"DTE Energy","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"MPWR","name":"Monolithic Power Systems","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"DVN","name":"Devon Energy","sector":"Energy","industry":"Oil & Gas Exploration & Production"},
+{"symbol":"ROL","name":"Rollins, Inc.","sector":"Industrials","industry":"Environmental & Facilities Services"},
+{"symbol":"HPE","name":"Hewlett Packard Enterprise","sector":"Information Technology","industry":"Technology Hardware, Storage & Peripherals"},
+{"symbol":"CHTR","name":"Charter Communications","sector":"Communication Services","industry":"Cable & Satellite"},
+{"symbol":"ADM","name":"Archer Daniels Midland","sector":"Consumer Staples","industry":"Agricultural Products & Services"},
+{"symbol":"TROW","name":"T. Rowe Price","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"FE","name":"FirstEnergy","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"ES","name":"Eversource Energy","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"PHM","name":"PulteGroup","sector":"Consumer Discretionary","industry":"Homebuilding"},
+{"symbol":"EL","name":"Est\u00e9e Lauder Companies (The)","sector":"Consumer Staples","industry":"Personal Care Products"},
+{"symbol":"HSY","name":"Hershey Company (The)","sector":"Consumer Staples","industry":"Packaged Foods & Meats"},
+{"symbol":"GPN","name":"Global Payments","sector":"Financials","industry":"Transaction & Payment Processing Services"},
+{"symbol":"TYL","name":"Tyler Technologies","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"NVR","name":"NVR, Inc.","sector":"Consumer Discretionary","industry":"Homebuilding"},
+{"symbol":"SBAC","name":"SBA Communications","sector":"Real Estate","industry":"Telecom Tower REITs"},
+{"symbol":"STZ","name":"Constellation Brands","sector":"Consumer Staples","industry":"Distillers & Vintners"},
+{"symbol":"CDW","name":"CDW Corporation","sector":"Information Technology","industry":"Technology Distributors"},
+{"symbol":"MTD","name":"Mettler Toledo","sector":"Health Care","industry":"Life Sciences Tools & Services"},
+{"symbol":"LULU","name":"Lululemon Athletica","sector":"Consumer Discretionary","industry":"Apparel, Accessories & Luxury Goods"},
+{"symbol":"ZBH","name":"Zimmer Biomet","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"BIIB","name":"Biogen","sector":"Health Care","industry":"Biotechnology"},
+{"symbol":"WDC","name":"Western Digital","sector":"Information Technology","industry":"Technology Hardware, Storage & Peripherals"},
+{"symbol":"DOV","name":"Dover Corporation","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"BR","name":"Broadridge Financial Solutions","sector":"Industrials","industry":"Data Processing & Outsourced Services"},
+{"symbol":"WST","name":"West Pharmaceutical Services","sector":"Health Care","industry":"Health Care Supplies"},
+{"symbol":"STE","name":"Steris","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"HBAN","name":"Huntington Bancshares","sector":"Financials","industry":"Regional Banks"},
+{"symbol":"PPL","name":"PPL Corporation","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"CCL","name":"Carnival Corporation","sector":"Consumer Discretionary","industry":"Hotels, Resorts & Cruise Lines"},
+{"symbol":"LVS","name":"Las Vegas Sands","sector":"Consumer Discretionary","industry":"Casinos & Gaming"},
+{"symbol":"GDDY","name":"GoDaddy","sector":"Information Technology","industry":"Internet Services & Infrastructure"},
+{"symbol":"AEE","name":"Ameren","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"NTAP","name":"NetApp","sector":"Information Technology","industry":"Technology Hardware, Storage & Peripherals"},
+{"symbol":"DLTR","name":"Dollar Tree","sector":"Consumer Staples","industry":"Consumer Staples Merchandise Retail"},
+{"symbol":"CINF","name":"Cincinnati Financial","sector":"Financials","industry":"Property & Casualty Insurance"},
+{"symbol":"RF","name":"Regions Financial Corporation","sector":"Financials","industry":"Regional Banks"},
+{"symbol":"TDY","name":"Teledyne Technologies","sector":"Information Technology","industry":"Electronic Equipment & Instruments"},
+{"symbol":"VLTO","name":"Veralto","sector":"Industrials","industry":"Environmental & Facilities Services"},
+{"symbol":"SMCI","name":"Supermicro","sector":"Information Technology","industry":"Technology Hardware, Storage & Peripherals"},
+{"symbol":"CFG","name":"Citizens Financial Group","sector":"Financials","industry":"Regional Banks"},
+{"symbol":"WY","name":"Weyerhaeuser","sector":"Real Estate","industry":"Timber REITs"},
+{"symbol":"CMS","name":"CMS Energy","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"WAT","name":"Waters Corporation","sector":"Health Care","industry":"Life Sciences Tools & Services"},
+{"symbol":"NTRS","name":"Northern Trust","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"STX","name":"Seagate Technology","sector":"Information Technology","industry":"Technology Hardware, Storage & Peripherals"},
+{"symbol":"FSLR","name":"First Solar","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"HUBB","name":"Hubbell Incorporated","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"INVH","name":"Invitation Homes","sector":"Real Estate","industry":"Single-Family Residential REITs"},
+{"symbol":"ATO","name":"Atmos Energy","sector":"Utilities","industry":"Gas Utilities"},
+{"symbol":"DRI","name":"Darden Restaurants","sector":"Consumer Discretionary","industry":"Restaurants"},
+{"symbol":"LH","name":"Labcorp","sector":"Health Care","industry":"Health Care Services"},
+{"symbol":"BAX","name":"Baxter International","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"SYF","name":"Synchrony Financial","sector":"Financials","industry":"Consumer Finance"},
+{"symbol":"CNP","name":"CenterPoint Energy","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"EQT","name":"EQT Corporation","sector":"Energy","industry":"Oil & Gas Exploration & Production"},
+{"symbol":"MKC","name":"McCormick & Company","sector":"Consumer Staples","industry":"Packaged Foods & Meats"},
+{"symbol":"ESS","name":"Essex Property Trust","sector":"Real Estate","industry":"Multi-Family Residential REITs"},
+{"symbol":"OMC","name":"Omnicom Group","sector":"Communication Services","industry":"Advertising"},
+{"symbol":"ZBRA","name":"Zebra Technologies","sector":"Information Technology","industry":"Electronic Equipment & Instruments"},
+{"symbol":"CLX","name":"Clorox","sector":"Consumer Staples","industry":"Household Products"},
+{"symbol":"ULTA","name":"Ulta Beauty","sector":"Consumer Discretionary","industry":"Other Specialty Retail"},
+{"symbol":"LDOS","name":"Leidos","sector":"Industrials","industry":"Diversified Support Services"},
+{"symbol":"MAA","name":"Mid-America Apartment Communities","sector":"Real Estate","industry":"Multi-Family Residential REITs"},
+{"symbol":"TSN","name":"Tyson Foods","sector":"Consumer Staples","industry":"Packaged Foods & Meats"},
+{"symbol":"ILMN","name":"Illumina, Inc.","sector":"Health Care","industry":"Life Sciences Tools & Services"},
+{"symbol":"EXPE","name":"Expedia Group","sector":"Consumer Discretionary","industry":"Hotels, Resorts & Cruise Lines"},
+{"symbol":"PFG","name":"Principal Financial Group","sector":"Financials","industry":"Life & Health Insurance"},
+{"symbol":"DG","name":"Dollar General","sector":"Consumer Staples","industry":"Consumer Staples Merchandise Retail"},
+{"symbol":"COO","name":"Cooper Companies (The)","sector":"Health Care","industry":"Health Care Supplies"},
+{"symbol":"J","name":"Jacobs Solutions","sector":"Industrials","industry":"Construction & Engineering"},
+{"symbol":"TXT","name":"Textron","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"PKG","name":"Packaging Corporation of America","sector":"Materials","industry":"Paper & Plastic Packaging Products & Materials"},
+{"symbol":"IFF","name":"International Flavors & Fragrances","sector":"Materials","industry":"Specialty Chemicals"},
+{"symbol":"DGX","name":"Quest Diagnostics","sector":"Health Care","industry":"Health Care Services"},
+{"symbol":"BBY","name":"Best Buy","sector":"Consumer Discretionary","industry":"Computer & Electronics Retail"},
+{"symbol":"STLD","name":"Steel Dynamics","sector":"Materials","industry":"Steel"},
+{"symbol":"FDS","name":"FactSet","sector":"Financials","industry":"Financial Exchanges & Data"},
+{"symbol":"EXPD","name":"Expeditors International","sector":"Industrials","industry":"Air Freight & Logistics"},
+{"symbol":"KEY","name":"KeyCorp","sector":"Financials","industry":"Regional Banks"},
+{"symbol":"ARE","name":"Alexandria Real Estate Equities","sector":"Real Estate","industry":"Office REITs"},
+{"symbol":"BALL","name":"Ball Corporation","sector":"Materials","industry":"Metal, Glass & Plastic Containers"},
+{"symbol":"L","name":"Loews Corporation","sector":"Financials","industry":"Multi-line Insurance"},
+{"symbol":"NRG","name":"NRG Energy","sector":"Utilities","industry":"Independent Power Producers & Energy Traders"},
+{"symbol":"IP","name":"International Paper","sector":"Materials","industry":"Paper & Plastic Packaging Products & Materials"},
+{"symbol":"AVY","name":"Avery Dennison","sector":"Materials","industry":"Paper & Plastic Packaging Products & Materials"},
+{"symbol":"LUV","name":"Southwest Airlines","sector":"Industrials","industry":"Passenger Airlines"},
+{"symbol":"MAS","name":"Masco","sector":"Industrials","industry":"Building Products"},
+{"symbol":"EG","name":"Everest Group","sector":"Financials","industry":"Reinsurance"},
+{"symbol":"AKAM","name":"Akamai Technologies","sector":"Information Technology","industry":"Internet Services & Infrastructure"},
+{"symbol":"CBOE","name":"Cboe Global Markets","sector":"Financials","industry":"Financial Exchanges & Data"},
+{"symbol":"GEN","name":"Gen Digital","sector":"Information Technology","industry":"Systems Software"},
+{"symbol":"SWKS","name":"Skyworks Solutions","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"DOC","name":"Healthpeak Properties","sector":"Real Estate","industry":"Health Care REITs"},
+{"symbol":"TRMB","name":"Trimble Inc.","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"WRB","name":"W. R. Berkley Corporation","sector":"Financials","industry":"Property & Casualty Insurance"},
+{"symbol":"EVRG","name":"Evergy","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"NI","name":"NiSource","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"GPC","name":"Genuine Parts Company","sector":"Consumer Discretionary","industry":"Distributors"},
+{"symbol":"JBHT","name":"J.B. Hunt","sector":"Industrials","industry":"Cargo Ground Transportation"},
+{"symbol":"SNA","name":"Snap-on","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"PNR","name":"Pentair","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"AMCR","name":"Amcor","sector":"Materials","industry":"Paper & Plastic Packaging Products & Materials"},
+{"symbol":"VRSN","name":"Verisign","sector":"Information Technology","industry":"Internet Services & Infrastructure"},
+{"symbol":"CF","name":"CF Industries","sector":"Materials","industry":"Fertilizers & Agricultural Chemicals"},
+{"symbol":"TER","name":"Teradyne","sector":"Information Technology","industry":"Semiconductor Materials & Equipment"},
+{"symbol":"APTV","name":"Aptiv","sector":"Consumer Discretionary","industry":"Automotive Parts & Equipment"},
+{"symbol":"RVTY","name":"Revvity","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"LNT","name":"Alliant Energy","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"UAL","name":"United Airlines Holdings","sector":"Industrials","industry":"Passenger Airlines"},
+{"symbol":"KIM","name":"Kimco Realty","sector":"Real Estate","industry":"Retail REITs"},
+{"symbol":"FFIV","name":"F5, Inc.","sector":"Information Technology","industry":"Communications Equipment"},
+{"symbol":"MRNA","name":"Moderna","sector":"Health Care","industry":"Biotechnology"},
+{"symbol":"UDR","name":"UDR, Inc.","sector":"Real Estate","industry":"Multi-Family Residential REITs"},
+{"symbol":"JKHY","name":"Jack Henry & Associates","sector":"Financials","industry":"Transaction & Payment Processing Services"},
+{"symbol":"CPT","name":"Camden Property Trust","sector":"Real Estate","industry":"Multi-Family Residential REITs"},
+{"symbol":"SWK","name":"Stanley Black & Decker","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"HST","name":"Host Hotels & Resorts","sector":"Real Estate","industry":"Hotel & Resort REITs"},
+{"symbol":"DPZ","name":"Domino's","sector":"Consumer Discretionary","industry":"Restaurants"},
+{"symbol":"PODD","name":"Insulet Corporation","sector":"Health Care","industry":"Health Care Equipment"},
+{"symbol":"TPR","name":"Tapestry, Inc.","sector":"Consumer Discretionary","industry":"Apparel, Accessories & Luxury Goods"},
+{"symbol":"CHRW","name":"C.H. Robinson","sector":"Industrials","industry":"Air Freight & Logistics"},
+{"symbol":"ALGN","name":"Align Technology","sector":"Health Care","industry":"Health Care Supplies"},
+{"symbol":"REG","name":"Regency Centers","sector":"Real Estate","industry":"Retail REITs"},
+{"symbol":"IEX","name":"IDEX Corporation","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"NDSN","name":"Nordson Corporation","sector":"Industrials","industry":"Industrial Machinery & Supplies & Components"},
+{"symbol":"TECH","name":"Bio-Techne","sector":"Health Care","industry":"Life Sciences Tools & Services"},
+{"symbol":"ALLE","name":"Allegion","sector":"Industrials","industry":"Building Products"},
+{"symbol":"BG","name":"Bunge Global","sector":"Consumer Staples","industry":"Agricultural Products & Services"},
+{"symbol":"INCY","name":"Incyte","sector":"Health Care","industry":"Biotechnology"},
+{"symbol":"BXP","name":"BXP, Inc.","sector":"Real Estate","industry":"Office REITs"},
+{"symbol":"AIZ","name":"Assurant","sector":"Financials","industry":"Multi-line Insurance"},
+{"symbol":"AES","name":"AES Corporation","sector":"Utilities","industry":"Independent Power Producers & Energy Traders"},
+{"symbol":"MGM","name":"MGM Resorts","sector":"Consumer Discretionary","industry":"Casinos & Gaming"},
+{"symbol":"SJM","name":"J.M. Smucker Company (The)","sector":"Consumer Staples","industry":"Packaged Foods & Meats"},
+{"symbol":"ERIE","name":"Erie Indemnity","sector":"Financials","industry":"Insurance Brokers"},
+{"symbol":"HRL","name":"Hormel Foods","sector":"Consumer Staples","industry":"Packaged Foods & Meats"},
+{"symbol":"CRL","name":"Charles River Laboratories","sector":"Health Care","industry":"Life Sciences Tools & Services"},
+{"symbol":"MOS","name":"Mosaic Company (The)","sector":"Materials","industry":"Fertilizers & Agricultural Chemicals"},
+{"symbol":"HAS","name":"Hasbro","sector":"Consumer Discretionary","industry":"Leisure Products"},
+{"symbol":"UHS","name":"Universal Health Services","sector":"Health Care","industry":"Health Care Facilities"},
+{"symbol":"BEN","name":"Franklin Resources","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"NCLH","name":"Norwegian Cruise Line Holdings","sector":"Consumer Discretionary","industry":"Hotels, Resorts & Cruise Lines"},
+{"symbol":"FRT","name":"Federal Realty Investment Trust","sector":"Real Estate","industry":"Retail REITs"},
+{"symbol":"HII","name":"Huntington Ingalls Industries","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"WYNN","name":"Wynn Resorts","sector":"Consumer Discretionary","industry":"Casinos & Gaming"},
+{"symbol":"APA","name":"APA Corporation","sector":"Energy","industry":"Oil & Gas Exploration & Production"},
+{"symbol":"GNRC","name":"Generac","sector":"Industrials","industry":"Heavy Electrical Equipment"},
+{"symbol":"AOS","name":"A. O. Smith","sector":"Industrials","industry":"Building Products"},
+{"symbol":"FOXA","name":"Fox Corporation (Class A)","sector":"Communication Services","industry":"Broadcasting"},
+{"symbol":"FOX","name":"Fox Corporation (Class B)","sector":"Communication Services","industry":"Broadcasting"},
+{"symbol":"NWSA","name":"News Corp (Class A)","sector":"Communication Services","industry":"Publishing"},
+{"symbol":"NWS","name":"News Corp (Class B)","sector":"Communication Services","industry":"Publishing"},
+{"symbol":"HSIC","name":"Henry Schein","sector":"Health Care","industry":"Health Care Distributors"},
+{"symbol":"IVZ","name":"Invesco","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"PNW","name":"Pinnacle West Capital","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"DVA","name":"DaVita","sector":"Health Care","industry":"Health Care Services"},
+{"symbol":"RL","name":"Ralph Lauren Corporation","sector":"Consumer Discretionary","industry":"Apparel, Accessories & Luxury Goods"},
+{"symbol":"GL","name":"Globe Life","sector":"Financials","industry":"Life & Health Insurance"},
+{"symbol":"SOLV","name":"Solventum","sector":"Health Care","industry":"Health Care Technology"},
+{"symbol":"DECK","name":"Deckers Brands","sector":"Consumer Discretionary","industry":"Footwear"},
+{"symbol":"ARES","name":"Ares Management","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"DASH","name":"DoorDash","sector":"Consumer Discretionary","industry":"Specialized Consumer Services"},
+{"symbol":"TKO","name":"TKO Group Holdings","sector":"Communication Services","industry":"Movies & Entertainment"},
+{"symbol":"WSM","name":"Williams-Sonoma, Inc.","sector":"Consumer Discretionary","industry":"Homefurnishing Retail"},
+{"symbol":"EXE","name":"Expand Energy","sector":"Energy","industry":"Oil & Gas Exploration & Production"},
+{"symbol":"COIN","name":"Coinbase","sector":"Financials","industry":"Financial Exchanges & Data"},
+{"symbol":"DDOG","name":"Datadog","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"XYZ","name":"Block, Inc.","sector":"Financials","industry":"Transaction & Payment Processing Services"},
+{"symbol":"IBKR","name":"Interactive Brokers","sector":"Financials","industry":"Investment Banking & Brokerage"},
+{"symbol":"CRH","name":"CRH plc","sector":"Materials","industry":"Construction Materials"},
+{"symbol":"LII","name":"Lennox International","sector":"Industrials","industry":"Building Products"},
+{"symbol":"CPAY","name":"Corpay","sector":"Financials","industry":"Transaction & Payment Processing Services"},
+{"symbol":"WDAY","name":"Workday, Inc.","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"AXON","name":"Axon Enterprise","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"APP","name":"AppLovin","sector":"Communication Services","industry":"Advertising"},
+{"symbol":"HOOD","name":"Robinhood Markets","sector":"Financials","industry":"Investment Banking & Brokerage"},
+{"symbol":"EME","name":"Emcor","sector":"Industrials","industry":"Construction & Engineering"},
+{"symbol":"VTR","name":"Ventas","sector":"Real Estate","industry":"Health Care REITs"},
+{"symbol":"ALB","name":"Albemarle Corporation","sector":"Materials","industry":"Specialty Chemicals"},
+{"symbol":"TPL","name":"Texas Pacific Land Corporation","sector":"Energy","industry":"Oil & Gas Exploration & Production"},
+{"symbol":"GRMN","name":"Garmin","sector":"Consumer Discretionary","industry":"Consumer Electronics"},
+{"symbol":"APD","name":"Air Products","sector":"Materials","industry":"Industrial Gases"},
+{"symbol":"BE","name":"Bloom Energy","sector":"Industrials","industry":"Electrical Components & Equipment"},
+{"symbol":"BF-B","name":"Brown\u2013Forman","sector":"Consumer Staples","industry":"Distillers & Vintners"},
+{"symbol":"BNY","name":"BNY Mellon","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"BX","name":"Blackstone Inc.","sector":"Financials","industry":"Asset Management & Custody Banks"},
+{"symbol":"CASY","name":"Casey's","sector":"Consumer Staples","industry":"Food Retail"},
+{"symbol":"CDNS","name":"Cadence Design Systems","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"CEG","name":"Constellation Energy","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"CHD","name":"Church & Dwight","sector":"Consumer Staples","industry":"Household Products"},
+{"symbol":"CIEN","name":"Ciena","sector":"Information Technology","industry":"Communications Equipment"},
+{"symbol":"COHR","name":"Coherent Corp.","sector":"Information Technology","industry":"Electronic Components"},
+{"symbol":"CVNA","name":"Carvana","sector":"Consumer Discretionary","industry":"Automotive Retail"},
+{"symbol":"ECHO","name":"EchoStar","sector":"Communication Services","industry":"Wireless Telecommunication Services"},
+{"symbol":"EIX","name":"Edison International","sector":"Utilities","industry":"Electric Utilities"},
+{"symbol":"FDXF","name":"FedEx Freight","sector":"Industrials","industry":"Cargo Ground Transportation"},
+{"symbol":"FERG","name":"Ferguson Enterprises","sector":"Industrials","industry":"Trading Companies & Distributors"},
+{"symbol":"FICO","name":"Fair Isaac","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"FIS","name":"Fidelity National Information Services","sector":"Financials","industry":"Transaction & Payment Processing Services"},
+{"symbol":"FISV","name":"Fiserv","sector":"Financials","industry":"Transaction & Payment Processing Services"},
+{"symbol":"FIX","name":"Comfort Systems USA","sector":"Industrials","industry":"Construction & Engineering"},
+{"symbol":"FLEX","name":"Flex Ltd.","sector":"Information Technology","industry":"Electronic Manufacturing Services"},
+{"symbol":"HONA","name":"Honeywell Aerospace","sector":"Industrials","industry":"Aerospace & Defense"},
+{"symbol":"IQV","name":"IQVIA","sector":"Health Care","industry":"Life Sciences Tools & Services"},
+{"symbol":"JBL","name":"Jabil","sector":"Information Technology","industry":"Electronic Manufacturing Services"},
+{"symbol":"KR","name":"Kroger","sector":"Consumer Staples","industry":"Food Retail"},
+{"symbol":"LITE","name":"Lumentum","sector":"Information Technology","industry":"Communications Equipment"},
+{"symbol":"LYV","name":"Live Nation Entertainment","sector":"Communication Services","industry":"Movies & Entertainment"},
+{"symbol":"MMM","name":"3M","sector":"Industrials","industry":"Industrial Conglomerates"},
+{"symbol":"MRSH","name":"Marsh McLennan","sector":"Financials","industry":"Insurance Brokers"},
+{"symbol":"MRVL","name":"Marvell Technology","sector":"Information Technology","industry":"Semiconductors"},
+{"symbol":"NEM","name":"Newmont","sector":"Materials","industry":"Gold"},
+{"symbol":"OXY","name":"Occidental Petroleum","sector":"Energy","industry":"Oil & Gas Exploration & Production"},
+{"symbol":"P","name":"Everpure","sector":"Information Technology","industry":"Technology Hardware, Storage & Peripherals"},
+{"symbol":"PCG","name":"PG&E Corporation","sector":"Utilities","industry":"Multi-Utilities"},
+{"symbol":"PTC","name":"PTC Inc.","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"Q","name":"Qnity Electronics","sector":"Information Technology","industry":"Semiconductor Materials & Equipment"},
+{"symbol":"RDDT","name":"Reddit","sector":"Communication Services","industry":"Interactive Media & Services"},
+{"symbol":"RJF","name":"Raymond James Financial","sector":"Financials","industry":"Investment Banking & Brokerage"},
+{"symbol":"SKYD","name":"Skydance","sector":"Communication Services","industry":"Movies & Entertainment"},
+{"symbol":"SNDK","name":"Sandisk","sector":"Information Technology","industry":"Technology Hardware, Storage & Peripherals"},
+{"symbol":"SNPS","name":"Synopsys","sector":"Information Technology","industry":"Application Software"},
+{"symbol":"SPG","name":"Simon Property Group","sector":"Real Estate","industry":"Retail REITs"},
+{"symbol":"SW","name":"Smurfit Westrock","sector":"Materials","industry":"Paper & Plastic Packaging Products & Materials"},
+{"symbol":"TRGP","name":"Targa Resources","sector":"Energy","industry":"Oil & Gas Storage & Transportation"},
+{"symbol":"TWLO","name":"Twilio","sector":"Information Technology","industry":"Systems Software"},
+{"symbol":"UPS","name":"United Parcel Service","sector":"Industrials","industry":"Air Freight & Logistics"},
+{"symbol":"VEEV","name":"Veeva Systems","sector":"Health Care","industry":"Health Care Technology"},
+{"symbol":"VMRK","name":"Vivmark Residential","sector":"Real Estate","industry":"Multi-Family Residential REITs"},
+{"symbol":"VRT","name":"Vertiv","sector":"Industrials","industry":"Electrical Components & Equipment"},
+{"symbol":"VTRS","name":"Viatris","sector":"Health Care","industry":"Pharmaceuticals"},
+{"symbol":"VYLR","name":"Vylor","sector":"Consumer Staples","industry":"Agricultural Products & Services"}
+];
+
+// ============================================================================
+// Finnhub client (free tier: 60 requests/minute, CORS enabled).
+// ============================================================================
+const FINNHUB = "https://finnhub.io/api/v1";
+const LS = {
+  key: "vs.apiKey", custom: "vs.customUniverse", useCustom: "vs.useCustom", cache: "vs.cache.v1", filters: "vs.filters",
+};
+const CACHE_TTL = 24 * 3600 * 1000;      // screener metrics
+const DETAIL_TTL = 6 * 3600 * 1000;      // news / financials / peers
+const MIN_GAP_MS = 1100;                 // ~55 req/min, under Finnhub's 60/min limit
+
+let apiKey = localStorage.getItem(LS.key) || "";
+let cache = loadCache();
+function loadCache() { try { return JSON.parse(localStorage.getItem(LS.cache) || "{}"); } catch { return {}; } }
+let saveTimer = null;
+function saveCache() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    try { localStorage.setItem(LS.cache, JSON.stringify(cache)); }
+    catch (e) { console.warn("cache save failed (storage full?)", e); }
+  }, 500);
+}
+function cacheGet(k, ttl) { const e = cache[k]; return e && Date.now() - e.t < ttl ? e.v : undefined; }
+function cacheSet(k, v) { cache[k] = { t: Date.now(), v }; saveCache(); }
+
+// Serialised request queue so we never exceed the rate limit; 429 -> back off and retry.
+const queue = []; let pumping = false; let lastAt = 0;
+function api(path, params = {}) {
+  return new Promise((resolve, reject) => { queue.push({ path, params, resolve, reject }); pump(); });
+}
+async function pump() {
+  if (pumping) return; pumping = true;
+  while (queue.length) {
+    const job = queue.shift();
+    const wait = MIN_GAP_MS - (Date.now() - lastAt);
+    if (wait > 0) await sleep(wait);
+    lastAt = Date.now();
+    try { job.resolve(await doFetch(job.path, job.params)); } catch (e) { job.reject(e); }
+  }
+  pumping = false;
+}
+async function doFetch(path, params, attempt = 0) {
+  const url = new URL(FINNHUB + path);
+  Object.entries(params).forEach(([k, v]) => v !== undefined && url.searchParams.set(k, v));
+  url.searchParams.set("token", apiKey);
+  const res = await fetch(url);
+  if (res.status === 429 && attempt < 3) { await sleep(15000 * (attempt + 1)); lastAt = Date.now(); return doFetch(path, params, attempt + 1); }
+  if (res.status === 401 || res.status === 403) throw new Error("Finnhub rejected the API key (HTTP " + res.status + ").");
+  if (!res.ok) throw new Error("HTTP " + res.status + " for " + path);
+  return res.json();
+}
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// ============================================================================
+// Metrics. Finnhub's /stock/metric returns ratios and growth rates (growth in %).
+// ============================================================================
+const GROWTH_METRICS = [
+  { key: "revenueGrowth3Y", label: "Revenue CAGR (3 yrs)", desc: "Compound annual revenue growth over the last 3 fiscal years" },
+  { key: "revenueGrowth5Y", label: "Revenue CAGR (5 yrs)", desc: "Compound annual revenue growth over the last 5 fiscal years" },
+  { key: "revenueGrowthTTMYoy", label: "Revenue growth (TTM YoY)", desc: "Trailing-12-month revenue vs the prior 12 months" },
+  { key: "revenueGrowthQuarterlyYoy", label: "Revenue growth (latest qtr YoY)", desc: "Most recent quarter vs the same quarter a year ago" },
+  { key: "epsGrowth3Y", label: "EPS CAGR (3 yrs)", desc: "Compound annual EPS growth over 3 fiscal years" },
+  { key: "epsGrowth5Y", label: "EPS CAGR (5 yrs)", desc: "Compound annual EPS growth over 5 fiscal years" },
+  { key: "epsGrowthTTMYoy", label: "EPS growth (TTM YoY)", desc: "Trailing-12-month EPS vs the prior 12 months" },
+  { key: "epsGrowthQuarterlyYoy", label: "EPS growth (latest qtr YoY)", desc: "Most recent quarter EPS vs a year ago" },
+  { key: "netMarginGrowth5Y", label: "Net margin growth (5 yrs)", desc: "Annual growth of net profit margin over 5 years" },
+];
+const MARKET_CAPS = [[0, "Any"], [2e9, "$2B+ (mid cap)"], [10e9, "$10B+ (large cap)"], [50e9, "$50B+"], [200e9, "$200B+ (mega cap)"]];
+const SORTS = [
+  ["pe", "P/E (TTM), low → high"], ["ps", "P/S (TTM), low → high"], ["peg", "PEG, low → high"],
+  ["growth", "Selected growth metric, high → low"], ["marketCap", "Market cap, high → low"],
+];
+
+const num = (v) => (typeof v === "number" && Number.isFinite(v) ? v : undefined);
+function pickMetrics(m) {
+  // Keep only what the table needs so the localStorage cache stays small.
+  const out = {
+    marketCap: num(m.marketCapitalization) !== undefined ? m.marketCapitalization * 1e6 : undefined,
+    pe: num(m.peTTM) ?? num(m.peBasicExclExtraTTM) ?? num(m.peExclExtraTTM),
+    ps: num(m.psTTM),
+    pb: num(m.pbQuarterly) ?? num(m.pb) ?? num(m.pbAnnual),
+    peg: num(m.pegTTM) ?? num(m.peg),
+    evEbitda: num(m.currentEv_ebitdaTTM) ?? num(m["currentEv/ebitdaTTM"]),
+    netMargin: num(m.netProfitMarginTTM),
+    opMargin: num(m.operatingMarginTTM),
+    roe: num(m.roeTTM),
+    epsTtm: num(m.epsTTM) ?? num(m.epsBasicExclExtraItemsTTM),
+    divYield: num(m.dividendYieldIndicatedAnnual) ?? num(m.currentDividendYieldTTM),
+    change52w: num(m["52WeekPriceReturnDaily"]),
+    revenuePerShareTTM: num(m.revenuePerShareTTM),
+  };
+  for (const g of GROWTH_METRICS) out[g.key] = num(m[g.key]);
+  return out;
+}
+async function getMetrics(symbol, force = false) {
+  if (!force) { const c = cacheGet("m:" + symbol, CACHE_TTL); if (c) return c; }
+  try {
+    const r = await api("/stock/metric", { symbol, metric: "all" });
+    const v = r && r.metric && Object.keys(r.metric).length ? pickMetrics(r.metric) : { empty: true };
+    cacheSet("m:" + symbol, v);
+    return v;
+  } catch (e) {
+    if (/API key/.test(e.message)) throw e;
+    const v = { error: e.message }; cacheSet("m:" + symbol, v); return v;
+  }
+}
+
+// ============================================================================
+// State / persistence
+// ============================================================================
+const DEFAULT_FILTERS = { minMarketCap: 10e9, sector: "", sortBy: "pe", growthMetric: "revenueGrowth3Y", minGrowth: "", maxPE: "", maxPS: "", limit: 50 };
+let filters = Object.assign({}, DEFAULT_FILTERS, safeJson(localStorage.getItem(LS.filters)) || {});
+function safeJson(s) { try { return s ? JSON.parse(s) : null; } catch { return null; } }
+let loading = { running: false, done: 0, total: 0, cancel: false };
+let topError = "";
+
+function universe() {
+  if (localStorage.getItem(LS.useCustom) === "1") {
+    const text = localStorage.getItem(LS.custom) || "";
+    const syms = text.split(/[\s,;]+/).map((s) => s.trim().toUpperCase()).filter(Boolean);
+    return [...new Set(syms)].map((s) => UNIVERSE.find((u) => u.symbol === s) || { symbol: s, name: s, sector: "", industry: "" });
+  }
+  return UNIVERSE;
+}
+
+async function loadUniverse(force = false) {
+  if (!apiKey) { topError = "Enter a Finnhub API key first (free at finnhub.io/register)."; render(); return; }
+  if (loading.running) { loading.cancel = true; return; }
+  topError = "";
+  const list = universe();
+  loading = { running: true, done: 0, total: list.length, cancel: false };
+  render();
+  let n = 0;
+  for (const u of list) {
+    if (loading.cancel) break;
+    if (!force && cacheGet("m:" + u.symbol, CACHE_TTL)) { loading.done++; continue; }
+    try { await getMetrics(u.symbol, force); }
+    catch (e) { topError = e.message; break; }
+    loading.done++;
+    if (++n % 3 === 0) renderTable();   // refresh table as rows arrive, without re-rendering inputs
+    renderStatus();
+  }
+  loading.running = false; loading.cancel = false;
+  render();
+}
+
+// ============================================================================
+// Screening
+// ============================================================================
+function screen() {
+  const rows = []; let pending = 0, loaded = 0;
+  for (const u of universe()) {
+    const m = cacheGet("m:" + u.symbol, CACHE_TTL);
+    if (!m) { pending++; continue; }
+    loaded++;
+    if (m.empty || m.error) continue;
+    if ((m.marketCap ?? 0) < filters.minMarketCap) continue;
+    if (filters.sector && u.sector !== filters.sector) continue;
+    if (m.pe === undefined || m.pe <= 0) continue;                       // losses: no meaningful P/E
+    if (filters.maxPE !== "" && m.pe > +filters.maxPE) continue;
+    if (filters.maxPS !== "" && (m.ps === undefined || m.ps > +filters.maxPS)) continue;
+    if (filters.minGrowth !== "") { const g = m[filters.growthMetric]; if (g === undefined || g < +filters.minGrowth) continue; }
+    if (filters.sortBy === "ps" && !(m.ps > 0)) continue;
+    if (filters.sortBy === "peg" && !(m.peg > 0)) continue;
+    rows.push({ ...u, m });
+  }
+  const key = (r) => ({
+    pe: r.m.pe ?? Infinity, ps: r.m.ps ?? Infinity, peg: r.m.peg ?? Infinity,
+    marketCap: -(r.m.marketCap ?? 0), growth: -(r.m[filters.growthMetric] ?? -Infinity),
+  })[filters.sortBy];
+  rows.sort((a, b) => key(a) - key(b));
+  return { rows: rows.slice(0, +filters.limit), pending, loaded, total: universe().length };
+}
+
+// ============================================================================
+// Formatting
+// ============================================================================
+const fmtMoney = (n) => { if (n === undefined) return "–"; const a = Math.abs(n); const [d, s] = a >= 1e12 ? [1e12, "T"] : a >= 1e9 ? [1e9, "B"] : a >= 1e6 ? [1e6, "M"] : [1e3, "K"]; return (n < 0 ? "-" : "") + "$" + (a / d).toFixed(a / d >= 100 ? 0 : 1) + s; };
+const fmtR = (n, d = 1) => (n === undefined ? "–" : n.toFixed(d));
+const fmtPct = (n, d = 1) => (n === undefined ? "–" : (n > 0 ? "+" : "") + n.toFixed(d) + "%");   // n already in percent
+const cls = (n) => (n === undefined ? "dim" : n >= 0 ? "up" : "down");
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmtDate = (ts) => (ts ? new Date(typeof ts === "number" ? ts * 1000 : ts).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "–");
+const ago = (ts) => { const h = Math.floor((Date.now() - ts * 1000) / 36e5); return h < 1 ? "just now" : h < 24 ? h + "h ago" : Math.floor(h / 24) + "d ago"; };
+
+// ============================================================================
+// Rendering: screener
+// ============================================================================
+const app = document.getElementById("app");
+function opt(list, sel, f = (x) => x) { return list.map((x) => { const [v, l] = Array.isArray(x) ? x : [f(x), f(x)]; return `<option value="${esc(v)}" ${String(v) === String(sel) ? "selected" : ""}>${esc(l)}</option>`; }).join(""); }
+
+function render() {
+  if (location.hash.length > 1) return renderDetail(decodeURIComponent(location.hash.slice(1)).toUpperCase());
+  const sectors = [...new Set(UNIVERSE.map((u) => u.sector))].sort();
+  const gm = GROWTH_METRICS.find((g) => g.key === filters.growthMetric);
+  const useCustom = localStorage.getItem(LS.useCustom) === "1";
+  app.innerHTML = `
+    <div class="row" style="justify-content:space-between;align-items:flex-end;margin-bottom:16px">
+      <div><h1>Value screener</h1><div class="sub">Companies ranked by P/E or P/S, filtered by size and multi-year growth, with news and competitor ratios. Data: Finnhub.</div></div>
+    </div>
+    <div class="panel">
+      <div class="grid">
+        <div style="grid-column: span 2">
+          <label for="apiKey">Finnhub API key <span class="dim">(free at finnhub.io/register — stored only in this browser)</span></label>
+          <input id="apiKey" type="password" value="${esc(apiKey)}" placeholder="paste key" autocomplete="off" />
+        </div>
+        <div>
+          <label for="uniMode">Universe</label>
+          <select id="uniMode"><option value="sp500" ${!useCustom ? "selected" : ""}>S&amp;P 500 (${UNIVERSE.length})</option><option value="custom" ${useCustom ? "selected" : ""}>Custom ticker list</option></select>
+        </div>
+        <div style="display:flex;align-items:flex-end;gap:8px">
+          <button class="primary" id="loadBtn">${loading.running ? "Stop" : "Load / update data"}</button>
+          <button id="refreshBtn" ${loading.running ? "disabled" : ""} title="Ignore the 24h cache and re-fetch everything">Force refresh</button>
+        </div>
+        <div class="${useCustom ? "" : "hidden"}" style="grid-column: 1 / -1">
+          <label for="customList">Tickers (comma, space or newline separated)</label>
+          <textarea id="customList" rows="2" placeholder="AAPL, MSFT, NVDA …">${esc(localStorage.getItem(LS.custom) || "")}</textarea>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="grid">
+        <div><label for="minMarketCap">Minimum market cap</label><select id="minMarketCap">${opt(MARKET_CAPS, filters.minMarketCap)}</select></div>
+        <div><label for="sortBy">Sort by</label><select id="sortBy">${opt(SORTS, filters.sortBy)}</select></div>
+        <div><label for="sector">Sector</label><select id="sector"><option value="">All sectors</option>${opt(sectors, filters.sector)}</select></div>
+        <div><label for="limit">Rows</label><select id="limit">${opt([25, 50, 100, 200, 500], filters.limit)}</select></div>
+        <div style="grid-column: span 2"><label for="growthMetric">Growth metric</label><select id="growthMetric">${opt(GROWTH_METRICS.map((g) => [g.key, g.label]), filters.growthMetric)}</select><div class="help">${esc(gm?.desc || "")}</div></div>
+        <div><label for="minGrowth">Minimum growth (%)</label><input id="minGrowth" type="number" placeholder="e.g. 10" value="${esc(filters.minGrowth)}" /></div>
+        <div class="row" style="gap:8px"><div style="flex:1"><label for="maxPE">Max P/E</label><input id="maxPE" type="number" placeholder="any" value="${esc(filters.maxPE)}" /></div><div style="flex:1"><label for="maxPS">Max P/S</label><input id="maxPS" type="number" step="0.1" placeholder="any" value="${esc(filters.maxPS)}" /></div></div>
+      </div>
+    </div>
+    <div id="status"></div>
+    <div id="table"></div>
+    <p class="foot">Companies with negative trailing earnings are excluded (no meaningful P/E). Growth figures are Finnhub's computed rates from reported financials; “–” means not available (e.g. growth off a loss). Click a ticker for news, financial history and competitors. Not investment advice.</p>`;
+
+  const bind = (id, ev, fn) => document.getElementById(id).addEventListener(ev, fn);
+  bind("apiKey", "change", (e) => { apiKey = e.target.value.trim(); localStorage.setItem(LS.key, apiKey); });
+  bind("uniMode", "change", (e) => { localStorage.setItem(LS.useCustom, e.target.value === "custom" ? "1" : "0"); render(); });
+  bind("customList", "change", (e) => localStorage.setItem(LS.custom, e.target.value));
+  bind("loadBtn", "click", () => loadUniverse(false));
+  bind("refreshBtn", "click", () => loadUniverse(true));
+  for (const id of ["minMarketCap", "sortBy", "sector", "limit", "growthMetric", "minGrowth", "maxPE", "maxPS"]) {
+    bind(id, "input", (e) => {
+      filters[id] = ["minMarketCap", "limit"].includes(id) ? +e.target.value : e.target.value;
+      localStorage.setItem(LS.filters, JSON.stringify(filters));
+      if (id === "growthMetric") document.querySelector("#growthMetric + .help").textContent = GROWTH_METRICS.find((g) => g.key === filters.growthMetric)?.desc || "";
+      renderTable();
+    });
+  }
+  renderStatus(); renderTable();
+}
+
+function renderStatus() {
+  const el = document.getElementById("status"); if (!el) return;
+  const s = screen();
+  const pct = s.total ? Math.round(((loading.running ? loading.done : s.loaded) / s.total) * 100) : 0;
+  const stale = Object.values(cache).some((e) => Date.now() - e.t > CACHE_TTL);
+  el.innerHTML = (topError ? `<div class="err">${esc(topError)}</div>` : "") +
+    `<div class="status">
+      <span>${s.rows.length} shown</span>
+      ${loading.running ? `<span><span class="bar"><span style="width:${pct}%"></span></span> Fetching ${loading.done}/${loading.total} <span class="dim">(~${Math.ceil((loading.total - loading.done) * MIN_GAP_MS / 60000)} min left at 55 req/min)</span></span>`
+        : s.loaded < s.total ? `<span class="muted">${s.loaded}/${s.total} companies loaded — click <b>Load / update data</b> to fetch the rest${s.pending ? ` (${s.pending} pending)` : ""}</span>`
+        : `<span>All ${s.total} companies loaded${stale ? " (some data older than 24h)" : ""}</span>`}
+    </div>`;
+}
+
+function renderTable() {
+  const el = document.getElementById("table"); if (!el) return;
+  const s = screen();
+  const gl = GROWTH_METRICS.find((g) => g.key === filters.growthMetric)?.label || "Growth";
+  const h = (k, label, numeric = true) => `<th class="${numeric ? "num" : ""}" data-sort="${k}">${esc(label)}${filters.sortBy === k ? " ▾" : ""}</th>`;
+  el.innerHTML = `<div class="tablewrap"><table><thead><tr>
+      <th>#</th><th>Company</th><th>Sector</th>${h("marketCap", "Mkt cap")}${h("pe", "P/E")}${h("ps", "P/S")}${h("peg", "PEG")}
+      <th class="num">P/B</th><th class="num">Net margin</th>${h("growth", gl)}<th class="num">Rev YoY (last Q)</th><th class="num">EPS YoY (TTM)</th><th class="num">52w</th>
+    </tr></thead><tbody>${
+      s.rows.map((r, i) => `<tr>
+        <td class="dim">${i + 1}</td>
+        <td><a href="#${esc(r.symbol)}"><b>${esc(r.symbol)}</b></a><div class="small" title="${esc(r.name)}">${esc(r.name)}</div></td>
+        <td><div class="small">${esc(r.sector)}</div><div class="small dim" title="${esc(r.industry)}">${esc(r.industry)}</div></td>
+        <td class="num">${fmtMoney(r.m.marketCap)}</td><td class="num"><b>${fmtR(r.m.pe)}</b></td><td class="num">${fmtR(r.m.ps, 2)}</td><td class="num">${fmtR(r.m.peg, 2)}</td>
+        <td class="num">${fmtR(r.m.pb, 2)}</td><td class="num ${cls(r.m.netMargin)}">${fmtPct(r.m.netMargin)}</td>
+        <td class="num ${cls(r.m[filters.growthMetric])}"><b>${fmtPct(r.m[filters.growthMetric])}</b></td>
+        <td class="num ${cls(r.m.revenueGrowthQuarterlyYoy)}">${fmtPct(r.m.revenueGrowthQuarterlyYoy)}</td>
+        <td class="num ${cls(r.m.epsGrowthTTMYoy)}">${fmtPct(r.m.epsGrowthTTMYoy)}</td>
+        <td class="num ${cls(r.m.change52w)}">${fmtPct(r.m.change52w, 0)}</td></tr>`).join("") ||
+      `<tr><td colspan="13" class="dim" style="text-align:center;padding:28px">${s.loaded === 0 ? "No data yet — enter your API key and click “Load / update data”." : "No companies match these filters."}</td></tr>`
+    }</tbody></table></div>`;
+  el.querySelectorAll("th[data-sort]").forEach((th) => th.addEventListener("click", () => {
+    filters.sortBy = th.dataset.sort; localStorage.setItem(LS.filters, JSON.stringify(filters));
+    const sel = document.getElementById("sortBy"); if (sel) sel.value = filters.sortBy; renderTable();
+  }));
+}
+
+// ============================================================================
+// Company detail: profile, financial history (SEC filings), news, competitors
+// ============================================================================
+const NEWS_TAGS = [
+  ["earnings", /\b(earnings|eps|quarter(ly)? results|q[1-4]\b|beats?|misses?|reported)/i],
+  ["revenue", /\b(revenue|sales|bookings|top[- ]line)\b/i],
+  ["guidance", /\b(guidance|outlook|forecast|raises?|lowers?|cuts? (its )?(outlook|forecast))\b/i],
+  ["profit", /\b(profit|margin|net income|bottom[- ]line|loss(es)?)\b/i],
+  ["growth", /\b(growth|expan(d|sion)|demand|ramp)\b/i],
+  ["M&A", /\b(acqui(re|sition)|merger|buyout|takeover|deal|divest)/i],
+  ["analyst", /\b(upgrade|downgrade|price target|rating|analyst|overweight|underweight)\b/i],
+  ["costs", /\b(layoffs?|job cuts|restructur|cost[- ]cut|tariff|inflation|supply chain)\b/i],
+  ["legal/regulatory", /\b(lawsuit|antitrust|regulator|fda|probe|investigation|fine|settlement|recall)\b/i],
+  ["product", /\b(launch(es)?|unveils?|new product|contract|partnership|wins?)\b/i],
+  ["capital", /\b(dividend|buyback|repurchase|debt|offering|split)\b/i],
+];
+const tagsFor = (t) => NEWS_TAGS.filter(([, re]) => re.test(t)).map(([n]) => n);
+
+// XBRL concepts (us-gaap) that carry the lines we chart. Finnhub reports them as e.g. "us-gaap_Revenues".
+const CONCEPTS = {
+  revenue: ["Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax", "SalesRevenueNet", "RevenuesNetOfInterestExpense", "TotalRevenuesAndOtherIncome", "RevenueFromContractWithCustomerIncludingAssessedTax"],
+  operatingIncome: ["OperatingIncomeLoss"],
+  netIncome: ["NetIncomeLoss", "ProfitLoss", "NetIncomeLossAvailableToCommonStockholdersBasic"],
+  eps: ["EarningsPerShareDiluted", "EarningsPerShareBasicAndDiluted", "EarningsPerShareBasic"],
+};
+function pickLine(items, names) {
+  for (const n of names) {
+    const it = (items || []).find((i) => typeof i.concept === "string" && i.concept.replace(/^.*[:_]/, "") === n && typeof i.value === "number");
+    if (it) return it.value;
+  }
+  return undefined;
+}
+function parseFilings(data) {
+  const rows = (data || []).map((f) => ({
+    form: f.form, year: f.year, quarter: f.quarter, endDate: (f.endDate || "").slice(0, 10), startDate: (f.startDate || "").slice(0, 10),
+    revenue: pickLine(f.report?.ic, CONCEPTS.revenue), operatingIncome: pickLine(f.report?.ic, CONCEPTS.operatingIncome),
+    netIncome: pickLine(f.report?.ic, CONCEPTS.netIncome), eps: pickLine(f.report?.ic, CONCEPTS.eps),
+  })).filter((r) => r.endDate);
+  const dedupe = (list) => { const m = new Map(); for (const r of list) if (!m.has(r.endDate)) m.set(r.endDate, r); return [...m.values()].sort((a, b) => a.endDate.localeCompare(b.endDate)); };
+  return { annual: dedupe(rows.filter((r) => r.form === "10-K")), quarterly: dedupe(rows.filter((r) => r.form === "10-Q")) };
+}
+const yoy = (list, i, f, lag) => { const a = list[i]?.[f], b = list[i - lag]?.[f]; return a === undefined || b === undefined || b <= 0 ? undefined : (a / b - 1) * 100; };
+const cagr = (list, f, yrs) => { const a = list[list.length - 1]?.[f], b = list[list.length - 1 - yrs]?.[f]; return a === undefined || b === undefined || b <= 0 || a <= 0 ? undefined : (Math.pow(a / b, 1 / yrs) - 1) * 100; };
+
+async function getDetail(symbol) {
+  const c = cacheGet("d:" + symbol, DETAIL_TTL); if (c) return c;
+  const to = new Date(), from = new Date(Date.now() - 45 * 864e5);
+  const iso = (d) => d.toISOString().slice(0, 10);
+  const safe = (p) => p.catch((e) => { console.warn(e); return null; });
+  const [profile, quote, news, filings, peers] = await Promise.all([
+    safe(api("/stock/profile2", { symbol })), safe(api("/quote", { symbol })),
+    safe(api("/company-news", { symbol, from: iso(from), to: iso(to) })),
+    safe(api("/stock/financials-reported", { symbol })),
+    safe(api("/stock/peers", { symbol })),
+  ]);
+  const metrics = await getMetrics(symbol);
+  const peerSyms = (Array.isArray(peers) ? peers : []).filter((p) => p && p !== symbol && !/[.^=]/.test(p)).slice(0, 5);
+  const competitors = [];
+  for (const p of peerSyms) {
+    const m = await getMetrics(p);
+    const u = UNIVERSE.find((x) => x.symbol === p);
+    competitors.push({ symbol: p, name: u?.name, m });
+  }
+  const d = {
+    profile: profile || {}, quote: quote || {}, metrics,
+    news: (Array.isArray(news) ? news : []).filter((n) => n.headline && n.url).map((n) => ({ id: n.id, headline: n.headline, source: n.source, url: n.url, t: n.datetime, summary: n.summary, tags: tagsFor(n.headline + " " + (n.summary || "")) }))
+      .sort((a, b) => (b.tags.length > 0) - (a.tags.length > 0) || b.t - a.t).slice(0, 25),
+    fin: parseFilings(filings?.data), competitors,
+  };
+  cacheSet("d:" + symbol, d);
+  return d;
+}
+
+async function renderDetail(symbol) {
+  app.innerHTML = `<a href="#">← Back to screener</a><p class="muted" style="margin-top:24px">Loading ${esc(symbol)}… (profile, news, filings and peers — about 10 requests)</p>`;
+  if (!apiKey) { app.innerHTML = `<a href="#">← Back to screener</a><div class="err" style="margin-top:16px">Enter a Finnhub API key on the screener page first.</div>`; return; }
+  let d;
+  try { d = await getDetail(symbol); } catch (e) { app.innerHTML = `<a href="#">← Back to screener</a><div class="err" style="margin-top:16px">${esc(e.message)}</div>`; return; }
+  if (location.hash.slice(1).toUpperCase() !== symbol) return;   // user navigated away while loading
+  const u = UNIVERSE.find((x) => x.symbol === symbol) || {};
+  const m = d.metrics || {}, p = d.profile, q = d.quote;
+  const stat = (l, v, c = "", title = "") => `<div class="stat" title="${esc(title)}"><div class="l">${esc(l)}</div><div class="v ${c}">${v}</div></div>`;
+  const dayChg = num(q.dp);
+  const { annual, quarterly } = d.fin;
+  const finTable = (list, lag, caveat) => list.length === 0 ? `<p class="dim">No filings data.</p>` : `<div class="tablewrap"><table><thead><tr><th>Period end</th><th>Form</th><th class="num">Revenue</th><th class="num">YoY</th><th class="num">Op. income</th><th class="num">Net income</th><th class="num">YoY</th><th class="num">Diluted EPS</th><th class="num">YoY</th></tr></thead><tbody>${
+      list.map((r, i) => [r, i]).reverse().slice(0, 10).map(([r, i]) => `<tr><td>${esc(r.endDate)}</td><td class="dim">${esc(r.form)}</td>
+        <td class="num">${fmtMoney(r.revenue)}</td><td class="num ${cls(yoy(list, i, "revenue", lag))}">${fmtPct(yoy(list, i, "revenue", lag))}</td>
+        <td class="num">${fmtMoney(r.operatingIncome)}</td><td class="num">${fmtMoney(r.netIncome)}</td><td class="num ${cls(yoy(list, i, "netIncome", lag))}">${fmtPct(yoy(list, i, "netIncome", lag))}</td>
+        <td class="num">${r.eps === undefined ? "–" : r.eps.toFixed(2)}</td><td class="num ${cls(yoy(list, i, "eps", lag))}">${fmtPct(yoy(list, i, "eps", lag))}</td></tr>`).join("")
+    }</tbody></table></div>${caveat ? `<div class="help">${caveat}</div>` : ""}`;
+  const compRow = (c, self) => `<tr class="${self ? "self" : ""}"><td>${self ? `<b>${esc(c.symbol)}</b>` : `<a href="#${esc(c.symbol)}"><b>${esc(c.symbol)}</b></a>`}<div class="small">${esc(c.name || "")}</div></td>
+      <td class="num">${fmtMoney(c.m?.marketCap)}</td><td class="num">${fmtR(c.m?.pe)}</td><td class="num">${fmtR(c.m?.ps, 2)}</td><td class="num">${fmtR(c.m?.peg, 2)}</td><td class="num">${fmtR(c.m?.pb, 2)}</td>
+      <td class="num ${cls(c.m?.netMargin)}">${fmtPct(c.m?.netMargin)}</td><td class="num ${cls(c.m?.revenueGrowth3Y)}">${fmtPct(c.m?.revenueGrowth3Y)}</td><td class="num ${cls(c.m?.revenueGrowthTTMYoy)}">${fmtPct(c.m?.revenueGrowthTTMYoy)}</td></tr>`;
+
+  app.innerHTML = `
+    <a href="#">← Back to screener</a>
+    <div class="row" style="justify-content:space-between;align-items:flex-start;margin-top:12px">
+      <div>
+        <h1>${esc(p.name || u.name || symbol)} <span class="dim">(${esc(symbol)})</span></h1>
+        <div class="sub">${esc(p.finnhubIndustry || u.industry || "")}${u.sector ? " · " + esc(u.sector) : ""}${p.weburl ? ` · <a href="${esc(p.weburl)}" target="_blank" rel="noreferrer">${esc(p.weburl.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a>` : ""}${p.exchange ? ` · <span class="pill">${esc(p.exchange)}</span>` : ""}</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:22px;font-weight:600">${num(q.c) !== undefined ? "$" + q.c.toFixed(2) : "–"}</div>
+        <div class="${cls(dayChg)}" style="font-size:13px">${fmtPct(dayChg, 2)} today · <span class="${cls(m.change52w)}">${fmtPct(m.change52w, 0)} 52w</span></div>
+      </div>
+    </div>
+    ${m.error ? `<div class="err" style="margin-top:12px">Metrics unavailable: ${esc(m.error)}</div>` : ""}
+    <div class="stats" style="margin-top:16px">
+      ${stat("Market cap", fmtMoney(m.marketCap))}${stat("P/E (TTM)", fmtR(m.pe))}${stat("P/S (TTM)", fmtR(m.ps, 2))}${stat("PEG", fmtR(m.peg, 2))}${stat("P/B", fmtR(m.pb, 2))}${stat("EV / EBITDA", fmtR(m.evEbitda))}
+      ${stat("Net margin", fmtPct(m.netMargin), cls(m.netMargin))}${stat("Operating margin", fmtPct(m.opMargin), cls(m.opMargin))}${stat("ROE", fmtPct(m.roe), cls(m.roe))}${stat("EPS (TTM)", m.epsTtm === undefined ? "–" : "$" + m.epsTtm.toFixed(2))}${stat("Dividend yield", fmtPct(m.divYield))}${stat("Revenue / share", m.revenuePerShareTTM === undefined ? "–" : "$" + m.revenuePerShareTTM.toFixed(2))}
+    </div>
+    <div class="cols" style="margin-top:28px">
+      <div>
+        <section style="margin-bottom:28px"><h2>Growth</h2><div class="stats">
+          ${GROWTH_METRICS.map((g) => stat(g.label, fmtPct(m[g.key]), cls(m[g.key]), g.desc)).join("")}
+          ${stat("Revenue CAGR 3y (from 10-Ks)", fmtPct(cagr(annual, "revenue", 3)), cls(cagr(annual, "revenue", 3)), "Computed here from SEC annual filings")}
+          ${stat("Net income CAGR 3y (from 10-Ks)", fmtPct(cagr(annual, "netIncome", 3)), cls(cagr(annual, "netIncome", 3)), "Computed here from SEC annual filings; needs positive profit at both ends")}
+        </div></section>
+        <section style="margin-bottom:28px"><h2>Annual results (10-K)</h2>${finTable(annual, 1, "")}</section>
+        <section style="margin-bottom:28px"><h2>Quarterly results (10-Q)</h2>${finTable(quarterly, 4, "YoY compares to the filing four quarters earlier. Some companies report year-to-date figures in 10-Qs, in which case Q2/Q3 numbers are cumulative. Q4 is not filed separately (it is in the 10-K).")}</section>
+        <section><h2>Top competitors</h2>
+          <div class="tablewrap"><table><thead><tr><th>Company</th><th class="num">Mkt cap</th><th class="num">P/E</th><th class="num">P/S</th><th class="num">PEG</th><th class="num">P/B</th><th class="num">Net margin</th><th class="num">Rev CAGR 3y</th><th class="num">Rev TTM YoY</th></tr></thead>
+          <tbody>${compRow({ symbol, name: p.name || u.name, m }, true)}${d.competitors.map((c) => compRow(c, false)).join("")}${d.competitors.length === 0 ? `<tr><td colspan="9" class="dim" style="text-align:center;padding:20px">No peers returned.</td></tr>` : ""}</tbody></table></div>
+          <div class="help">Peers are Finnhub's peer group for this company (same industry / sub-industry classification).</div>
+        </section>
+      </div>
+      <aside>
+        <h2>Latest news <span class="dim" style="font-weight:400;font-size:12px">(last 45 days)</span></h2>
+        <div class="help" style="margin-bottom:10px">Articles mentioning earnings, revenue, guidance, margins, M&amp;A or other profit drivers are tagged and listed first.</div>
+        <ul class="news">${d.news.map((n) => `<li><a href="${esc(n.url)}" target="_blank" rel="noreferrer">${esc(n.headline)}</a><div class="small" style="max-width:none">${esc(n.source)} · ${ago(n.t)}</div>${n.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</li>`).join("") || `<li class="dim">No recent news.</li>`}</ul>
+        ${p.name ? `<details style="margin-top:20px"><summary>About</summary><div class="help" style="margin-top:8px">${esc(p.name)} · ${p.country ? esc(p.country) + " · " : ""}${p.ipo ? "IPO " + esc(p.ipo) + " · " : ""}${p.marketCapitalization ? "mkt cap " + fmtMoney(p.marketCapitalization * 1e6) : ""}</div></details>` : ""}
+      </aside>
+    </div>`;
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener("hashchange", render);
+render();
+</script>
+</body>
+</html>
